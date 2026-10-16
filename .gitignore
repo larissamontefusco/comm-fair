@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.DS_Store
+outputs/
+comfair/artifacts/forecasting/f0*
+comfair/artifacts/forecasting/f1*
+# Official benchmark and derived dataset must be reviewed before publication.
+reader/*.xlsx
+inputs/*.csv

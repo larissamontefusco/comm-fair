@@ -1,0 +1,218 @@
+# Source facts remain separate from the explicitly approved M3 modelling baseline.
+# Coordinates below refer to the data sheet unless otherwise stated.
+workbook:
+  path: backend/reader/ComErgy Benchmark Dataset 2026.xlsx
+  sheet: ComErgy Benchmark Dataset 2026
+  hourly_range: A3:M8762
+  member_range: P9:T17
+  dimensions: {members: 9, periods: 8760}
+  location: {value: 'Sydney, NSW, Australia', source: Q2}
+  currency_note: {value: 'Australian Dollar (~ 0.7 USD)', source: Q3}
+  demand_label: {value: 'Hourly Electricity Demand (kW or kWh) -- 01 Jan-31 Dec', source: A1}
+  import_tariff:
+    raw_values: [0.15, 0.25, 0.55]
+    header: Electricity price c/kWh
+    source: J1 and J3:J8762
+  feed_in_tariff:
+    raw_values: [0.05]
+    header: Feedin Tariff c/kWh
+    source: K1 and K3:K8762
+  connection_fee:
+    value: 1
+    unit: AUD
+    frequency: daily
+    source: P4/Q4 with currency note Q3
+    note: Retained as a daily fee; no annualisation or allocation across connections in ingestion.
+  pv_module:
+    value: 440
+    unit: W/module
+    model: LG NeON
+    source: P20
+  battery_module:
+    value: 4.66
+    unit: kWh/module
+    model: Fox ESS EQ4800
+    source: P19
+  assets:
+    total_pv_modules: 112
+    total_battery_modules: 14
+    source: Q9:Q17; counts only, no capacities derived
+
+model:
+  name: ComFair Benchmark Model
+  members: 9
+  periods: 8760
+  horizon: annual
+
+assumptions:
+  approval: M3 user instruction, 22 Sep 2026
+  baseline:
+    dt_hours:
+      value: 1.0
+      unit: "h"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "One-hour integration of average demand power."
+    benchmark_days:
+      value: 365
+      unit: "day"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "8760 hourly intervals; no fabricated calendar year."
+    tariff_scale:
+      value: 1.0
+      unit: "AUD/kWh per raw unit"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "Explicit resolution of J1/K1 c/kWh versus Q3 Australian Dollar ambiguity; import 0.15/0.25/0.55 and FIT 0.05 interpreted as AUD/kWh."
+    daily_connection_fee_aud:
+      value: 1.0
+      unit: "AUD/day/member"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "Retain every active member connection in every coalition; no artificial fixed-charge savings."
+    pv_module_kw:
+      value: 0.44
+      unit: "kW/module"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "Explicit adoption of workbook P20 rating; ingestion retains counts."
+    pv_nmot_c:
+      value: 44.0
+      unit: "degC"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "Module temperature proxy using GHI and ambient temperature."
+    pv_gamma_per_c:
+      value: -0.0033
+      unit: "1/degC"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "Linear Pmax temperature correction."
+    pv_derating:
+      value: 1.0
+      unit: "dimensionless"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "Module-output availability proxy, not a full AC plant model; no additional system losses."
+    battery_module_kwh:
+      value: 4.66
+      unit: "kWh/module"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "Explicit adoption of workbook P19 nominal energy rating."
+    battery_module_voltage_v:
+      value: 44.8
+      unit: "V/module"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "Series stack voltage scales with module count."
+    battery_stack_current_a:
+      value: 30.0
+      unit: "A/series stack"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "Recommended/standard current supplied in approved device assumptions; power = modules * 44.8 * 30 / 1000 in both directions."
+    battery_round_trip_efficiency:
+      value: 0.95
+      unit: "dimensionless"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "Conservative modelling value based on supplied manufacturer claim >95%; each one-way efficiency is sqrt(0.95)."
+    soc_min_fraction:
+      value: 0.1
+      unit: "fraction of nominal energy"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "90% depth of discharge."
+    soc_max_fraction:
+      value: 1.0
+      unit: "fraction of nominal energy"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "Nominal upper energy limit."
+    soc_initial_fraction:
+      value: 0.5
+      unit: "fraction of nominal energy"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "Neutral starting point; terminal SOC equals initial SOC."
+    degradation_aud_per_kwh:
+      value: 0.0
+      unit: "AUD/kWh throughput"
+      classification: approved modelling assumption
+      source: "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified"
+      rationale: "No degradation term in M3 baseline; charge and discharge throughput reported separately."
+    flow_tolerance_kw:
+      value: 1.0e-6
+      unit: "kW"
+      classification: engineering tolerance
+      source: "M3 numerical validation policy"
+      rationale: "Post-solve absolute feasibility and simultaneity threshold; no dispatch rounding."
+    energy_tolerance_kwh:
+      value: 1.0e-6
+      unit: "kWh"
+      classification: engineering tolerance
+      source: "M3 numerical validation policy"
+      rationale: "Post-solve absolute energy-balance, SOC dynamics, bounds and endpoint threshold."
+    cost_tolerance_aud:
+      value: 1.0e-5
+      unit: "AUD"
+      classification: engineering tolerance
+      source: "M3 numerical validation policy"
+      rationale: "Absolute objective reconstruction and B1 versus summed B0 comparison tolerance."
+  conventions:
+    time_axis:
+      value: ordinal t=0..8759, worksheet row=3+t
+      unit: hourly ordinal
+      classification: approved modelling interpretation
+      source: Workbook A1/A3:M8762 and M3 user instruction
+      rationale: No synthetic year 2025. Actual year/timezone/DST and interval start/end remain unspecified.
+    demand:
+      value: average power over each one-hour interval
+      unit: kW
+      classification: approved modelling interpretation
+      source: Workbook A1 and M3 user instruction
+      rationale: Energy = demand * dt, numerically equal in kWh at dt=1 h.
+    pv_availability:
+      value: clip(n*0.440*(GHI/1000)*(1-0.0033*(Tamb+(44-20)*GHI/800-25)), 0, n*0.440)
+      unit: kW
+      classification: approved modelling proxy
+      source: M3 user instruction; upstream reader is supporting evidence only
+      rationale: Uses actual weather and counts without rounding; explicit lower and nameplate upper clipping.
+    terminal_soc:
+      value: initial SOC
+      unit: kWh
+      classification: approved modelling assumption
+      source: M3 user instruction
+      rationale: Full-horizon cyclic storage prevents free depletion at horizon end.
+    simultaneity:
+      value: LP without exclusivity binaries, checked after solve
+      unit: policy
+      classification: approved modelling assumption
+      source: M3 user instruction
+      rationale: Strict import > FIT > 0 and round-trip efficiency < 1; stop on material simultaneous flows rather than silently change formulation.
+    pool:
+      value: implicit unconstrained community energy pool
+      unit: policy
+      classification: approved modelling assumption
+      source: M3 user instruction and mathematical contract section 5
+      rationale: Aggregate physical clearing; no network constraints supplied; member settlement deferred to M4.
+solver:
+  default: highs
+  algorithm: simplex
+  threads: 1
+  random_seed: 0
+  primal_feasibility_tolerance: 1.0e-8
+  dual_feasibility_tolerance: 1.0e-8
+  classification: engineering reproducibility configuration
+  source: M3 implementation
+  rationale: Deterministic LP algorithm and ordering; tolerances tighter than post-solve acceptance thresholds.
+market:
+  local_exchange:
+    price_protection: p_FIT_t <= p_EC_t <= p_Grid_t
+    price_basis: null  # M4, intentionally unimplemented.
+reproducibility:
+  benchmark_source: backend/reader/ComErgy Benchmark Dataset 2026.xlsx
+  benchmark_sheet: ComErgy Benchmark Dataset 2026
+  benchmark_loader: comfair.data.load_benchmark

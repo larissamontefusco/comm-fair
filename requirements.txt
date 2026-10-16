@@ -1,0 +1,11 @@
+# Python 3.11 or 3.12 recommended. Standalone forecasting only.
+numpy>=1.26,<3
+pandas>=2.0,<3
+openpyxl>=3.1,<4
+PyYAML==6.0.3
+scikit-learn==1.7.2
+statsmodels==0.14.5
+lightgbm==4.6.0
+xgboost-cpu==3.0.5
+threadpoolctl==3.7.0
+pytest==9.1.1
