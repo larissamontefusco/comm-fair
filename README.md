@@ -1,41 +1,55 @@
-# CommFair Forecasting 
+# CommFair Forecasting
 
-Independent, reproducible hourly 24-step forecasting of community electricity
+<div align="center">
+
+<img src="assets/logos/tecnico-lisboa.png" alt="Técnico Lisboa" height="76" /> &nbsp;&nbsp;
+<img src="assets/logos/inesc-id.png" alt="INESC-ID" height="76" /> &nbsp;&nbsp;
+<img src="assets/logos/iti.png" alt="Interactive Technologies Institute (ITI)" height="76" />
+
+<p><strong>Independent, reproducible energy forecasting</strong></p>
+<p><small>ComErgy Grand Challenge 2026 · Code-only research release</small></p>
+
+</div>
+
+This repository implements hourly 24-step forecasting of community electricity
 consumption (`load_kw`) and available PV power (`pv_available_kw`) for the
-nine-member ComErgy benchmark. No frontend, FastAPI, database, authentication,
-optimisation solver, EV/EVSE management or deployment is included.
+nine-member ComErgy benchmark. It contains forecasting algorithms, data loading,
+command-line experiments, reproducibility utilities and tests.
 
 ## Models and scientific protocol
 
-- **F0:** persistence, naive-24 and naive-168 benchmarks, strict 24-hour leakage
-  boundary and MAE/RMSE/WAPE/sMAPE evaluation.
+- **F0:** persistence, naive-24 and naive-168 benchmarks, a strict 24-hour
+  leakage boundary, and MAE/RMSE/WAPE/sMAPE evaluation.
 - **F1:** `AutoReg`, `Ridge`, `RandomForest`, `ExtraTrees`, `LightGBM`,
   `XGBoost`, local/global alternatives, validation-only model selection and
-  locked test evaluation (original F1 benchmarking methodology retained).
-- **Reference champions:** global Ridge (alpha=0.1) for load, naive-24 for PV.
-  Test dates are synthetic dataset labels, not real-time forecasts.
-- **Configurable training:** optional different contiguous train/validation/test
-  intervals through `scripts/train_custom.py`. It does **not** call the website.
+  locked test evaluation.
+- **Reference champions:** global Ridge (`alpha=0.1`) for load and naive-24
+  for PV. Test dates are synthetic dataset labels, not real-time forecasts.
+- **Configurable training:** contiguous train/validation/test intervals can be
+  supplied through `scripts/train_custom.py`.
 
-Training features are constructed from observed history only. Fitted scalers
-and imputers use train data only. Reference splits in hourly ordinals: train
-`[0, 5256)`, validation `[5256, 7008)`, test `[7008, 8760)`. Forecast
-origins are daily, with a 24-hour horizon and nine members.
+Features are constructed from observed history only; fitted scalers and
+imputers use training data only. Reference splits, in hourly ordinals, are:
+train `[0, 5256)`, validation `[5256, 7008)`, test `[7008, 8760)`.
+Forecast origins are daily, with a 24-hour horizon and nine members.
 
-## Structure
+## Repository structure
 
 ```text
+assets/logos/           # Institutional logos (excluded from code licence)
 comfair/
   forecasting/          # F0/F1 methods, features, splits, evaluation, custom engine
-  data/                 # Official benchmark loader and domain records
-  physical/             # PV generation proxy (not the optimisation model)
+  data/                 # Benchmark loader and domain records
+  physical/             # PV generation proxy
   config/assumptions.yaml
   artifacts/forecasting/ # F0 checkpoints generated locally (not tracked)
-reader/                  # CSV generator scripts; supply official workbook here
-inputs/                  # Supply two source CSV files here
+reader/                  # CSV generator scripts; supply benchmark workbook here
+inputs/                  # Supply the two source CSV files here
 scripts/                 # CLI: demo inference and custom split training
-tests/                   # Direct tests with no server
+tests/                   # Tests with no external services
 docs/                    # Dataset setup and historical F0/F1 specifications
+LICENSE                  # Apache License 2.0
+NOTICE                   # Attribution and third-party asset notices
 ```
 
 ## Install and run (Python 3.11/3.12)
@@ -48,15 +62,11 @@ pip install -r requirements.txt
 ```
 
 **Code-only submission:** the benchmark workbook and consumption/production
-CSVs are not included. See [docs/DATA_SETUP.md](docs/DATA_SETUP.md) for the
-three required input files and redistribution guidance. Place the verified files
-under `reader/` and `inputs/`. Or copy them from your original checkout:
+CSVs are not included. Follow [the dataset setup guide](docs/DATA_SETUP.md)
+to prepare and place the required inputs under `reader/` and `inputs/`.
 
-```bash
-python -m scripts.import_data --backend ../comm-energy-grand-challenge-inescid-main/backend
-```
-
-Run a 24-hour retrospective forecast using frozen F1 champion configurations:
+Run a 24-hour retrospective forecast using the frozen F1 champion
+configurations, or compare against a naive baseline:
 
 ```bash
 python -m scripts.demo --origin-t 7008 --model champion --output-dir outputs/demo
@@ -65,8 +75,8 @@ python -m pytest tests -q
 ```
 
 Outputs: `predictions.csv` (24 hours × 9 members × 2 targets) and
-`summary.json` (metrics for historical held-out actuals). `--origin-t` may
-be 7008, 7032, ..., 8736.
+`summary.json` (metrics computed from held-out historical observations).
+Valid `--origin-t` values are 7008, 7032, ..., 8736.
 
 Train and evaluate with the reference or custom synthetic-date splits:
 
@@ -85,25 +95,38 @@ Example `my_splits.json`:
 }
 ```
 
-For the exhaustive F0 and F1 reproduction with the standalone provenance gates:
+To reproduce the exhaustive F0 and F1 benchmarks:
 
 ```bash
 python -m comfair.forecasting.benchmark --output-dir comfair/artifacts/forecasting
 python -m comfair.forecasting.model_benchmark --output-dir outputs/full-f1
 ```
 
-F1 fits many model configurations and may take a substantial amount of CPU time.
-Each F1 output directory must be new. The original integrated provenance gates
-requiring M3/M4 optimiser results were intentionally replaced by F0-only source
-checks and digest verification. The mathematical forecast models, evaluation and
-validation/test boundaries are not altered by this packaging. This standalone
-version must not be represented as byte-identical to the original full integrated
-artifact provenance. The reference champion identities are not a guarantee
-that runtime-based tiebreaks choose identical champions on every machine.
+F1 fits many candidate configurations and can take substantial CPU time.
+Use a new output directory for each F1 run. This standalone release checks
+F0 source files and digests without depending on other research workflows.
+The forecasting models, evaluation metrics and train/validation/test
+boundaries have been retained. Runtime-dependent tiebreaks may select a
+different model on different machines.
 
-## Submission boundaries
+## Licence
 
-No `/frontend`, `main.py`, `Dockerfile`, FastAPI routes, database tables or
-credentials. Data, historical evidence and software licensing must be reviewed
-before making the GitHub repository public. Commit this code-only tree to a
-**new Git repository**, not as a fork requiring access to the private platform.
+The original source code and project documentation in this release are made
+available under the **[Apache License, Version 2.0](LICENSE)**, subject to the
+necessary rights and authorisations. Apache-2.0 requires preservation of
+applicable notices and includes express patent terms and warranty disclaimers;
+it is a permissive licence, including for commercial reuse.
+
+**Institutional logos, names and trademarks are not covered by Apache-2.0.**
+They remain the property of their respective owners; displaying affiliations
+does not imply endorsement. The benchmark datasets are not included and are
+subject to their own rights. See [NOTICE](NOTICE) for details.
+
+## Authors and contact
+
+| Author | Affiliation | Email | LinkedIn |
+| --- | --- | --- | --- |
+| **Larissa Montefusco** | Instituto Superior Técnico · INESC-ID | [larissa.montefusco@tecnico.ulisboa.pt](mailto:larissa.montefusco@tecnico.ulisboa.pt) | [LinkedIn](https://www.linkedin.com/in/larissa-montefusco/) |
+| **Nicollas Nogueira** | Instituto Superior Técnico · ITI | [nicollas.nogueira@tecnico.ulisboa.pt](mailto:nicollas.nogueira@tecnico.ulisboa.pt) | [LinkedIn](https://www.linkedin.com/in/nicollas-nogueira-591232283/) |
+
+Developed as part of the **ComErgy Grand Challenge 2026**.

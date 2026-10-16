@@ -1,0 +1,23 @@
+CommFair Forecasting
+Copyright 2026 CommFair Forecasting contributors
+
+Contributors and contact details are listed in README.md.
+
+The source code and project documentation are made available under the
+Apache License, Version 2.0, to the extent that the contributors have the
+rights necessary to license those materials. See LICENSE for the terms.
+
+Third-party institutional identities and source datasets are not licensed
+under Apache-2.0 by this project:
+
+- assets/logos/tecnico-lisboa.png — Instituto Superior Técnico / Técnico Lisboa
+- assets/logos/inesc-id.png — INESC-ID
+- assets/logos/iti.png — Interactive Technologies Institute (ITI)
+
+All names, symbols, and logos remain subject to the rights and policies of
+their respective owners. Their presence indicates author affiliations only;
+it does not convey institutional endorsement or trademark permissions.
+
+The ComErgy benchmark input workbook and source CSVs are not distributed
+with this code-only repository. Rights to those files remain with their
+respective owners. Third-party Python dependencies retain their own licences.
