@@ -6,16 +6,20 @@ from pathlib import Path
 import numpy as np
 
 from comfair.forecasting.baselines import forecast as baseline
-from comfair.forecasting.data import load_forecasting_data
+from comfair.forecasting.data import load_forecasting_csv_data, load_forecasting_data
 from comfair.forecasting.models import Candidate, fit_candidate
 from comfair.forecasting.metrics import aggregate_metrics
 from comfair.forecasting.schemas import MEMBERS, canonical_json
 
 
-def run(origin_t=7008, output_dir=Path("outputs/demo"), model="champion"):
+def run(origin_t=7008, output_dir=Path("outputs/demo"), model="champion",
+        load_csv=None, pv_csv=None):
     if not (isinstance(origin_t, int) and origin_t % 24 == 0 and 7008 <= origin_t <= 8736):
         raise ValueError("Use a test-set daily origin_t: 7008, 7032, ... 8736")
-    dataset, audit = load_forecasting_data()
+    if (load_csv is None) != (pv_csv is None):
+        raise ValueError("Provide both load_csv and pv_csv, or neither")
+    dataset, audit = (load_forecasting_csv_data(load_csv, pv_csv)
+                      if load_csv is not None else load_forecasting_data())
     if model not in ("champion", "naive_24"):
         raise ValueError("model must be champion or naive_24")
     fitted = None
@@ -51,6 +55,9 @@ def run(origin_t=7008, output_dir=Path("outputs/demo"), model="champion"):
                                   percentage_members=eligible)["micro"]}
     summary = {"kind": "historical_holdout_demonstration", "origin_t": origin_t,
                "horizon_hours": 24, "units": "kW", "metrics": scores,
+               "data_source": audit.get("source_kind", "canonical_benchmark"),
+               "source_sha256": {k: v["sha256"] for k, v in audit["sources"].items()
+                                  if k in ("load_csv", "pv_csv")},
                "note": "Actuals are joined after prediction for retrospective evaluation only. "
                        "Synthetic dataset hours are not live timestamps."}
     (output_dir / "summary.json").write_text(canonical_json(summary))
@@ -65,5 +72,9 @@ if __name__ == "__main__":
     parser.add_argument("--origin-t", type=int, default=7008)
     parser.add_argument("--model", choices=("champion", "naive_24"), default="champion")
     parser.add_argument("--output-dir", type=Path, default=Path("outputs/demo"))
+    parser.add_argument("--load-csv", type=Path,
+                        help="Standalone consumption CSV (requires --pv-csv)")
+    parser.add_argument("--pv-csv", type=Path,
+                        help="Standalone production CSV (requires --load-csv)")
     args = parser.parse_args()
-    run(args.origin_t, args.output_dir, args.model)
+    run(args.origin_t, args.output_dir, args.model, args.load_csv, args.pv_csv)

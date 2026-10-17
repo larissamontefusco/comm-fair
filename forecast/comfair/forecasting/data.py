@@ -87,6 +87,50 @@ def read_wide_csv(path):
     return values, stamps
 
 
+def load_forecasting_csv_data(load_path, pv_path):
+    """Load a self-contained annual example from the two public wide CSVs.
+
+    Unlike :func:`load_forecasting_data`, this adapter does not claim that the
+    values were verified against the private benchmark workbook.  It is meant
+    for examples and local algorithm tests where the CSVs are the source of
+    truth.
+    """
+    load_path, pv_path = Path(load_path), Path(pv_path)
+    load, load_stamps = read_wide_csv(load_path)
+    pv, pv_stamps = read_wide_csv(pv_path)
+    if load_stamps != pv_stamps:
+        raise ValueError('Load/PV timestamps are not identical')
+    zero = tuple(i for i in MEMBERS if not np.any(pv[:, i - 1]))
+    sources = {
+        'load_csv': {'path': str(load_path), 'sha256': sha256(load_path.read_bytes()).hexdigest()},
+        'pv_csv': {'path': str(pv_path), 'sha256': sha256(pv_path.read_bytes()).hexdigest()},
+    }
+    audit = {
+        'schema_version': 1,
+        'status': 'PASS',
+        'source_kind': 'standalone_csv_example',
+        'sources': sources,
+        'member_ids': list(MEMBERS),
+        'shapes': {'load_kw': [8760, 9], 'pv_available_kw': [8760, 9]},
+        'zero_pv_members': list(zero),
+        'time_contract': {
+            'first': load_stamps[0], 'last': load_stamps[-1],
+            'resolution_hours': 1,
+        },
+        'alignment_checks': {'load_pv_timestamps_identical': True},
+        'warnings': [
+            'CSV values are used directly and are not checked against the private workbook.',
+            'This adapter is for standalone examples, not canonical benchmark regeneration.',
+        ],
+    }
+    dataset = ForecastDataset(
+        load, pv, MEMBERS, zero,
+        {'sources': sources, 'target_definition': {'source': 'standalone_csv_example'}},
+    )
+    dataset.validate()
+    return dataset, audit
+
+
 def load_forecasting_data():
     from comfair.data import load_benchmark
     from comfair.physical.config import load_baseline

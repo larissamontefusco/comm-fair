@@ -44,6 +44,7 @@ coalitions/             Coalition methods, verification scripts, evidence and fi
   scripts/              Verification, figure generation and bounded solver smoke test
   tests/                Scientific verification and release-boundary tests
 assets/logos/           Existing institutional branding (not Apache-2.0 licensed)
+examples/                Isolated CSV data and runnable forecast/coalition examples
 requirements.txt        Forecasting dependencies only
 Dockerfile              Reproducible Python 3.12 environment for all workflows
 compose.yaml            Short Docker services for verification and examples
@@ -58,6 +59,35 @@ does not contain an HTTP server or expose a network port. Build the image once:
 ```bash
 docker compose build
 ```
+
+The included example CSVs can be tested immediately, without the private
+benchmark workbook:
+
+```bash
+# Validate shape, timestamps and tariff relationships.
+# This is a test command: it reports PASS/FAIL and does not create forecasts.
+docker compose run --rm example-csv-tests
+
+# Run both forecasting algorithms on the example consumption/production data.
+docker compose run --rm example-forecast-champion
+docker compose run --rm example-forecast-naive24
+
+# Compare baseline and cooperative_pool costs using all three CSVs.
+docker compose run --rm example-coalition
+```
+
+The forecast commands create these CSV files on the host:
+
+```text
+outputs/examples/forecast-champion/predictions.csv
+outputs/examples/forecast-naive-24/predictions.csv
+```
+
+Each row contains the forecast origin, target hour, horizon, member, model,
+predicted kW and actual kW. JSON metric summaries are stored beside the CSVs.
+See the
+[CSV examples guide](examples/README.md) for local commands, parameters and the
+explicit no-battery assumption used by the coalition example.
 
 Then run the workflows that need no private input data:
 
@@ -189,6 +219,10 @@ docker compose run --rm forecast-custom \
 | Fragmentation analysis | `python coalitions/scripts/generate_coalition_fragmentation_figure.py --output-dir outputs/coalitions/figures` | Included M5 artifact | Fully runnable |
 | Deterministic insights snapshot | `PYTHONPATH=coalitions python -m comfair.presentation.insights --check` | Included five artifacts | Fully runnable |
 | Physical/market smoke test | `python coalitions/scripts/smoke_physical.py` | Synthetic arrays created by the script | Fully runnable |
+| Example CSV validation | `python -m unittest discover -s examples/tests -v` | Included example CSVs | Fully runnable |
+| Example forecast: Ridge champion | See `examples/README.md` | Included consumption/production CSVs | Fully runnable; no workbook needed |
+| Example forecast: naive-24 | See `examples/README.md` | Included consumption/production CSVs | Fully runnable; no workbook needed |
+| Example coalition solve | `python examples/run_coalition_csv.py` | Included consumption/production/price CSVs | Fully runnable; assumes no batteries |
 | Forecast demo: Ridge champion | `cd forecast && python -m scripts.demo --model champion` | Workbook + consumption/PV CSVs | Runnable with authorized inputs |
 | Forecast demo: naive-24 | `cd forecast && python -m scripts.demo --model naive_24` | Same three files | Runnable with authorized inputs |
 | Custom forecasting experiment | `cd forecast && python -m scripts.train_custom` | Same three files | Runnable with authorized inputs |
@@ -225,7 +259,10 @@ the extent the contributors have the necessary rights. Preserve [NOTICE](NOTICE)
 Institutional logos, names and trademarks are excluded and imply no endorsement.
 Third-party packages retain their own licences.
 
-The input workbook/CSVs are absent. Derived artifacts contain benchmark household
+The private canonical workbook/CSVs are absent. The official competition CSV
+dataset under `examples/data/comergy/` is included specifically for the
+documented test workflows, but is not sufficient by itself for canonical
+workbook-based regeneration. Derived artifacts contain benchmark household
 profiles, incomes and energy summaries; permission to redistribute these derived
 materials still requires confirmation. See [Coalition Analysis documentation](coalitions/README.md).
 Do not infer dataset redistribution rights from the source-code licence.
