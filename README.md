@@ -95,7 +95,7 @@ Then run the workflows that need no private input data:
 # Verify hashes, 512 coalition identities, core inequalities and policies.
 docker compose run --rm verify
 
-# Run the 15 public coalition/release tests.
+# Run the 21 public coalition/release tests.
 docker compose run --rm coalition-tests
 
 # Read one published cooperative-pool coalition (members 1, 3 and 8).
