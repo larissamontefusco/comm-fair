@@ -11,3 +11,19 @@ comfair/artifacts/forecasting/f1*
 # Official benchmark and derived dataset must be reviewed before publication.
 reader/*.xlsx
 inputs/*.csv
+
+# Local verification environments and generated scratch output.
+.venv-*/
+.cache/
+*.egg-info/
+*:Zone.Identifier
+.env.*
+!.env.example
+# External benchmark inputs require redistribution review in both modules.
+forecast/reader/*.xlsx
+forecast/inputs/*.csv
+coalitions/reader/*.xlsx
+coalitions/inputs/*.csv
+# Forecast artifacts generated in the reorganized module layout.
+forecast/comfair/artifacts/forecasting/f0*
+forecast/comfair/artifacts/forecasting/f1*

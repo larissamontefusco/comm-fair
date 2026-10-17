@@ -1,0 +1,419 @@
+{
+  "scope": "Imported source and evidence before the editorial public-release pass; not a claim of full regeneration compatibility.",
+  "files": [
+    {
+      "public_path": "comfair/__init__.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/__init__.py",
+      "imported_sha256": "030ebb519f5f44a44ae12352ecf837a34dce1756b495c88ff609aca0c9f4397d"
+    },
+    {
+      "public_path": "comfair/artifacts/m3_baselines.json",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/artifacts/m3_baselines.json",
+      "imported_sha256": "767c7c1538768d8db7840194597401bc133fd8ae5c23da3d497754d7cd8997aa"
+    },
+    {
+      "public_path": "comfair/artifacts/m5_coalitions.json",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/artifacts/m5_coalitions.json",
+      "imported_sha256": "cca30380f74cb0579e3024b401095779ae88bee7dee39f41554944810156bbb8"
+    },
+    {
+      "public_path": "comfair/artifacts/m5_core.json",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/artifacts/m5_core.json",
+      "imported_sha256": "985f155b46c170dc1069790cd5bdd7dfc6b6678f4214089063692cb72193a5ee"
+    },
+    {
+      "public_path": "comfair/artifacts/m7_governance.json",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/artifacts/m7_governance.json",
+      "imported_sha256": "dafc21444a21ab395da69b5a9f7f65b66d3933a0dee235e64d40cc88e769b7e2"
+    },
+    {
+      "public_path": "comfair/artifacts/m7_policy_comparison.json",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/artifacts/m7_policy_comparison.json",
+      "imported_sha256": "b636aae9bda8d6c51f3bc1e0c8defaaac8d19d90cc63d0c42d9489b37c50e6a0"
+    },
+    {
+      "public_path": "comfair/config/__init__.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/config/__init__.py",
+      "imported_sha256": "21f10e79b0f63a4c6b097d9d15d48144e76b467955db04265280acf6724f2f02"
+    },
+    {
+      "public_path": "comfair/config/assumptions.yaml",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/config/assumptions.yaml",
+      "imported_sha256": "311c91ca732e5715894b1d3ec2efcaf85af601d296aac547da7145c8b81ef759"
+    },
+    {
+      "public_path": "comfair/data/README.md",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/data/README.md",
+      "imported_sha256": "f4878ad51ce7f3b3699a4768e6d66a2dcb12824a7dc2dcbae69b2ee162cad3b8"
+    },
+    {
+      "public_path": "comfair/data/__init__.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/data/__init__.py",
+      "imported_sha256": "e28245467001b2e288b47a3686f027253a73581e3798bb0362c104ca428041b4"
+    },
+    {
+      "public_path": "comfair/data/benchmark_summary.json",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/data/benchmark_summary.json",
+      "imported_sha256": "c83cf9ced0818814823b8e1fd6d4b909fe21bfd369309801f12205fb776d1707"
+    },
+    {
+      "public_path": "comfair/data/loader.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/data/loader.py",
+      "imported_sha256": "6f4ec01dd0aff5601c2ca2a26504b93470231971e4b1de2015de82d3d29e980b"
+    },
+    {
+      "public_path": "comfair/data/models.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/data/models.py",
+      "imported_sha256": "3ee4c56c1049ec0bbb5b7721c8633e7f05fe2f0f20e5449613d78235478cdc53"
+    },
+    {
+      "public_path": "comfair/data/summary.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/data/summary.py",
+      "imported_sha256": "5eac6da730ce5a4eb9a14b2be93aeeb2c29e454154020051bd720f0ce36611e4"
+    },
+    {
+      "public_path": "comfair/game/README.md",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/README.md",
+      "imported_sha256": "45b7bb787471001c6fea4b1ee521a330a9714c090f46696386317077b29e29da"
+    },
+    {
+      "public_path": "comfair/game/__init__.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/__init__.py",
+      "imported_sha256": "41946a698d74433e8db383884eb57c860e6b0d1b4d1c9471db43ff772a0317e3"
+    },
+    {
+      "public_path": "comfair/game/batch_precompute.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/batch_precompute.py",
+      "imported_sha256": "1f8beaf04d208a84ab83f54502a5f5c6722e3effb17b216c6e12a83930a2f9ae"
+    },
+    {
+      "public_path": "comfair/game/benchmark_context.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/benchmark_context.py",
+      "imported_sha256": "3ce61fdc711dd08bbd12dfe375720e420b741dd1787e52bcd42e4203875e9ca0"
+    },
+    {
+      "public_path": "comfair/game/benchmark_evaluator.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/benchmark_evaluator.py",
+      "imported_sha256": "f9cdc393d302ac6001654fb3746ffda3ba9536c0267fce753a8f3ef7ee3f7533"
+    },
+    {
+      "public_path": "comfair/game/benchmark_results.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/benchmark_results.py",
+      "imported_sha256": "48b6bca55362ea1efc4ae221d5da0afc095d0318296fab4bd9e24a5df85b3181"
+    },
+    {
+      "public_path": "comfair/game/checkpoint.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/checkpoint.py",
+      "imported_sha256": "9d3717c3319e2adb24f09977a6d31db4f0c116805c56739ec63c93194d3891c9"
+    },
+    {
+      "public_path": "comfair/game/coalitions.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/coalitions.py",
+      "imported_sha256": "4658182b33be79bd313d2ee8d7146304ab521917e78c3542abb38394e26f3de1"
+    },
+    {
+      "public_path": "comfair/game/engine.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/engine.py",
+      "imported_sha256": "1da3f59716ea043bc560070ddae2781feb2f05ef197b686b5f7419fb432630e4"
+    },
+    {
+      "public_path": "comfair/game/evaluator.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/evaluator.py",
+      "imported_sha256": "bd4f034208b31618c9095aa03a6831faf051369b790fcafc2bd728b9bdf69b3c"
+    },
+    {
+      "public_path": "comfair/game/precomputed.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/precomputed.py",
+      "imported_sha256": "e05e733b5c76fbe03771e4e175514017439fd58bd7e1f4f4201e6e700d310a3d"
+    },
+    {
+      "public_path": "comfair/game/provenance.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/provenance.py",
+      "imported_sha256": "2db641de8ed92c055c375fefda019708630922f93384728c47cf399bd206268c"
+    },
+    {
+      "public_path": "comfair/game/results.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/results.py",
+      "imported_sha256": "a11f82e6a7004cfc34778e04eccfe73e46305e508e938e7d8984d7a649db450c"
+    },
+    {
+      "public_path": "comfair/game/run_game.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/run_game.py",
+      "imported_sha256": "97067ca81661330bf7b8c0a09e10730d188b7f7721f4e78339dc5544ac0a5f00"
+    },
+    {
+      "public_path": "comfair/game/stability.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/game/stability.py",
+      "imported_sha256": "afed7b82cfa5a7817bc4ae2fc3b346236950b1a6c1dc1e771c0ad45b1db15905"
+    },
+    {
+      "public_path": "comfair/governance/README.md",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/governance/README.md",
+      "imported_sha256": "f3d594b11819c180d202d4243351a0c41d1ed21301f169e215acbedd9b84a450"
+    },
+    {
+      "public_path": "comfair/governance/__init__.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/governance/__init__.py",
+      "imported_sha256": "68ea78371025158355a50bea2cbac53b6f9ae61f762cd5126b1378422e3b47a6"
+    },
+    {
+      "public_path": "comfair/governance/ablation.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/governance/ablation.py",
+      "imported_sha256": "08d4492735ddf54ce7290c8d9b9f99b4653d50ddb011006024286cc8445229b2"
+    },
+    {
+      "public_path": "comfair/governance/allocations.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/governance/allocations.py",
+      "imported_sha256": "dc537f7bfff2720744b40001f46f6f7253d08967363a3922aad8fcdb4b5dc1f2"
+    },
+    {
+      "public_path": "comfair/governance/audit.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/governance/audit.py",
+      "imported_sha256": "3597b96a28cecb017fad4cdfd11e8c4090a89f19f51b242d0a0bd2910629be07"
+    },
+    {
+      "public_path": "comfair/governance/cooperative.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/governance/cooperative.py",
+      "imported_sha256": "02812e4b072caa3f89754905d77a41c4610d3487363fc7a92cb999dff2bf9a6a"
+    },
+    {
+      "public_path": "comfair/governance/frontier.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/governance/frontier.py",
+      "imported_sha256": "cf362010d7a6057107d0ef069b2155a0fa6b93c7408cd5f8125b8dccf97c90dc"
+    },
+    {
+      "public_path": "comfair/governance/metrics.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/governance/metrics.py",
+      "imported_sha256": "38f850d0fb1e82d1430c3e888b65243f63a9bd840021b8e0c8b4027edaec112d"
+    },
+    {
+      "public_path": "comfair/governance/pricing_baselines.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/governance/pricing_baselines.py",
+      "imported_sha256": "6147028c4f2a3e46f601725ece4912fc306b46d5a54a9dcf071d31a896528767"
+    },
+    {
+      "public_path": "comfair/governance/provenance.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/governance/provenance.py",
+      "imported_sha256": "7a32d349ab9f15d73049d91fcb6923322900e26fccbde9d7925506265566eb0d"
+    },
+    {
+      "public_path": "comfair/governance/reports.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/governance/reports.py",
+      "imported_sha256": "3444973bb40f4f68ed7531992234e0eedaa1f4a10368ae1c3ad0700dfe3cd0e6"
+    },
+    {
+      "public_path": "comfair/governance/results.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/governance/results.py",
+      "imported_sha256": "723e3df49b624394a1b0d57ed7991378bb956d4e6d451e3ee3ab4e9c10c3dfdf"
+    },
+    {
+      "public_path": "comfair/governance/run_governance.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/governance/run_governance.py",
+      "imported_sha256": "a49fd20e7ec5e8ddb9554c2453316f93e0e2b3f4aede1f18c03dc92a5501b88f"
+    },
+    {
+      "public_path": "comfair/market/README.md",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/market/README.md",
+      "imported_sha256": "590672552553cbb4710cf8b3642f59d9f96244154fc01665d933169f6e4a142e"
+    },
+    {
+      "public_path": "comfair/market/__init__.py",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/market/__init__.py",
+      "imported_sha256": "b5541e7a0d5209268dffcdbe5d832fdf06c18a191777e0b153d312795861c91b"
+    },
+    {
+      "public_path": "comfair/market/matching.py",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/market/matching.py",
+      "imported_sha256": "1962ccc41042b507c238707a9a63afd88bcacfb364039e40cacba1dee8205a2e"
+    },
+    {
+      "public_path": "comfair/market/pricing.py",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/market/pricing.py",
+      "imported_sha256": "da5766965f089fb9fa08a3e68d086dd02b5994baa296990d9d1a8f3a0ff97384"
+    },
+    {
+      "public_path": "comfair/market/results.py",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/market/results.py",
+      "imported_sha256": "081214af155196b4470fe3ee0f34fd21876498d92206ba74a711e438f4b46a69"
+    },
+    {
+      "public_path": "comfair/market/run_market.py",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/market/run_market.py",
+      "imported_sha256": "529ef6490650b870849344e2678108d7d78369641bc1df30c0b5f5361f272a71"
+    },
+    {
+      "public_path": "comfair/market/settlement.py",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/market/settlement.py",
+      "imported_sha256": "1db3e1e49476de756d24685321002e0d9c32489f99ac27b3d8c4756fcfcc45c9"
+    },
+    {
+      "public_path": "comfair/physical/README.md",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/physical/README.md",
+      "imported_sha256": "49f02193ce4db8810c47de2d082b469fcbb6ddfa211620d85d945eaa1d40fe75"
+    },
+    {
+      "public_path": "comfair/physical/__init__.py",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/physical/__init__.py",
+      "imported_sha256": "93aab65cefa1aeb2f956a94283302c0573e19a378d183b4845302b505ed42e9c"
+    },
+    {
+      "public_path": "comfair/physical/config.py",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/physical/config.py",
+      "imported_sha256": "262bc1d5ac960f29ba70adda5e37c1e6f49f3c2f2e0e2f212e1b2c77421e0945"
+    },
+    {
+      "public_path": "comfair/physical/model.py",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/physical/model.py",
+      "imported_sha256": "e9087cd74117eaddc6f2e7e54f276267eb2a69a3b24dee947f249da334e20ddf"
+    },
+    {
+      "public_path": "comfair/physical/pv.py",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/physical/pv.py",
+      "imported_sha256": "bd5c42296517f3b7118fe9c9af8fc2d5a83df1eb0be44a0479c0f23d0edf760d"
+    },
+    {
+      "public_path": "comfair/physical/results.py",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/physical/results.py",
+      "imported_sha256": "81b97541b1444858a17983ab1a96d69a169ee17626b6e8df0e05af0ae49004a2"
+    },
+    {
+      "public_path": "comfair/physical/run_baselines.py",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/physical/run_baselines.py",
+      "imported_sha256": "60a826aa1d1edb9fc5680849dfbaee7ec99347362165d015b52f2804172054f3"
+    },
+    {
+      "public_path": "comfair/physical/solver.py",
+      "reference_commit": "f30cd22f79774a6c187dd79415aaa0f6ce896e36",
+      "reference_path": "backend/comfair/physical/solver.py",
+      "imported_sha256": "b979cf280ac21d897d2321e39191591d003a8dfe027cc08f02ac33ca083e2ad7"
+    },
+    {
+      "public_path": "comfair/presentation/__init__.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/presentation/__init__.py",
+      "imported_sha256": "2221ca312660b334868da9e77de5b15eace107691ebb95821c153947ea94d098"
+    },
+    {
+      "public_path": "comfair/presentation/insights.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/presentation/insights.py",
+      "imported_sha256": "ba4082fad72e017c55d893ee9ab60b49e1cff19dc4609808edfd44bf8ea8a376"
+    },
+    {
+      "public_path": "comfair/repair/README.md",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/repair/README.md",
+      "imported_sha256": "562328cb30b1d1bbc1d4fa1f8e4c278c7cadc70437cb32bab2ad849c45541f1a"
+    },
+    {
+      "public_path": "comfair/repair/__init__.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/repair/__init__.py",
+      "imported_sha256": "5cc4dc52908b055ff1e630a3d8bef2ed0e5278f093a3ca8d92a671afc64c80d8"
+    },
+    {
+      "public_path": "comfair/repair/audit.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/repair/audit.py",
+      "imported_sha256": "9a85e725ce1e5764880b0b9a4874b504e8880beb27b07815ce8b627f444f3335"
+    },
+    {
+      "public_path": "comfair/repair/coalition.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/repair/coalition.py",
+      "imported_sha256": "3ba0e9d4524727abc1f6a4347876e578eb900458fe7e2d94fcd72cfef58c559f"
+    },
+    {
+      "public_path": "comfair/repair/curve.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/repair/curve.py",
+      "imported_sha256": "1b147bacefed7539aa2bc3b7f8b64e7df7174c7b121022d6206002e322ebd7af"
+    },
+    {
+      "public_path": "comfair/repair/individual.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/repair/individual.py",
+      "imported_sha256": "7a33d0b501d360e199b47c3f216919896bfff60e98907a0ef9c02885450cc768"
+    },
+    {
+      "public_path": "comfair/repair/model.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/repair/model.py",
+      "imported_sha256": "c8b7417ea421349c0d9fd66d32503738f7aa038a9d45909c1fac8baecb3a6eef"
+    },
+    {
+      "public_path": "comfair/repair/provenance.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/repair/provenance.py",
+      "imported_sha256": "7ef97810add9fe0807c1bd90b99d017d2852e210f2fc3357a71016298eb7a757"
+    },
+    {
+      "public_path": "comfair/repair/results.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/repair/results.py",
+      "imported_sha256": "6d2d030d98fbe9b2eb50461cb4b5e784b0404442ef1bda4ba89aa536bf3ccc6e"
+    },
+    {
+      "public_path": "comfair/repair/run_repair.py",
+      "reference_commit": "e992c1ec105c83d031b78f39146d5f8eb61f5f79",
+      "reference_path": "backend/comfair/repair/run_repair.py",
+      "imported_sha256": "54a81764322b48ab41aacdaf174c646ac7b73ba0e83171c83ed895e227be667e"
+    }
+  ]
+}

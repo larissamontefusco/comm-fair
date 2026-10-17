@@ -1,4 +1,4 @@
-# CommFair Forecasting
+# CommFair — Community Energy Research
 
 <div align="center">
 
@@ -6,121 +6,120 @@
 <img src="assets/logos/inesc-id.png" alt="INESC-ID" height="76" /> &nbsp;&nbsp;
 <img src="assets/logos/iti.png" alt="Interactive Technologies Institute (ITI)" height="76" />
 
-<p><strong>Independent, reproducible energy forecasting</strong></p>
-<p><small>ComErgy Grand Challenge 2026 · Code-only research release</small></p>
+<p><strong>Energy forecasting, cooperative stability and fair benefit allocation</strong></p>
+<p><small>ComErgy Grand Challenge 2026 · Public scientific methods and verified research evidence</small></p>
 
 </div>
 
-This repository implements hourly 24-step forecasting of community electricity
-consumption (`load_kw`) and available PV power (`pv_available_kw`) for the
-nine-member ComErgy benchmark. It contains forecasting algorithms, data loading,
-command-line experiments, reproducibility utilities and tests.
+CommFair is a research contribution to the **ComErgy Grand Challenge 2026**.
+It separates the economic value created by coordinated energy operation from
+market settlement, individual participation protection and coalition stability.
+This repository publishes forecasting methods and annual coalition evidence;
+it complements the deployed CommFair platform and Final Technical Report.
+It does not contain or reproduce the web platform, user accounts or database.
 
-## Models and scientific protocol
+## Scientific contributions
 
-- **F0:** persistence, naive-24 and naive-168 benchmarks, a strict 24-hour
-  leakage boundary, and MAE/RMSE/WAPE/sMAPE evaluation.
-- **F1:** `AutoReg`, `Ridge`, `RandomForest`, `ExtraTrees`, `LightGBM`,
-  `XGBoost`, local/global alternatives, validation-only model selection and
-  locked test evaluation.
-- **Reference champions:** global Ridge (`alpha=0.1`) for load and naive-24
-  for PV. Test dates are synthetic dataset labels, not real-time forecasts.
-- **Configurable training:** contiguous train/validation/test intervals can be
-  supplied through `scripts/train_custom.py`.
+- **Forecasting:** leakage-aware hourly load and PV forecasting, historical
+  baselines, model benchmarking and validation-based champion selection.
+- **Cooperation:** a fixed nine-household, 8,760-hour physical benchmark,
+  standalone counterfactuals and all 512 subset values.
+- **Stability and distribution:** core/least-core evidence, market-anchored
+  budget-balanced repair and comparison of 13 allocation/governance policies.
+- **Fragmentation:** reconstruction of all 255 complementary bipartitions and
+  their additional annual operating costs relative to the grand coalition.
 
-Features are constructed from observed history only; fitted scalers and
-imputers use training data only. Reference splits, in hourly ordinals, are:
-train `[0, 5256)`, validation `[5256, 7008)`, test `[7008, 8760)`.
-Forecast origins are daily, with a 24-hour horizon and nine members.
+The published annual evidence gives AUD 4,244.99 cooperative surplus (43.52%
+less cost than independent operation) and a numerically nonempty core. These
+are results for one fixed perfect-foresight benchmark, not universal guarantees
+or forecasts of outcomes for registered operational communities.
 
-## Repository structure
+## Repository map
 
 ```text
-assets/logos/           # Institutional logos (excluded from code licence)
-comfair/
-  forecasting/          # F0/F1 methods, features, splits, evaluation, custom engine
-  data/                 # Benchmark loader and domain records
-  physical/             # PV generation proxy
-  config/assumptions.yaml
-  artifacts/forecasting/ # F0 checkpoints generated locally (not tracked)
-reader/                  # CSV generator scripts; supply benchmark workbook here
-inputs/                  # Supply the two source CSV files here
-scripts/                 # CLI: demo inference and custom split training
-tests/                   # Tests with no external services
-docs/                    # Dataset setup and historical F0/F1 specifications
-LICENSE                  # Apache License 2.0
-NOTICE                   # Attribution and third-party asset notices
+forecast/               Forecasting source, CLI, tests and data setup documentation
+coalitions/             Coalition methods, verification scripts, evidence and figures
+  comfair/artifacts/    Five immutable canonical annual research artifacts
+  results/              Deterministically derived research snapshot
+  scripts/              Verification, figure generation and bounded solver smoke test
+  tests/                Scientific verification and release-boundary tests
+assets/logos/           Existing institutional branding (not Apache-2.0 licensed)
+requirements.txt        Forecasting dependencies only
+LICENSE, NOTICE         Code licence and attribution/third-party restrictions
 ```
 
-## Install and run (Python 3.11/3.12)
+## Quick start: coalition evidence
+
+From the repository root, with Python 3.11 or later (verified on 3.13.5):
 
 ```bash
-python -m venv .venv
-# Linux/macOS: source .venv/bin/activate
-# Windows PowerShell: .venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+python3 -m venv .venv-coalitions
+. .venv-coalitions/bin/activate
+python coalitions/scripts/verify_release.py
+python -m unittest discover -s coalitions/tests -v
+python -m pip install -r coalitions/requirements.txt
+python coalitions/scripts/generate_coalition_fragmentation_figure.py --output-dir outputs/coalitions/figures
 ```
 
-**Code-only submission:** the benchmark workbook and consumption/production
-CSVs are not included. Follow [the dataset setup guide](docs/DATA_SETUP.md)
-to prepare and place the required inputs under `reader/` and `inputs/`.
+Verification and tests use only the Python standard library; Matplotlib/NumPy
+are needed only for figures. No solver, private dataset, network service or
+platform installation is needed for this path. See the
+[Coalition Analysis README](coalitions/README.md) for the exact scientific
+contract, hashes, expected results and limits of full regeneration.
 
-Run a 24-hour retrospective forecast using the frozen F1 champion
-configurations, or compare against a naive baseline:
+## Quick start: forecasting
+
+Use a separate environment. Both modules contain a package called `comfair`;
+do not combine their import paths or install one over the other.
 
 ```bash
+# From the repository root; exit another virtual environment first.
+python3 -m venv .venv-forecast
+. .venv-forecast/bin/activate
+python -m pip install -r requirements.txt
+cd forecast
+# Supply the authorized workbook and two CSVs before the next commands.
 python -m scripts.demo --origin-t 7008 --model champion --output-dir outputs/demo
-python -m scripts.demo --origin-t 7008 --model naive_24 --output-dir outputs/naive
 python -m pytest tests -q
 ```
 
-Outputs: `predictions.csv` (24 hours × 9 members × 2 targets) and
-`summary.json` (metrics computed from held-out historical observations).
-Valid `--origin-t` values are 7008, 7032, ..., 8736.
+Read the existing [forecasting methodology](forecast/docs/FORECASTING_ORIGINAL.md)
+and [dataset setup](forecast/docs/DATA_SETUP.md). There is no separate forecasting
+README in this checkout; these are the existing module documents. Paths in the
+setup guide are relative to `forecast/`, not the repository root. Historical
+`backend/` examples in the methodology describe the original platform.
 
-Train and evaluate with the reference or custom synthetic-date splits:
+Inputs are not distributed. Forecasting dataset tests and inference therefore
+require authorized external inputs; exhaustive forecasting experiments were
+not rerun for this release review. The root dependency list is forecasting-only.
+Custom split training is available as `python -m scripts.train_custom` from
+`forecast/`; see its `--help` before running potentially expensive experiments.
 
-```bash
-python -m scripts.train_custom --output-dir outputs/custom
-python -m scripts.train_custom --splits-json my_splits.json --output-dir outputs/other
-```
+## Reproducibility boundaries
 
-Example `my_splits.json`:
+**Level 1: verified artifact-based reproduction.** Hash checks, cost identities,
+core witness feasibility, policy budget balance, the byte-identical snapshot,
+255 bipartitions and fragmentation figures can be reproduced in this checkout.
 
-```json
-{
-  "train": {"start_date": "2025-01-01", "end_date": "2025-07-31"},
-  "validation": {"start_date": "2025-08-01", "end_date": "2025-08-31"},
-  "test": {"start_date": "2025-09-01", "end_date": "2025-12-31"}
-}
-```
+**Level 2: partial, not a complete annual rerun.** The physical/market source
+supports a small synthetic solver example. Full annual regeneration additionally
+requires the benchmark workbook, missing intermediate artifacts and a coherent
+historical source environment. The supplied later game runner targets the
+platform's forecast-driven pipeline; it is not the historical annual cost oracle.
+These incompatibilities are recorded in [the dependency audit](coalitions/DEPENDENCIES.md).
+Compilation or successful artifact verification does not prove full regeneration.
 
-To reproduce the exhaustive F0 and F1 benchmarks:
+## Licence and data rights
 
-```bash
-python -m comfair.forecasting.benchmark --output-dir comfair/artifacts/forecasting
-python -m comfair.forecasting.model_benchmark --output-dir outputs/full-f1
-```
+Original source and documentation are offered under [Apache-2.0](LICENSE), to
+the extent the contributors have the necessary rights. Preserve [NOTICE](NOTICE).
+Institutional logos, names and trademarks are excluded and imply no endorsement.
+Third-party packages retain their own licences.
 
-F1 fits many candidate configurations and can take substantial CPU time.
-Use a new output directory for each F1 run. This standalone release checks
-F0 source files and digests without depending on other research workflows.
-The forecasting models, evaluation metrics and train/validation/test
-boundaries have been retained. Runtime-dependent tiebreaks may select a
-different model on different machines.
-
-## Licence
-
-The original source code and project documentation in this release are made
-available under the **[Apache License, Version 2.0](LICENSE)**, subject to the
-necessary rights and authorisations. Apache-2.0 requires preservation of
-applicable notices and includes express patent terms and warranty disclaimers;
-it is a permissive licence, including for commercial reuse.
-
-**Institutional logos, names and trademarks are not covered by Apache-2.0.**
-They remain the property of their respective owners; displaying affiliations
-does not imply endorsement. The benchmark datasets are not included and are
-subject to their own rights. See [NOTICE](NOTICE) for details.
+The input workbook/CSVs are absent. Derived artifacts contain benchmark household
+profiles, incomes and energy summaries; permission to redistribute these derived
+materials still requires confirmation. See [Coalition Analysis documentation](coalitions/README.md).
+Do not infer dataset redistribution rights from the source-code licence.
 
 ## Authors and contact
 

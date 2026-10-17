@@ -1,0 +1,4 @@
+# Level 1 figures only. Verification/tests require no third-party packages.
+# Tested with Python 3.13.5; these match the recorded M7 direct plot dependencies.
+matplotlib==3.11.2
+numpy==2.4.6

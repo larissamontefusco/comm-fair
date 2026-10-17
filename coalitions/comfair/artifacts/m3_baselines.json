@@ -1,0 +1,886 @@
+{
+  "B0": [
+    {
+      "coalition_members": [
+        1
+      ],
+      "diagnostics": {
+        "battery_simultaneity": {
+          "1": {
+            "count": 0,
+            "max_overlap_kw": 0.0,
+            "periods": []
+          }
+        },
+        "grid_simultaneity": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "max_balance_residual_kw": 4.440892098500626e-16,
+        "max_battery_power_violation_kw": 0.0,
+        "max_energy_balance_residual_kwh": 4.440892098500626e-16,
+        "max_grid_nonnegative_violation_kw": 0.0,
+        "max_pv_bound_violation_kw": 0.0,
+        "max_soc_bound_violation_kwh": 0.0,
+        "max_soc_dynamics_residual_kwh": 0.0,
+        "max_soc_endpoint_residual_kwh": 0.0,
+        "objective_reconstruction_residual_aud": 3.410605131648481e-13
+      },
+      "fixed_connection_cost_aud": 365.0,
+      "kpis": {
+        "battery_charge_kwh": 0.0,
+        "battery_discharge_kwh": 0.0,
+        "battery_throughput_kwh": 0.0,
+        "demand_kwh": 5315.942999999999,
+        "grid_export_kwh": 10141.897689440599,
+        "grid_import_kwh": 3552.6851903114,
+        "peak_grid_import_kw": 4.344,
+        "pv_available_kwh": 11905.1554991292,
+        "pv_curtailed_kwh": 0.0,
+        "pv_used_kwh": 11905.1554991292
+      },
+      "solver": {
+        "name": "highs",
+        "options": {
+          "dual_feasibility_tolerance": 1e-08,
+          "primal_feasibility_tolerance": 1e-08,
+          "random_seed": 0,
+          "solver": "simplex",
+          "threads": 1
+        },
+        "pyomo_version": "6.10.1",
+        "status": "ok",
+        "termination_condition": "optimal",
+        "version": "1.15.1"
+      },
+      "total_cost_aud": 633.1594356294999,
+      "variable_grid_cost_aud": 268.15943562949985
+    },
+    {
+      "coalition_members": [
+        2
+      ],
+      "diagnostics": {
+        "battery_simultaneity": {
+          "2": {
+            "count": 0,
+            "max_overlap_kw": 0.0,
+            "periods": []
+          }
+        },
+        "grid_simultaneity": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "max_balance_residual_kw": 4.440892098500626e-16,
+        "max_battery_power_violation_kw": 0.0,
+        "max_energy_balance_residual_kwh": 4.440892098500626e-16,
+        "max_grid_nonnegative_violation_kw": 0.0,
+        "max_pv_bound_violation_kw": 0.0,
+        "max_soc_bound_violation_kwh": 0.0,
+        "max_soc_dynamics_residual_kwh": 9.159339953157541e-16,
+        "max_soc_endpoint_residual_kwh": 0.0,
+        "objective_reconstruction_residual_aud": 6.821210263296962e-13
+      },
+      "fixed_connection_cost_aud": 365.0,
+      "kpis": {
+        "battery_charge_kwh": 2427.518536604994,
+        "battery_discharge_kwh": 2306.142609774744,
+        "battery_throughput_kwh": 4733.661146379738,
+        "demand_kwh": 4400.82,
+        "grid_export_kwh": 0.0,
+        "grid_import_kwh": 4522.195926830251,
+        "peak_grid_import_kw": 5.687,
+        "pv_available_kwh": 0.0,
+        "pv_curtailed_kwh": 0.0,
+        "pv_used_kwh": 0.0
+      },
+      "solver": {
+        "name": "highs",
+        "options": {
+          "dual_feasibility_tolerance": 1e-08,
+          "primal_feasibility_tolerance": 1e-08,
+          "random_seed": 0,
+          "solver": "simplex",
+          "threads": 1
+        },
+        "pyomo_version": "6.10.1",
+        "status": "ok",
+        "termination_condition": "optimal",
+        "version": "1.15.1"
+      },
+      "total_cost_aud": 1074.7337780602797,
+      "variable_grid_cost_aud": 709.7337780602797
+    },
+    {
+      "coalition_members": [
+        3
+      ],
+      "diagnostics": {
+        "battery_simultaneity": {
+          "3": {
+            "count": 0,
+            "max_overlap_kw": 0.0,
+            "periods": []
+          }
+        },
+        "grid_simultaneity": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "max_balance_residual_kw": 1.4988010832439613e-15,
+        "max_battery_power_violation_kw": 0.0,
+        "max_energy_balance_residual_kwh": 1.4988010832439613e-15,
+        "max_grid_nonnegative_violation_kw": 0.0,
+        "max_pv_bound_violation_kw": 0.0,
+        "max_soc_bound_violation_kwh": 0.0,
+        "max_soc_dynamics_residual_kwh": 1.3322676295501878e-15,
+        "max_soc_endpoint_residual_kwh": 0.0,
+        "objective_reconstruction_residual_aud": 2.8421709430404007e-13
+      },
+      "fixed_connection_cost_aud": 365.0,
+      "kpis": {
+        "battery_charge_kwh": 2728.3916386858136,
+        "battery_discharge_kwh": 2591.972056751523,
+        "battery_throughput_kwh": 5320.363695437337,
+        "demand_kwh": 9260.089,
+        "grid_export_kwh": 17421.030691624146,
+        "grid_import_kwh": 3007.228275300038,
+        "peak_grid_import_kw": 7.938000000000001,
+        "pv_available_kwh": 23810.3109982584,
+        "pv_curtailed_kwh": 0.0,
+        "pv_used_kwh": 23810.3109982584
+      },
+      "solver": {
+        "name": "highs",
+        "options": {
+          "dual_feasibility_tolerance": 1e-08,
+          "primal_feasibility_tolerance": 1e-08,
+          "random_seed": 0,
+          "solver": "simplex",
+          "threads": 1
+        },
+        "pyomo_version": "6.10.1",
+        "status": "ok",
+        "termination_condition": "optimal",
+        "version": "1.15.1"
+      },
+      "total_cost_aud": -18.563159417464817,
+      "variable_grid_cost_aud": -383.5631594174648
+    },
+    {
+      "coalition_members": [
+        4
+      ],
+      "diagnostics": {
+        "battery_simultaneity": {
+          "4": {
+            "count": 0,
+            "max_overlap_kw": 0.0,
+            "periods": []
+          }
+        },
+        "grid_simultaneity": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "max_balance_residual_kw": 8.881784197001252e-16,
+        "max_battery_power_violation_kw": 0.0,
+        "max_energy_balance_residual_kwh": 8.881784197001252e-16,
+        "max_grid_nonnegative_violation_kw": 0.0,
+        "max_pv_bound_violation_kw": 0.0,
+        "max_soc_bound_violation_kwh": 0.0,
+        "max_soc_dynamics_residual_kwh": 0.0,
+        "max_soc_endpoint_residual_kwh": 0.0,
+        "objective_reconstruction_residual_aud": 5.684341886080801e-13
+      },
+      "fixed_connection_cost_aud": 365.0,
+      "kpis": {
+        "battery_charge_kwh": 0.0,
+        "battery_discharge_kwh": 0.0,
+        "battery_throughput_kwh": 0.0,
+        "demand_kwh": 7130.821,
+        "grid_export_kwh": 14723.71958173,
+        "grid_import_kwh": 4393.64584967384,
+        "peak_grid_import_kw": 5.46999701152,
+        "pv_available_kwh": 17460.89473205616,
+        "pv_curtailed_kwh": 0.0,
+        "pv_used_kwh": 17460.89473205616
+      },
+      "solver": {
+        "name": "highs",
+        "options": {
+          "dual_feasibility_tolerance": 1e-08,
+          "primal_feasibility_tolerance": 1e-08,
+          "random_seed": 0,
+          "solver": "simplex",
+          "threads": 1
+        },
+        "pyomo_version": "6.10.1",
+        "status": "ok",
+        "termination_condition": "optimal",
+        "version": "1.15.1"
+      },
+      "total_cost_aud": 623.341918214048,
+      "variable_grid_cost_aud": 258.34191821404795
+    },
+    {
+      "coalition_members": [
+        5
+      ],
+      "diagnostics": {
+        "battery_simultaneity": {
+          "5": {
+            "count": 0,
+            "max_overlap_kw": 0.0,
+            "periods": []
+          }
+        },
+        "grid_simultaneity": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "max_balance_residual_kw": 0.0,
+        "max_battery_power_violation_kw": 0.0,
+        "max_energy_balance_residual_kwh": 0.0,
+        "max_grid_nonnegative_violation_kw": 0.0,
+        "max_pv_bound_violation_kw": 0.0,
+        "max_soc_bound_violation_kwh": 0.0,
+        "max_soc_dynamics_residual_kwh": 0.0,
+        "max_soc_endpoint_residual_kwh": 0.0,
+        "objective_reconstruction_residual_aud": 4.547473508864641e-13
+      },
+      "fixed_connection_cost_aud": 365.0,
+      "kpis": {
+        "battery_charge_kwh": 0.0,
+        "battery_discharge_kwh": 0.0,
+        "battery_throughput_kwh": 0.0,
+        "demand_kwh": 6920.581,
+        "grid_export_kwh": 0.0,
+        "grid_import_kwh": 6920.581,
+        "peak_grid_import_kw": 3.497,
+        "pv_available_kwh": 0.0,
+        "pv_curtailed_kwh": 0.0,
+        "pv_used_kwh": 0.0
+      },
+      "solver": {
+        "name": "highs",
+        "options": {
+          "dual_feasibility_tolerance": 1e-08,
+          "primal_feasibility_tolerance": 1e-08,
+          "random_seed": 0,
+          "solver": "simplex",
+          "threads": 1
+        },
+        "pyomo_version": "6.10.1",
+        "status": "ok",
+        "termination_condition": "optimal",
+        "version": "1.15.1"
+      },
+      "total_cost_aud": 2237.44225,
+      "variable_grid_cost_aud": 1872.44225
+    },
+    {
+      "coalition_members": [
+        6
+      ],
+      "diagnostics": {
+        "battery_simultaneity": {
+          "6": {
+            "count": 0,
+            "max_overlap_kw": 0.0,
+            "periods": []
+          }
+        },
+        "grid_simultaneity": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "max_balance_residual_kw": 8.881784197001252e-16,
+        "max_battery_power_violation_kw": 0.0,
+        "max_energy_balance_residual_kwh": 8.881784197001252e-16,
+        "max_grid_nonnegative_violation_kw": 0.0,
+        "max_pv_bound_violation_kw": 0.0,
+        "max_soc_bound_violation_kwh": 0.0,
+        "max_soc_dynamics_residual_kwh": 1.1102230246251565e-15,
+        "max_soc_endpoint_residual_kwh": 0.0,
+        "objective_reconstruction_residual_aud": 1.7053025658242404e-13
+      },
+      "fixed_connection_cost_aud": 365.0,
+      "kpis": {
+        "battery_charge_kwh": 3074.0891251335956,
+        "battery_discharge_kwh": 2920.3846688769154,
+        "battery_throughput_kwh": 5994.4737940105115,
+        "demand_kwh": 7436.088,
+        "grid_export_kwh": 10431.270884295987,
+        "grid_import_kwh": 2147.5226750470656,
+        "peak_grid_import_kw": 8.585074083574243,
+        "pv_available_kwh": 15873.540665505601,
+        "pv_curtailed_kwh": 0.0,
+        "pv_used_kwh": 15873.540665505601
+      },
+      "solver": {
+        "name": "highs",
+        "options": {
+          "dual_feasibility_tolerance": 1e-08,
+          "primal_feasibility_tolerance": 1e-08,
+          "random_seed": 0,
+          "solver": "simplex",
+          "threads": 1
+        },
+        "pyomo_version": "6.10.1",
+        "status": "ok",
+        "termination_condition": "optimal",
+        "version": "1.15.1"
+      },
+      "total_cost_aud": 320.0006084912195,
+      "variable_grid_cost_aud": -44.99939150878049
+    },
+    {
+      "coalition_members": [
+        7
+      ],
+      "diagnostics": {
+        "battery_simultaneity": {
+          "7": {
+            "count": 0,
+            "max_overlap_kw": 0.0,
+            "periods": []
+          }
+        },
+        "grid_simultaneity": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "max_balance_residual_kw": 8.881784197001252e-16,
+        "max_battery_power_violation_kw": 0.0,
+        "max_energy_balance_residual_kwh": 8.881784197001252e-16,
+        "max_grid_nonnegative_violation_kw": 0.0,
+        "max_pv_bound_violation_kw": 0.0,
+        "max_soc_bound_violation_kwh": 0.0,
+        "max_soc_dynamics_residual_kwh": 2.220446049250313e-15,
+        "max_soc_endpoint_residual_kwh": 0.0,
+        "objective_reconstruction_residual_aud": 4.547473508864641e-12
+      },
+      "fixed_connection_cost_aud": 365.0,
+      "kpis": {
+        "battery_charge_kwh": 5965.858705968492,
+        "battery_discharge_kwh": 5667.565770670068,
+        "battery_throughput_kwh": 11633.42447663856,
+        "demand_kwh": 10747.599,
+        "grid_export_kwh": 0.0,
+        "grid_import_kwh": 11045.891935298425,
+        "peak_grid_import_kw": 8.026,
+        "pv_available_kwh": 0.0,
+        "pv_curtailed_kwh": 0.0,
+        "pv_used_kwh": 0.0
+      },
+      "solver": {
+        "name": "highs",
+        "options": {
+          "dual_feasibility_tolerance": 1e-08,
+          "primal_feasibility_tolerance": 1e-08,
+          "random_seed": 0,
+          "solver": "simplex",
+          "threads": 1
+        },
+        "pyomo_version": "6.10.1",
+        "status": "ok",
+        "termination_condition": "optimal",
+        "version": "1.15.1"
+      },
+      "total_cost_aud": 2208.424346622769,
+      "variable_grid_cost_aud": 1843.4243466227688
+    },
+    {
+      "coalition_members": [
+        8
+      ],
+      "diagnostics": {
+        "battery_simultaneity": {
+          "8": {
+            "count": 0,
+            "max_overlap_kw": 0.0,
+            "periods": []
+          }
+        },
+        "grid_simultaneity": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "max_balance_residual_kw": 8.881784197001252e-16,
+        "max_battery_power_violation_kw": 0.0,
+        "max_energy_balance_residual_kwh": 8.881784197001252e-16,
+        "max_grid_nonnegative_violation_kw": 0.0,
+        "max_pv_bound_violation_kw": 0.0,
+        "max_soc_bound_violation_kwh": 0.0,
+        "max_soc_dynamics_residual_kwh": 1.7763568394002505e-15,
+        "max_soc_endpoint_residual_kwh": 0.0,
+        "objective_reconstruction_residual_aud": 6.821210263296962e-13
+      },
+      "fixed_connection_cost_aud": 365.0,
+      "kpis": {
+        "battery_charge_kwh": 4200.942618486401,
+        "battery_discharge_kwh": 3990.895487562081,
+        "battery_throughput_kwh": 8191.838106048483,
+        "demand_kwh": 10463.173999999999,
+        "grid_export_kwh": 4809.805662660145,
+        "grid_import_kwh": 3577.8712944552667,
+        "peak_grid_import_kw": 7.745,
+        "pv_available_kwh": 11905.1554991292,
+        "pv_curtailed_kwh": 0.0,
+        "pv_used_kwh": 11905.1554991292
+      },
+      "solver": {
+        "name": "highs",
+        "options": {
+          "dual_feasibility_tolerance": 1e-08,
+          "primal_feasibility_tolerance": 1e-08,
+          "random_seed": 0,
+          "solver": "simplex",
+          "threads": 1
+        },
+        "pyomo_version": "6.10.1",
+        "status": "ok",
+        "termination_condition": "optimal",
+        "version": "1.15.1"
+      },
+      "total_cost_aud": 677.6092550548598,
+      "variable_grid_cost_aud": 312.6092550548598
+    },
+    {
+      "coalition_members": [
+        9
+      ],
+      "diagnostics": {
+        "battery_simultaneity": {
+          "9": {
+            "count": 0,
+            "max_overlap_kw": 0.0,
+            "periods": []
+          }
+        },
+        "grid_simultaneity": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "max_balance_residual_kw": 4.440892098500626e-16,
+        "max_battery_power_violation_kw": 0.0,
+        "max_energy_balance_residual_kwh": 4.440892098500626e-16,
+        "max_grid_nonnegative_violation_kw": 0.0,
+        "max_pv_bound_violation_kw": 0.0,
+        "max_soc_bound_violation_kwh": 0.0,
+        "max_soc_dynamics_residual_kwh": 0.0,
+        "max_soc_endpoint_residual_kwh": 0.0,
+        "objective_reconstruction_residual_aud": 6.139089236967266e-12
+      },
+      "fixed_connection_cost_aud": 365.0,
+      "kpis": {
+        "battery_charge_kwh": 0.0,
+        "battery_discharge_kwh": 0.0,
+        "battery_throughput_kwh": 0.0,
+        "demand_kwh": 10891.019,
+        "grid_export_kwh": 5367.9273903904,
+        "grid_import_kwh": 8322.1760576376,
+        "peak_grid_import_kw": 7.053,
+        "pv_available_kwh": 7936.770332752801,
+        "pv_curtailed_kwh": 0.0,
+        "pv_used_kwh": 7936.770332752801
+      },
+      "solver": {
+        "name": "highs",
+        "options": {
+          "dual_feasibility_tolerance": 1e-08,
+          "primal_feasibility_tolerance": 1e-08,
+          "random_seed": 0,
+          "solver": "simplex",
+          "threads": 1
+        },
+        "pyomo_version": "6.10.1",
+        "status": "ok",
+        "termination_condition": "optimal",
+        "version": "1.15.1"
+      },
+      "total_cost_aud": 1998.49065123692,
+      "variable_grid_cost_aud": 1633.49065123692
+    }
+  ],
+  "B1": {
+    "coalition_members": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "diagnostics": {
+      "battery_simultaneity": {
+        "1": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "2": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "3": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "4": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "5": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "6": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "7": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "8": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        },
+        "9": {
+          "count": 0,
+          "max_overlap_kw": 0.0,
+          "periods": []
+        }
+      },
+      "grid_simultaneity": {
+        "count": 0,
+        "max_overlap_kw": 0.0,
+        "periods": []
+      },
+      "max_balance_residual_kw": 1.4210854715202004e-14,
+      "max_battery_power_violation_kw": 0.0,
+      "max_energy_balance_residual_kwh": 1.4210854715202004e-14,
+      "max_grid_nonnegative_violation_kw": 0.0,
+      "max_pv_bound_violation_kw": 0.0,
+      "max_soc_bound_violation_kwh": 0.0,
+      "max_soc_dynamics_residual_kwh": 2.220446049250313e-15,
+      "max_soc_endpoint_residual_kwh": 0.0,
+      "objective_reconstruction_residual_aud": 1.000444171950221e-11
+    },
+    "fixed_connection_cost_aud": 3285.0,
+    "kpis": {
+      "battery_charge_kwh": 22902.381329042342,
+      "battery_discharge_kwh": 21757.262262590222,
+      "battery_throughput_kwh": 44659.643591632564,
+      "demand_kwh": 72566.134,
+      "grid_export_kwh": 42793.684532003885,
+      "grid_import_kwh": 27613.10987162464,
+      "peak_grid_import_kw": 34.353,
+      "pv_available_kwh": 88891.82772683135,
+      "pv_curtailed_kwh": 0.0,
+      "pv_used_kwh": 88891.82772683135
+    },
+    "solver": {
+      "name": "highs",
+      "options": {
+        "dual_feasibility_tolerance": 1e-08,
+        "primal_feasibility_tolerance": 1e-08,
+        "random_seed": 0,
+        "solver": "simplex",
+        "threads": 1
+      },
+      "pyomo_version": "6.10.1",
+      "status": "ok",
+      "termination_condition": "optimal",
+      "version": "1.15.1"
+    },
+    "total_cost_aud": 5509.653992063874,
+    "variable_grid_cost_aud": 2224.6539920638743
+  },
+  "B_i_aud": {
+    "1": 633.1594356294999,
+    "2": 1074.7337780602797,
+    "3": -18.563159417464817,
+    "4": 623.341918214048,
+    "5": 2237.44225,
+    "6": 320.0006084912195,
+    "7": 2208.424346622769,
+    "8": 677.6092550548598,
+    "9": 1998.49065123692
+  },
+  "C_N_aud": 5509.653992063874,
+  "currency": "AUD",
+  "milestone": "M3",
+  "provenance": {
+    "assumptions": {
+      "approval": "M3 user instruction, 22 Sep 2026",
+      "baseline": {
+        "battery_module_kwh": {
+          "classification": "approved modelling assumption",
+          "rationale": "Explicit adoption of workbook P19 nominal energy rating.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "kWh/module",
+          "value": 4.66
+        },
+        "battery_module_voltage_v": {
+          "classification": "approved modelling assumption",
+          "rationale": "Series stack voltage scales with module count.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "V/module",
+          "value": 44.8
+        },
+        "battery_round_trip_efficiency": {
+          "classification": "approved modelling assumption",
+          "rationale": "Conservative modelling value based on supplied manufacturer claim >95%; each one-way efficiency is sqrt(0.95).",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "dimensionless",
+          "value": 0.95
+        },
+        "battery_stack_current_a": {
+          "classification": "approved modelling assumption",
+          "rationale": "Recommended/standard current supplied in approved device assumptions; power = modules * 44.8 * 30 / 1000 in both directions.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "A/series stack",
+          "value": 30.0
+        },
+        "benchmark_days": {
+          "classification": "approved modelling assumption",
+          "rationale": "8760 hourly intervals; no fabricated calendar year.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "day",
+          "value": 365
+        },
+        "cost_tolerance_aud": {
+          "classification": "engineering tolerance",
+          "rationale": "Absolute objective reconstruction and B1 versus summed B0 comparison tolerance.",
+          "source": "M3 numerical validation policy",
+          "unit": "AUD",
+          "value": 1e-05
+        },
+        "daily_connection_fee_aud": {
+          "classification": "approved modelling assumption",
+          "rationale": "Retain every active member connection in every coalition; no artificial fixed-charge savings.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "AUD/day/member",
+          "value": 1.0
+        },
+        "degradation_aud_per_kwh": {
+          "classification": "approved modelling assumption",
+          "rationale": "No degradation term in M3 baseline; charge and discharge throughput reported separately.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "AUD/kWh throughput",
+          "value": 0.0
+        },
+        "dt_hours": {
+          "classification": "approved modelling assumption",
+          "rationale": "One-hour integration of average demand power.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "h",
+          "value": 1.0
+        },
+        "energy_tolerance_kwh": {
+          "classification": "engineering tolerance",
+          "rationale": "Post-solve absolute energy-balance, SOC dynamics, bounds and endpoint threshold.",
+          "source": "M3 numerical validation policy",
+          "unit": "kWh",
+          "value": 1e-06
+        },
+        "flow_tolerance_kw": {
+          "classification": "engineering tolerance",
+          "rationale": "Post-solve absolute feasibility and simultaneity threshold; no dispatch rounding.",
+          "source": "M3 numerical validation policy",
+          "unit": "kW",
+          "value": 1e-06
+        },
+        "pv_derating": {
+          "classification": "approved modelling assumption",
+          "rationale": "Module-output availability proxy, not a full AC plant model; no additional system losses.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "dimensionless",
+          "value": 1.0
+        },
+        "pv_gamma_per_c": {
+          "classification": "approved modelling assumption",
+          "rationale": "Linear Pmax temperature correction.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "1/degC",
+          "value": -0.0033
+        },
+        "pv_module_kw": {
+          "classification": "approved modelling assumption",
+          "rationale": "Explicit adoption of workbook P20 rating; ingestion retains counts.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "kW/module",
+          "value": 0.44
+        },
+        "pv_nmot_c": {
+          "classification": "approved modelling assumption",
+          "rationale": "Module temperature proxy using GHI and ambient temperature.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "degC",
+          "value": 44.0
+        },
+        "soc_initial_fraction": {
+          "classification": "approved modelling assumption",
+          "rationale": "Neutral starting point; terminal SOC equals initial SOC.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "fraction of nominal energy",
+          "value": 0.5
+        },
+        "soc_max_fraction": {
+          "classification": "approved modelling assumption",
+          "rationale": "Nominal upper energy limit.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "fraction of nominal energy",
+          "value": 1.0
+        },
+        "soc_min_fraction": {
+          "classification": "approved modelling assumption",
+          "rationale": "90% depth of discharge.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "fraction of nominal energy",
+          "value": 0.1
+        },
+        "tariff_scale": {
+          "classification": "approved modelling assumption",
+          "rationale": "Explicit resolution of J1/K1 c/kWh versus Q3 Australian Dollar ambiguity; import 0.15/0.25/0.55 and FIT 0.05 interpreted as AUD/kWh.",
+          "source": "User-approved M3 baseline, 22 Sep 2026; device values supplied by user, not independently certified",
+          "unit": "AUD/kWh per raw unit",
+          "value": 1.0
+        }
+      },
+      "conventions": {
+        "demand": {
+          "classification": "approved modelling interpretation",
+          "rationale": "Energy = demand * dt, numerically equal in kWh at dt=1 h.",
+          "source": "Workbook A1 and M3 user instruction",
+          "unit": "kW",
+          "value": "average power over each one-hour interval"
+        },
+        "pool": {
+          "classification": "approved modelling assumption",
+          "rationale": "Aggregate physical clearing; no network constraints supplied; member settlement deferred to M4.",
+          "source": "M3 user instruction and mathematical contract section 5",
+          "unit": "policy",
+          "value": "implicit unconstrained community energy pool"
+        },
+        "pv_availability": {
+          "classification": "approved modelling proxy",
+          "rationale": "Uses actual weather and counts without rounding; explicit lower and nameplate upper clipping.",
+          "source": "M3 user instruction; upstream reader is supporting evidence only",
+          "unit": "kW",
+          "value": "clip(n*0.440*(GHI/1000)*(1-0.0033*(Tamb+(44-20)*GHI/800-25)), 0, n*0.440)"
+        },
+        "simultaneity": {
+          "classification": "approved modelling assumption",
+          "rationale": "Strict import > FIT > 0 and round-trip efficiency < 1; stop on material simultaneous flows rather than silently change formulation.",
+          "source": "M3 user instruction",
+          "unit": "policy",
+          "value": "LP without exclusivity binaries, checked after solve"
+        },
+        "terminal_soc": {
+          "classification": "approved modelling assumption",
+          "rationale": "Full-horizon cyclic storage prevents free depletion at horizon end.",
+          "source": "M3 user instruction",
+          "unit": "kWh",
+          "value": "initial SOC"
+        },
+        "time_axis": {
+          "classification": "approved modelling interpretation",
+          "rationale": "No synthetic year 2025. Actual year/timezone/DST and interval start/end remain unspecified.",
+          "source": "Workbook A1/A3:M8762 and M3 user instruction",
+          "unit": "hourly ordinal",
+          "value": "ordinal t=0..8759, worksheet row=3+t"
+        }
+      }
+    },
+    "battery_module_power_kw": 1.344,
+    "billing_days": 365,
+    "eta_charge": 0.9746794344808963,
+    "eta_discharge": 0.9746794344808963,
+    "input_sha256": "0321d5d9d4254a8f9e8e0911a8c4e34dcc5a4cb0518699595cd94e1d79737cd0",
+    "parameters": {
+      "battery_module_kwh": 4.66,
+      "battery_module_voltage_v": 44.8,
+      "battery_round_trip_efficiency": 0.95,
+      "battery_stack_current_a": 30.0,
+      "benchmark_days": 365,
+      "cost_tolerance_aud": 1e-05,
+      "daily_connection_fee_aud": 1.0,
+      "degradation_aud_per_kwh": 0.0,
+      "dt_hours": 1.0,
+      "energy_tolerance_kwh": 1e-06,
+      "flow_tolerance_kw": 1e-06,
+      "pv_derating": 1.0,
+      "pv_gamma_per_c": -0.0033,
+      "pv_module_kw": 0.44,
+      "pv_nmot_c": 44.0,
+      "soc_initial_fraction": 0.5,
+      "soc_max_fraction": 1.0,
+      "soc_min_fraction": 0.1,
+      "tariff_scale": 1.0
+    },
+    "period_axis": "ordinal t=0..T-1",
+    "period_count": 8760,
+    "physical_source_sha256": "471fd8bd5b210af883ab9b3cad934afe06317f0eb85bc450905ea705edf5efda",
+    "raw_tariff_unit_status": "unresolved: c/kWh headers versus Australian Dollar note; raw values unchanged",
+    "registry_sha256": "311c91ca732e5715894b1d3ec2efcaf85af601d296aac547da7145c8b81ef759",
+    "sheet": "ComErgy Benchmark Dataset 2026",
+    "solver_configuration": {
+      "algorithm": "simplex",
+      "classification": "engineering reproducibility configuration",
+      "default": "highs",
+      "dual_feasibility_tolerance": 1e-08,
+      "primal_feasibility_tolerance": 1e-08,
+      "random_seed": 0,
+      "rationale": "Deterministic LP algorithm and ordering; tolerances tighter than post-solve acceptance thresholds.",
+      "source": "M3 implementation",
+      "threads": 1
+    },
+    "solver_configuration_used": {
+      "dual_feasibility_tolerance": 1e-08,
+      "primal_feasibility_tolerance": 1e-08,
+      "random_seed": 0,
+      "solver": "simplex",
+      "threads": 1
+    },
+    "tariff_interpretation": "Approved AUD/kWh, raw scale 1.0; original labels retained in M2",
+    "workbook": "ComErgy Benchmark Dataset 2026.xlsx",
+    "workbook_sha256": "c559bd7dc946b2f0c01c8cc96beea75c783f3b48bdd7fe6da855b2ef01f75370"
+  },
+  "runtime_diagnostics_file": "m3_baselines.runtime.json",
+  "runtime_note": "Measured runtimes are in the adjacent .runtime.json file; excluded here for deterministic artifact bytes.",
+  "schema_version": 1,
+  "sum_B_i_aud": 9754.639083892132,
+  "v_N_aud": 4244.985091828258,
+  "validation": {
+    "B1_no_worse_than_feasible_aggregation": true,
+    "all_dispatch_checks_passed": true,
+    "all_solves_optimal": true,
+    "feasible_aggregation_cost_aud": 8721.333443506517,
+    "feasible_aggregation_max_energy_residual_kwh": 2.220446049250313e-14,
+    "workbook_hash_unchanged": true
+  }
+}

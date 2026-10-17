@@ -1,0 +1,3703 @@
+{
+  "admissible_candidates": [
+    {
+      "metrics": {
+        "arithmetic_roundoff_guard_aud": 3.637978807091713e-11,
+        "benefits_aud": {
+          "1": 263.1577114149826,
+          "2": 463.13137842759215,
+          "3": 336.60165421762724,
+          "4": 346.4626184713524,
+          "5": 925.4971669736842,
+          "6": 160.40224845847388,
+          "7": 1108.2887638047623,
+          "8": 153.8979830360479,
+          "9": 487.54556702373316
+        },
+        "bills_aud": {
+          "1": 370.00172421451725,
+          "2": 611.6023996326876,
+          "3": -355.16481363509206,
+          "4": 276.87929974269554,
+          "5": 1311.9450830263158,
+          "6": 159.59836003274563,
+          "7": 1100.1355828180067,
+          "8": 523.7112720188119,
+          "9": 1510.9450842131869
+        },
+        "classification_tolerance_aud": 1.0000036379788072e-05,
+        "coalition": {
+          "allocation_in_core": true,
+          "blocking_count_by_size": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "efficiency_residual_aud": -1.8189894035458565e-12,
+          "empty_deficit_aud": 0.0,
+          "grand_deficit_aud": 1.8189894035458565e-12,
+          "maximum_positive_proper_deficit_aud": 0.0,
+          "minimum_member_benefit_aud": 153.8979830360479,
+          "no_harm_violation_aud": 0.0,
+          "proper_blocking_count": 0,
+          "proper_multi_member_blocking_count": 0,
+          "singleton_blocking_count": 0,
+          "sum_u_aud": 4244.985091828256,
+          "worst_blocking_coalition": null,
+          "worst_proper_coalition": {
+            "benefit_sum_aud": 3518.6960019856815,
+            "blocking": false,
+            "classification": "nonblocking",
+            "deficit_aud": -7.980232094431813,
+            "kind": "proper_multi_member",
+            "mask": 508,
+            "members": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          }
+        },
+        "constitutionally_admissible": true,
+        "contribution_fidelity": {
+          "reason": null,
+          "value": 0.9788016742743483
+        },
+        "contribution_share_L1_distance": 0.021198325725651765,
+        "equal_benefit_L1_distance_aud": 2212.6729343855227,
+        "harmed_member_count": 0,
+        "inadmissibility_reasons": [],
+        "inequality": {
+          "gini": {
+            "reason": null,
+            "value": 0.350120497448095
+          },
+          "jain": {
+            "reason": null,
+            "value": 0.693036090139225
+          }
+        },
+        "justice": {
+          "1": {
+            "benefit_as_income_share": 0.001315788557074913,
+            "energy_burden_change": -0.001315788557074913,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0018500086210725864,
+            "reason": null,
+            "standalone_energy_burden": 0.003165797178147499
+          },
+          "2": {
+            "benefit_as_income_share": 0.005789142230344902,
+            "energy_burden_change": -0.005789142230344902,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007645029995408595,
+            "reason": null,
+            "standalone_energy_burden": 0.013434172225753497
+          },
+          "3": {
+            "benefit_as_income_share": 0.00210376033886017,
+            "energy_burden_change": -0.00210376033886017,
+            "negative_bill_interpretation": "net annual electricity revenue",
+            "policy_energy_burden": -0.0022197800852193253,
+            "reason": null,
+            "standalone_energy_burden": -0.0001160197463591551
+          },
+          "4": {
+            "benefit_as_income_share": 0.001443594243630635,
+            "energy_burden_change": -0.001443594243630635,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.001153663748927898,
+            "reason": null,
+            "standalone_energy_burden": 0.002597257992558533
+          },
+          "5": {
+            "benefit_as_income_share": 0.01322138809962406,
+            "energy_burden_change": -0.01322138809962406,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.018742072614661653,
+            "reason": null,
+            "standalone_energy_burden": 0.03196346071428571
+          },
+          "6": {
+            "benefit_as_income_share": 0.0013366854038206156,
+            "energy_burden_change": -0.0013366854038206156,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0013299863336062136,
+            "reason": null,
+            "standalone_energy_burden": 0.002666671737426829
+          },
+          "7": {
+            "benefit_as_income_share": 0.0038887325045781134,
+            "energy_burden_change": -0.0038887325045781134,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.003860124851993006,
+            "reason": null,
+            "standalone_energy_burden": 0.0077488573565711195
+          },
+          "8": {
+            "benefit_as_income_share": 0.001061365400248606,
+            "energy_burden_change": -0.001061365400248606,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.003611801875991806,
+            "reason": null,
+            "standalone_energy_burden": 0.004673167276240412
+          },
+          "9": {
+            "benefit_as_income_share": 0.0025660293001249115,
+            "energy_burden_change": -0.0025660293001249115,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007952342548490457,
+            "reason": null,
+            "standalone_energy_burden": 0.01051837184861537
+          }
+        },
+        "market_L1_distance_aud": 0.0,
+        "maximum_benefit_aud": 1108.2887638047623,
+        "mean_benefit_aud": 471.6650102031396,
+        "minimum_benefit_aud": 153.8979830360479,
+        "relative_bill_saving": {
+          "1": {
+            "reason": null,
+            "value": 0.41562629664256034
+          },
+          "2": {
+            "reason": null,
+            "value": 0.430926605157483
+          },
+          "3": {
+            "reason": "nonpositive_standalone_cost",
+            "value": null
+          },
+          "4": {
+            "reason": null,
+            "value": 0.5558147275960694
+          },
+          "5": {
+            "reason": null,
+            "value": 0.4136406948486309
+          },
+          "6": {
+            "reason": null,
+            "value": 0.501256073276733
+          },
+          "7": {
+            "reason": null,
+            "value": 0.5018459271650451
+          },
+          "8": {
+            "reason": null,
+            "value": 0.2271190688261603
+          },
+          "9": {
+            "reason": null,
+            "value": 0.24395689152810296
+          }
+        },
+        "total_benefit_aud": 4244.985091828256
+      },
+      "normative_metadata": {
+        "least_core_guaranteed_by_construction": true,
+        "no_harm_guaranteed_by_construction": true,
+        "repair_necessary": false,
+        "standard_or_project_defined": "M6 canonical",
+        "uses_information": "fixed exact game / M4 settlement only",
+        "uses_socioeconomic_data_in_objective": false
+      },
+      "policy_id": "A4_minimum_repair",
+      "source_policy_id": "A4_minimum_repair",
+      "variant": "raw"
+    },
+    {
+      "metrics": {
+        "arithmetic_roundoff_guard_aud": 3.637978807091713e-11,
+        "benefits_aud": {
+          "1": 263.1577114149826,
+          "2": 463.13137842759215,
+          "3": 336.60165421762724,
+          "4": 346.4626184713524,
+          "5": 925.4971669736842,
+          "6": 160.40224845847388,
+          "7": 1108.2887638047623,
+          "8": 153.8979830360479,
+          "9": 487.54556702373316
+        },
+        "bills_aud": {
+          "1": 370.00172421451725,
+          "2": 611.6023996326876,
+          "3": -355.16481363509206,
+          "4": 276.87929974269554,
+          "5": 1311.9450830263158,
+          "6": 159.59836003274563,
+          "7": 1100.1355828180067,
+          "8": 523.7112720188119,
+          "9": 1510.9450842131869
+        },
+        "classification_tolerance_aud": 1.0000036379788072e-05,
+        "coalition": {
+          "allocation_in_core": true,
+          "blocking_count_by_size": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "efficiency_residual_aud": -1.8189894035458565e-12,
+          "empty_deficit_aud": 0.0,
+          "grand_deficit_aud": 1.8189894035458565e-12,
+          "maximum_positive_proper_deficit_aud": 0.0,
+          "minimum_member_benefit_aud": 153.8979830360479,
+          "no_harm_violation_aud": 0.0,
+          "proper_blocking_count": 0,
+          "proper_multi_member_blocking_count": 0,
+          "singleton_blocking_count": 0,
+          "sum_u_aud": 4244.985091828256,
+          "worst_blocking_coalition": null,
+          "worst_proper_coalition": {
+            "benefit_sum_aud": 3518.6960019856815,
+            "blocking": false,
+            "classification": "nonblocking",
+            "deficit_aud": -7.980232094431813,
+            "kind": "proper_multi_member",
+            "mask": 508,
+            "members": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          }
+        },
+        "constitutionally_admissible": true,
+        "contribution_fidelity": {
+          "reason": null,
+          "value": 0.9788016742743483
+        },
+        "contribution_share_L1_distance": 0.021198325725651765,
+        "equal_benefit_L1_distance_aud": 2212.6729343855227,
+        "harmed_member_count": 0,
+        "inadmissibility_reasons": [],
+        "inequality": {
+          "gini": {
+            "reason": null,
+            "value": 0.350120497448095
+          },
+          "jain": {
+            "reason": null,
+            "value": 0.693036090139225
+          }
+        },
+        "justice": {
+          "1": {
+            "benefit_as_income_share": 0.001315788557074913,
+            "energy_burden_change": -0.001315788557074913,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0018500086210725864,
+            "reason": null,
+            "standalone_energy_burden": 0.003165797178147499
+          },
+          "2": {
+            "benefit_as_income_share": 0.005789142230344902,
+            "energy_burden_change": -0.005789142230344902,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007645029995408595,
+            "reason": null,
+            "standalone_energy_burden": 0.013434172225753497
+          },
+          "3": {
+            "benefit_as_income_share": 0.00210376033886017,
+            "energy_burden_change": -0.00210376033886017,
+            "negative_bill_interpretation": "net annual electricity revenue",
+            "policy_energy_burden": -0.0022197800852193253,
+            "reason": null,
+            "standalone_energy_burden": -0.0001160197463591551
+          },
+          "4": {
+            "benefit_as_income_share": 0.001443594243630635,
+            "energy_burden_change": -0.001443594243630635,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.001153663748927898,
+            "reason": null,
+            "standalone_energy_burden": 0.002597257992558533
+          },
+          "5": {
+            "benefit_as_income_share": 0.01322138809962406,
+            "energy_burden_change": -0.01322138809962406,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.018742072614661653,
+            "reason": null,
+            "standalone_energy_burden": 0.03196346071428571
+          },
+          "6": {
+            "benefit_as_income_share": 0.0013366854038206156,
+            "energy_burden_change": -0.0013366854038206156,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0013299863336062136,
+            "reason": null,
+            "standalone_energy_burden": 0.002666671737426829
+          },
+          "7": {
+            "benefit_as_income_share": 0.0038887325045781134,
+            "energy_burden_change": -0.0038887325045781134,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.003860124851993006,
+            "reason": null,
+            "standalone_energy_burden": 0.0077488573565711195
+          },
+          "8": {
+            "benefit_as_income_share": 0.001061365400248606,
+            "energy_burden_change": -0.001061365400248606,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.003611801875991806,
+            "reason": null,
+            "standalone_energy_burden": 0.004673167276240412
+          },
+          "9": {
+            "benefit_as_income_share": 0.0025660293001249115,
+            "energy_burden_change": -0.0025660293001249115,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007952342548490457,
+            "reason": null,
+            "standalone_energy_burden": 0.01051837184861537
+          }
+        },
+        "market_L1_distance_aud": 0.0,
+        "maximum_benefit_aud": 1108.2887638047623,
+        "mean_benefit_aud": 471.6650102031396,
+        "minimum_benefit_aud": 153.8979830360479,
+        "relative_bill_saving": {
+          "1": {
+            "reason": null,
+            "value": 0.41562629664256034
+          },
+          "2": {
+            "reason": null,
+            "value": 0.430926605157483
+          },
+          "3": {
+            "reason": "nonpositive_standalone_cost",
+            "value": null
+          },
+          "4": {
+            "reason": null,
+            "value": 0.5558147275960694
+          },
+          "5": {
+            "reason": null,
+            "value": 0.4136406948486309
+          },
+          "6": {
+            "reason": null,
+            "value": 0.501256073276733
+          },
+          "7": {
+            "reason": null,
+            "value": 0.5018459271650451
+          },
+          "8": {
+            "reason": null,
+            "value": 0.2271190688261603
+          },
+          "9": {
+            "reason": null,
+            "value": 0.24395689152810296
+          }
+        },
+        "total_benefit_aud": 4244.985091828256
+      },
+      "normative_metadata": {
+        "least_core_guaranteed_by_construction": false,
+        "no_harm_guaranteed_by_construction": false,
+        "repair_necessary": false,
+        "standard_or_project_defined": "M4 canonical",
+        "uses_information": "fixed exact game / M4 settlement only",
+        "uses_socioeconomic_data_in_objective": false
+      },
+      "policy_id": "G0_market",
+      "source_policy_id": "G0_market",
+      "variant": "raw"
+    },
+    {
+      "metrics": {
+        "arithmetic_roundoff_guard_aud": 3.637978807091713e-11,
+        "benefits_aud": {
+          "1": 267.68625868302024,
+          "2": 466.5830732539889,
+          "3": 397.3106999024076,
+          "4": 352.9675404419295,
+          "5": 892.5916750678007,
+          "6": 185.57548288849102,
+          "7": 1042.5936484324443,
+          "8": 168.01170295503653,
+          "9": 471.6650102031398
+        },
+        "bills_aud": {
+          "1": 365.4731769464796,
+          "2": 608.1507048062908,
+          "3": -415.8738593198724,
+          "4": 270.37437777211846,
+          "5": 1344.8505749321994,
+          "6": 134.42512560272849,
+          "7": 1165.8306981903247,
+          "8": 509.59755209982325,
+          "9": 1526.8256410337804
+        },
+        "classification_tolerance_aud": 1.0000036379788072e-05,
+        "coalition": {
+          "allocation_in_core": true,
+          "blocking_count_by_size": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "efficiency_residual_aud": 0.0,
+          "empty_deficit_aud": 0.0,
+          "grand_deficit_aud": 0.0,
+          "maximum_positive_proper_deficit_aud": 1.0000000202126103e-05,
+          "minimum_member_benefit_aud": 168.01170295503653,
+          "no_harm_violation_aud": 0.0,
+          "proper_blocking_count": 0,
+          "proper_multi_member_blocking_count": 0,
+          "singleton_blocking_count": 0,
+          "sum_u_aud": 4244.985091828258,
+          "worst_blocking_coalition": null,
+          "worst_proper_coalition": {
+            "benefit_sum_aud": 3891.397905984731,
+            "blocking": false,
+            "classification": "indifferent",
+            "deficit_aud": 1.0000000202126103e-05,
+            "kind": "proper_multi_member",
+            "mask": 351,
+            "members": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              7,
+              9
+            ]
+          }
+        },
+        "constitutionally_admissible": true,
+        "contribution_fidelity": {
+          "reason": null,
+          "value": 0.9767746699481933
+        },
+        "contribution_share_L1_distance": 0.023225330051806724,
+        "equal_benefit_L1_distance_aud": 1983.7106061879304,
+        "harmed_member_count": 0,
+        "inadmissibility_reasons": [],
+        "inequality": {
+          "gini": {
+            "reason": null,
+            "value": 0.3214747263971628
+          },
+          "jain": {
+            "reason": null,
+            "value": 0.7305597939900167
+          }
+        },
+        "justice": {
+          "1": {
+            "benefit_as_income_share": 0.0013384312934151012,
+            "energy_burden_change": -0.0013384312934151012,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.001827365884732398,
+            "reason": null,
+            "standalone_energy_burden": 0.003165797178147499
+          },
+          "2": {
+            "benefit_as_income_share": 0.005832288415674861,
+            "energy_burden_change": -0.005832288415674861,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0076018838100786355,
+            "reason": null,
+            "standalone_energy_burden": 0.013434172225753497
+          },
+          "3": {
+            "benefit_as_income_share": 0.0024831918743900474,
+            "energy_burden_change": -0.0024831918743900474,
+            "negative_bill_interpretation": "net annual electricity revenue",
+            "policy_energy_burden": -0.0025992116207492026,
+            "reason": null,
+            "standalone_energy_burden": -0.0001160197463591551
+          },
+          "4": {
+            "benefit_as_income_share": 0.0014706980851747061,
+            "energy_burden_change": -0.0014706980851747061,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.001126559907383827,
+            "reason": null,
+            "standalone_energy_burden": 0.002597257992558533
+          },
+          "5": {
+            "benefit_as_income_share": 0.012751309643825724,
+            "energy_burden_change": -0.012751309643825724,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.019212151070459992,
+            "reason": null,
+            "standalone_energy_burden": 0.03196346071428571
+          },
+          "6": {
+            "benefit_as_income_share": 0.001546462357404092,
+            "energy_burden_change": -0.001546462357404092,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0011202093800227373,
+            "reason": null,
+            "standalone_energy_burden": 0.002666671737426829
+          },
+          "7": {
+            "benefit_as_income_share": 0.0036582233278331378,
+            "energy_burden_change": -0.0036582233278331378,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.004090634028737982,
+            "reason": null,
+            "standalone_energy_burden": 0.0077488573565711195
+          },
+          "8": {
+            "benefit_as_income_share": 0.001158701399689907,
+            "energy_burden_change": -0.001158701399689907,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.003514465876550505,
+            "reason": null,
+            "standalone_energy_burden": 0.004673167276240412
+          },
+          "9": {
+            "benefit_as_income_share": 0.0024824474221217885,
+            "energy_burden_change": -0.0024824474221217877,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.008035924426493582,
+            "reason": null,
+            "standalone_energy_burden": 0.01051837184861537
+          }
+        },
+        "market_L1_distance_aud": 228.9623281975925,
+        "maximum_benefit_aud": 1042.5936484324443,
+        "mean_benefit_aud": 471.6650102031398,
+        "minimum_benefit_aud": 168.01170295503653,
+        "relative_bill_saving": {
+          "1": {
+            "reason": null,
+            "value": 0.4227785982797227
+          },
+          "2": {
+            "reason": null,
+            "value": 0.43413827943148464
+          },
+          "3": {
+            "reason": "nonpositive_standalone_cost",
+            "value": null
+          },
+          "4": {
+            "reason": null,
+            "value": 0.566250287568058
+          },
+          "5": {
+            "reason": null,
+            "value": 0.3989339501691276
+          },
+          "6": {
+            "reason": null,
+            "value": 0.5799222812839839
+          },
+          "7": {
+            "reason": null,
+            "value": 0.47209842167644533
+          },
+          "8": {
+            "reason": null,
+            "value": 0.24794776886781772
+          },
+          "9": {
+            "reason": null,
+            "value": 0.23601061626743838
+          }
+        },
+        "total_benefit_aud": 4244.985091828258
+      },
+      "normative_metadata": {
+        "least_core_guaranteed_by_construction": false,
+        "no_harm_guaranteed_by_construction": true,
+        "repair_necessary": true,
+        "standard_or_project_defined": "project comparator",
+        "uses_information": "fixed exact game / M4 settlement only",
+        "uses_socioeconomic_data_in_objective": false
+      },
+      "policy_id": "G1_equal_benefit__repaired",
+      "source_policy_id": "G1_equal_benefit",
+      "variant": "ComFair repaired"
+    },
+    {
+      "metrics": {
+        "arithmetic_roundoff_guard_aud": 3.637978807091713e-11,
+        "benefits_aud": {
+          "1": 258.1390044033088,
+          "2": 445.6277676266581,
+          "3": 369.1351869460996,
+          "4": 345.59685947565976,
+          "5": 886.4631282474822,
+          "6": 172.41528762825453,
+          "7": 1090.2723613483172,
+          "8": 164.3060777286632,
+          "9": 513.0294184238147
+        },
+        "bills_aud": {
+          "1": 375.0204312261911,
+          "2": 629.1060104336216,
+          "3": -387.69834636356444,
+          "4": 277.7450587383882,
+          "5": 1350.9791217525178,
+          "6": 147.58532086296498,
+          "7": 1118.1519852744518,
+          "8": 513.3031773261965,
+          "9": 1485.4612328131052
+        },
+        "classification_tolerance_aud": 1.0000036379788072e-05,
+        "coalition": {
+          "allocation_in_core": true,
+          "blocking_count_by_size": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "efficiency_residual_aud": 0.0,
+          "empty_deficit_aud": 0.0,
+          "grand_deficit_aud": 0.0,
+          "maximum_positive_proper_deficit_aud": 1.0000000202126103e-05,
+          "minimum_member_benefit_aud": 164.3060777286632,
+          "no_harm_violation_aud": 0.0,
+          "proper_blocking_count": 0,
+          "proper_multi_member_blocking_count": 0,
+          "singleton_blocking_count": 0,
+          "sum_u_aud": 4244.985091828258,
+          "worst_blocking_coalition": null,
+          "worst_proper_coalition": {
+            "benefit_sum_aud": 3198.514408729681,
+            "blocking": false,
+            "classification": "indifferent",
+            "deficit_aud": 1.0000000202126103e-05,
+            "kind": "proper_multi_member",
+            "mask": 123,
+            "members": [
+              1,
+              2,
+              4,
+              5,
+              6,
+              7
+            ]
+          }
+        },
+        "constitutionally_admissible": true,
+        "contribution_fidelity": {
+          "reason": null,
+          "value": 0.9977507438825775
+        },
+        "contribution_share_L1_distance": 0.0022492561174225836,
+        "equal_benefit_L1_distance_aud": 2149.539754820389,
+        "harmed_member_count": 0,
+        "inadmissibility_reasons": [],
+        "inequality": {
+          "gini": {
+            "reason": null,
+            "value": 0.3379580193713484
+          },
+          "jain": {
+            "reason": null,
+            "value": 0.7111762520911041
+          }
+        },
+        "justice": {
+          "1": {
+            "benefit_as_income_share": 0.0012906950220165439,
+            "energy_burden_change": -0.0012906950220165439,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0018751021561309554,
+            "reason": null,
+            "standalone_energy_burden": 0.003165797178147499
+          },
+          "2": {
+            "benefit_as_income_share": 0.005570347095333226,
+            "energy_burden_change": -0.005570347095333227,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.00786382513042027,
+            "reason": null,
+            "standalone_energy_burden": 0.013434172225753497
+          },
+          "3": {
+            "benefit_as_income_share": 0.0023070949184131224,
+            "energy_burden_change": -0.0023070949184131224,
+            "negative_bill_interpretation": "net annual electricity revenue",
+            "policy_energy_burden": -0.0024231146647722777,
+            "reason": null,
+            "standalone_energy_burden": -0.0001160197463591551
+          },
+          "4": {
+            "benefit_as_income_share": 0.0014399869144819156,
+            "energy_burden_change": -0.0014399869144819156,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0011572710780766175,
+            "reason": null,
+            "standalone_energy_burden": 0.002597257992558533
+          },
+          "5": {
+            "benefit_as_income_share": 0.012663758974964032,
+            "energy_burden_change": -0.012663758974964032,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.019299701739321683,
+            "reason": null,
+            "standalone_energy_burden": 0.03196346071428571
+          },
+          "6": {
+            "benefit_as_income_share": 0.0014367940635687877,
+            "energy_burden_change": -0.0014367940635687877,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0012298776738580415,
+            "reason": null,
+            "standalone_energy_burden": 0.002666671737426829
+          },
+          "7": {
+            "benefit_as_income_share": 0.0038255170573625163,
+            "energy_burden_change": -0.0038255170573625163,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.003923340299208603,
+            "reason": null,
+            "standalone_energy_burden": 0.0077488573565711195
+          },
+          "8": {
+            "benefit_as_income_share": 0.001133145363645953,
+            "energy_burden_change": -0.0011331453636459533,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0035400219125944587,
+            "reason": null,
+            "standalone_energy_burden": 0.004673167276240412
+          },
+          "9": {
+            "benefit_as_income_share": 0.002700154833809551,
+            "energy_burden_change": -0.0027001548338095515,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007818217014805817,
+            "reason": null,
+            "standalone_energy_burden": 0.01051837184861537
+          }
+        },
+        "market_L1_distance_aud": 160.87703598189754,
+        "maximum_benefit_aud": 1090.2723613483172,
+        "mean_benefit_aud": 471.6650102031398,
+        "minimum_benefit_aud": 164.3060777286632,
+        "relative_bill_saving": {
+          "1": {
+            "reason": null,
+            "value": 0.40769984600586706
+          },
+          "2": {
+            "reason": null,
+            "value": 0.41464014319057135
+          },
+          "3": {
+            "reason": "nonpositive_standalone_cost",
+            "value": null
+          },
+          "4": {
+            "reason": null,
+            "value": 0.5544258285498234
+          },
+          "5": {
+            "reason": null,
+            "value": 0.3961948641344742
+          },
+          "6": {
+            "reason": null,
+            "value": 0.5387967492973859
+          },
+          "7": {
+            "reason": null,
+            "value": 0.49368789246306544
+          },
+          "8": {
+            "reason": null,
+            "value": 0.2424790932280889
+          },
+          "9": {
+            "reason": null,
+            "value": 0.25670844049547437
+          }
+        },
+        "total_benefit_aud": 4244.985091828258
+      },
+      "normative_metadata": {
+        "least_core_guaranteed_by_construction": false,
+        "no_harm_guaranteed_by_construction": false,
+        "repair_necessary": true,
+        "standard_or_project_defined": "project comparator",
+        "uses_information": "fixed exact game / M4 settlement only",
+        "uses_socioeconomic_data_in_objective": false
+      },
+      "policy_id": "G2_contribution_proportional__repaired",
+      "source_policy_id": "G2_contribution_proportional",
+      "variant": "ComFair repaired"
+    },
+    {
+      "metrics": {
+        "arithmetic_roundoff_guard_aud": 3.637978807091713e-11,
+        "benefits_aud": {
+          "1": 277.84235491082273,
+          "2": 438.1991370234552,
+          "3": 397.31069990240775,
+          "4": 371.97572925439164,
+          "5": 897.9242893862051,
+          "6": 185.57548288849085,
+          "7": 1028.399473182734,
+          "8": 157.85560672723386,
+          "9": 489.9023185525173
+        },
+        "bills_aud": {
+          "1": 355.3170807186771,
+          "2": 636.5346410368245,
+          "3": -415.87385931987257,
+          "4": 251.3661889596563,
+          "5": 1339.517960613795,
+          "6": 134.42512560272866,
+          "7": 1180.024873440035,
+          "8": 519.7536483276259,
+          "9": 1508.5883326844028
+        },
+        "classification_tolerance_aud": 1.0000036379788072e-05,
+        "coalition": {
+          "allocation_in_core": true,
+          "blocking_count_by_size": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "efficiency_residual_aud": 9.094947017729282e-13,
+          "empty_deficit_aud": 0.0,
+          "grand_deficit_aud": -9.094947017729282e-13,
+          "maximum_positive_proper_deficit_aud": 1.0000000656873453e-05,
+          "minimum_member_benefit_aud": 157.85560672723386,
+          "no_harm_violation_aud": 0.0,
+          "proper_blocking_count": 0,
+          "proper_multi_member_blocking_count": 0,
+          "singleton_blocking_count": 0,
+          "sum_u_aud": 4244.985091828259,
+          "worst_blocking_coalition": null,
+          "worst_proper_coalition": {
+            "benefit_sum_aud": 3357.772073373333,
+            "blocking": false,
+            "classification": "indifferent",
+            "deficit_aud": 1.0000000656873453e-05,
+            "kind": "proper_multi_member",
+            "mask": 251,
+            "members": [
+              1,
+              2,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          }
+        },
+        "constitutionally_admissible": true,
+        "contribution_fidelity": {
+          "reason": null,
+          "value": 0.9744575903137089
+        },
+        "contribution_share_L1_distance": 0.025542409686291095,
+        "equal_benefit_L1_distance_aud": 2002.462101024074,
+        "harmed_member_count": 0,
+        "inadmissibility_reasons": [],
+        "inequality": {
+          "gini": {
+            "reason": null,
+            "value": 0.3198317852035028
+          },
+          "jain": {
+            "reason": null,
+            "value": 0.7337677983840156
+          }
+        },
+        "justice": {
+          "1": {
+            "benefit_as_income_share": 0.0013892117745541138,
+            "energy_burden_change": -0.0013892117745541138,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0017765854035933855,
+            "reason": null,
+            "standalone_energy_burden": 0.003165797178147499
+          },
+          "2": {
+            "benefit_as_income_share": 0.00547748921279319,
+            "energy_burden_change": -0.0054774892127931905,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007956683012960306,
+            "reason": null,
+            "standalone_energy_burden": 0.013434172225753497
+          },
+          "3": {
+            "benefit_as_income_share": 0.0024831918743900483,
+            "energy_burden_change": -0.0024831918743900483,
+            "negative_bill_interpretation": "net annual electricity revenue",
+            "policy_energy_burden": -0.0025992116207492035,
+            "reason": null,
+            "standalone_energy_burden": -0.0001160197463591551
+          },
+          "4": {
+            "benefit_as_income_share": 0.0015498988718932985,
+            "energy_burden_change": -0.0015498988718932985,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0010473591206652346,
+            "reason": null,
+            "standalone_energy_burden": 0.002597257992558533
+          },
+          "5": {
+            "benefit_as_income_share": 0.01282748984837436,
+            "energy_burden_change": -0.01282748984837436,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.019135970865911355,
+            "reason": null,
+            "standalone_energy_burden": 0.03196346071428571
+          },
+          "6": {
+            "benefit_as_income_share": 0.0015464623574040904,
+            "energy_burden_change": -0.0015464623574040904,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0011202093800227388,
+            "reason": null,
+            "standalone_energy_burden": 0.002666671737426829
+          },
+          "7": {
+            "benefit_as_income_share": 0.0036084192041499438,
+            "energy_burden_change": -0.0036084192041499438,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.004140438152421175,
+            "reason": null,
+            "standalone_energy_burden": 0.0077488573565711195
+          },
+          "8": {
+            "benefit_as_income_share": 0.0010886593567395438,
+            "energy_burden_change": -0.0010886593567395438,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0035845079195008685,
+            "reason": null,
+            "standalone_energy_burden": 0.004673167276240412
+          },
+          "9": {
+            "benefit_as_income_share": 0.0025784332555395645,
+            "energy_burden_change": -0.0025784332555395645,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007939938593075804,
+            "reason": null,
+            "standalone_energy_burden": 0.01051837184861537
+          }
+        },
+        "market_L1_distance_aud": 264.78881922729124,
+        "maximum_benefit_aud": 1028.399473182734,
+        "mean_benefit_aud": 471.6650102031399,
+        "minimum_benefit_aud": 157.85560672723386,
+        "relative_bill_saving": {
+          "1": {
+            "reason": null,
+            "value": 0.43881894397512416
+          },
+          "2": {
+            "reason": null,
+            "value": 0.40772807737962197
+          },
+          "3": {
+            "reason": "nonpositive_standalone_cost",
+            "value": null
+          },
+          "4": {
+            "reason": null,
+            "value": 0.5967442881430922
+          },
+          "5": {
+            "reason": null,
+            "value": 0.4013173029990853
+          },
+          "6": {
+            "reason": null,
+            "value": 0.5799222812839834
+          },
+          "7": {
+            "reason": null,
+            "value": 0.4656711355113491
+          },
+          "8": {
+            "reason": null,
+            "value": 0.23295963794717317
+          },
+          "9": {
+            "reason": null,
+            "value": 0.2451361572541275
+          }
+        },
+        "total_benefit_aud": 4244.985091828259
+      },
+      "normative_metadata": {
+        "least_core_guaranteed_by_construction": false,
+        "no_harm_guaranteed_by_construction": false,
+        "repair_necessary": true,
+        "standard_or_project_defined": "standard cooperative game concept",
+        "uses_information": "fixed exact game / M4 settlement only",
+        "uses_socioeconomic_data_in_objective": false
+      },
+      "policy_id": "G3_shapley__repaired",
+      "source_policy_id": "G3_shapley",
+      "variant": "ComFair repaired"
+    },
+    {
+      "metrics": {
+        "arithmetic_roundoff_guard_aud": 3.637978807091713e-11,
+        "benefits_aud": {
+          "1": 252.425935438539,
+          "2": 454.22541839082396,
+          "3": 343.8123326046466,
+          "4": 337.7121560766577,
+          "5": 918.4321955757609,
+          "6": 160.15906341620712,
+          "7": 1112.4743383744903,
+          "8": 151.43089039530105,
+          "9": 514.3127615558315
+        },
+        "bills_aud": {
+          "1": 380.73350019096085,
+          "2": 620.5083596694558,
+          "3": -362.3754920221114,
+          "4": 285.62976213739023,
+          "5": 1319.0100544242391,
+          "6": 159.8415450750124,
+          "7": 1095.9500082482787,
+          "8": 526.1783646595587,
+          "9": 1484.1778896810886
+        },
+        "classification_tolerance_aud": 1.0000036379788072e-05,
+        "coalition": {
+          "allocation_in_core": true,
+          "blocking_count_by_size": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "efficiency_residual_aud": 0.0,
+          "empty_deficit_aud": 0.0,
+          "grand_deficit_aud": 0.0,
+          "maximum_positive_proper_deficit_aud": 0.0,
+          "minimum_member_benefit_aud": 151.43089039530105,
+          "no_harm_violation_aud": 0.0,
+          "proper_blocking_count": 0,
+          "proper_multi_member_blocking_count": 0,
+          "singleton_blocking_count": 0,
+          "sum_u_aud": 4244.985091828258,
+          "worst_blocking_coalition": null,
+          "worst_proper_coalition": {
+            "benefit_sum_aud": 1936.673503216632,
+            "blocking": false,
+            "classification": "nonblocking",
+            "deficit_aud": -25.41640947228325,
+            "kind": "proper_multi_member",
+            "mask": 179,
+            "members": [
+              1,
+              2,
+              5,
+              6,
+              8
+            ]
+          }
+        },
+        "constitutionally_admissible": true,
+        "contribution_fidelity": {
+          "reason": null,
+          "value": 0.9829641913362682
+        },
+        "contribution_share_L1_distance": 0.017035808663731777,
+        "equal_benefit_L1_distance_aud": 2260.4485297933265,
+        "harmed_member_count": 0,
+        "inadmissibility_reasons": [],
+        "inequality": {
+          "gini": {
+            "reason": null,
+            "value": 0.3538439388138786
+          },
+          "jain": {
+            "reason": null,
+            "value": 0.6912488000352082
+          }
+        },
+        "justice": {
+          "1": {
+            "benefit_as_income_share": 0.001262129677192695,
+            "energy_burden_change": -0.001262129677192695,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0019036675009548043,
+            "reason": null,
+            "standalone_energy_burden": 0.003165797178147499
+          },
+          "2": {
+            "benefit_as_income_share": 0.0056778177298853,
+            "energy_burden_change": -0.0056778177298853,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007756354495868197,
+            "reason": null,
+            "standalone_energy_burden": 0.013434172225753497
+          },
+          "3": {
+            "benefit_as_income_share": 0.0021488270787790413,
+            "energy_burden_change": -0.0021488270787790413,
+            "negative_bill_interpretation": "net annual electricity revenue",
+            "policy_energy_burden": -0.0022648468251381965,
+            "reason": null,
+            "standalone_energy_burden": -0.0001160197463591551
+          },
+          "4": {
+            "benefit_as_income_share": 0.0014071339836527405,
+            "energy_burden_change": -0.0014071339836527405,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0011901240089057926,
+            "reason": null,
+            "standalone_energy_burden": 0.002597257992558533
+          },
+          "5": {
+            "benefit_as_income_share": 0.013120459936796586,
+            "energy_burden_change": -0.013120459936796586,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.01884300077748913,
+            "reason": null,
+            "standalone_energy_burden": 0.03196346071428571
+          },
+          "6": {
+            "benefit_as_income_share": 0.001334658861801726,
+            "energy_burden_change": -0.001334658861801726,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0013320128756251033,
+            "reason": null,
+            "standalone_energy_burden": 0.002666671737426829
+          },
+          "7": {
+            "benefit_as_income_share": 0.0039034187311385625,
+            "energy_burden_change": -0.0039034187311385625,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0038454386254325565,
+            "reason": null,
+            "standalone_energy_burden": 0.0077488573565711195
+          },
+          "8": {
+            "benefit_as_income_share": 0.0010443509682434556,
+            "energy_burden_change": -0.0010443509682434556,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.003628816307996957,
+            "reason": null,
+            "standalone_energy_burden": 0.004673167276240412
+          },
+          "9": {
+            "benefit_as_income_share": 0.0027069092713464813,
+            "energy_burden_change": -0.0027069092713464813,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007811462577268887,
+            "reason": null,
+            "standalone_energy_burden": 0.01051837184861537
+          }
+        },
+        "market_L1_distance_aud": 76.32689497768905,
+        "maximum_benefit_aud": 1112.4743383744903,
+        "mean_benefit_aud": 471.6650102031398,
+        "minimum_benefit_aud": 151.43089039530105,
+        "relative_bill_saving": {
+          "1": {
+            "reason": null,
+            "value": 0.3986767332742535
+          },
+          "2": {
+            "reason": null,
+            "value": 0.4226399389908701
+          },
+          "3": {
+            "reason": "nonpositive_standalone_cost",
+            "value": null
+          },
+          "4": {
+            "reason": null,
+            "value": 0.5417767459699245
+          },
+          "5": {
+            "reason": null,
+            "value": 0.41048308423413427
+          },
+          "6": {
+            "reason": null,
+            "value": 0.5004961214647244
+          },
+          "7": {
+            "reason": null,
+            "value": 0.5037412035760884
+          },
+          "8": {
+            "reason": null,
+            "value": 0.22347819080930512
+          },
+          "9": {
+            "reason": null,
+            "value": 0.2573505966803044
+          }
+        },
+        "total_benefit_aud": 4244.985091828258
+      },
+      "normative_metadata": {
+        "least_core_guaranteed_by_construction": true,
+        "no_harm_guaranteed_by_construction": true,
+        "repair_necessary": false,
+        "standard_or_project_defined": "standard cooperative game concept",
+        "uses_information": "fixed exact game / M4 settlement only",
+        "uses_socioeconomic_data_in_objective": false
+      },
+      "policy_id": "G4_nucleolus",
+      "source_policy_id": "G4_nucleolus",
+      "variant": "raw"
+    },
+    {
+      "metrics": {
+        "arithmetic_roundoff_guard_aud": 3.637978807091713e-11,
+        "benefits_aud": {
+          "1": 263.1577114149826,
+          "2": 463.13137842759215,
+          "3": 336.60165421762724,
+          "4": 346.4626184713524,
+          "5": 925.4971669736842,
+          "6": 160.40224845847388,
+          "7": 1108.2887638047623,
+          "8": 153.8979830360479,
+          "9": 487.54556702373316
+        },
+        "bills_aud": {
+          "1": 370.00172421451725,
+          "2": 611.6023996326876,
+          "3": -355.16481363509206,
+          "4": 276.87929974269554,
+          "5": 1311.9450830263158,
+          "6": 159.59836003274563,
+          "7": 1100.1355828180067,
+          "8": 523.7112720188119,
+          "9": 1510.9450842131869
+        },
+        "classification_tolerance_aud": 1.0000036379788072e-05,
+        "coalition": {
+          "allocation_in_core": true,
+          "blocking_count_by_size": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "efficiency_residual_aud": -1.8189894035458565e-12,
+          "empty_deficit_aud": 0.0,
+          "grand_deficit_aud": 1.8189894035458565e-12,
+          "maximum_positive_proper_deficit_aud": 0.0,
+          "minimum_member_benefit_aud": 153.8979830360479,
+          "no_harm_violation_aud": 0.0,
+          "proper_blocking_count": 0,
+          "proper_multi_member_blocking_count": 0,
+          "singleton_blocking_count": 0,
+          "sum_u_aud": 4244.985091828256,
+          "worst_blocking_coalition": null,
+          "worst_proper_coalition": {
+            "benefit_sum_aud": 3518.6960019856815,
+            "blocking": false,
+            "classification": "nonblocking",
+            "deficit_aud": -7.980232094431813,
+            "kind": "proper_multi_member",
+            "mask": 508,
+            "members": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          }
+        },
+        "constitutionally_admissible": true,
+        "contribution_fidelity": {
+          "reason": null,
+          "value": 0.9788016742743483
+        },
+        "contribution_share_L1_distance": 0.021198325725651765,
+        "equal_benefit_L1_distance_aud": 2212.6729343855227,
+        "harmed_member_count": 0,
+        "inadmissibility_reasons": [],
+        "inequality": {
+          "gini": {
+            "reason": null,
+            "value": 0.350120497448095
+          },
+          "jain": {
+            "reason": null,
+            "value": 0.693036090139225
+          }
+        },
+        "justice": {
+          "1": {
+            "benefit_as_income_share": 0.001315788557074913,
+            "energy_burden_change": -0.001315788557074913,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0018500086210725864,
+            "reason": null,
+            "standalone_energy_burden": 0.003165797178147499
+          },
+          "2": {
+            "benefit_as_income_share": 0.005789142230344902,
+            "energy_burden_change": -0.005789142230344902,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007645029995408595,
+            "reason": null,
+            "standalone_energy_burden": 0.013434172225753497
+          },
+          "3": {
+            "benefit_as_income_share": 0.00210376033886017,
+            "energy_burden_change": -0.00210376033886017,
+            "negative_bill_interpretation": "net annual electricity revenue",
+            "policy_energy_burden": -0.0022197800852193253,
+            "reason": null,
+            "standalone_energy_burden": -0.0001160197463591551
+          },
+          "4": {
+            "benefit_as_income_share": 0.001443594243630635,
+            "energy_burden_change": -0.001443594243630635,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.001153663748927898,
+            "reason": null,
+            "standalone_energy_burden": 0.002597257992558533
+          },
+          "5": {
+            "benefit_as_income_share": 0.01322138809962406,
+            "energy_burden_change": -0.01322138809962406,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.018742072614661653,
+            "reason": null,
+            "standalone_energy_burden": 0.03196346071428571
+          },
+          "6": {
+            "benefit_as_income_share": 0.0013366854038206156,
+            "energy_burden_change": -0.0013366854038206156,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0013299863336062136,
+            "reason": null,
+            "standalone_energy_burden": 0.002666671737426829
+          },
+          "7": {
+            "benefit_as_income_share": 0.0038887325045781134,
+            "energy_burden_change": -0.0038887325045781134,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.003860124851993006,
+            "reason": null,
+            "standalone_energy_burden": 0.0077488573565711195
+          },
+          "8": {
+            "benefit_as_income_share": 0.001061365400248606,
+            "energy_burden_change": -0.001061365400248606,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.003611801875991806,
+            "reason": null,
+            "standalone_energy_burden": 0.004673167276240412
+          },
+          "9": {
+            "benefit_as_income_share": 0.0025660293001249115,
+            "energy_burden_change": -0.0025660293001249115,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007952342548490457,
+            "reason": null,
+            "standalone_energy_burden": 0.01051837184861537
+          }
+        },
+        "market_L1_distance_aud": 0.0,
+        "maximum_benefit_aud": 1108.2887638047623,
+        "mean_benefit_aud": 471.6650102031396,
+        "minimum_benefit_aud": 153.8979830360479,
+        "relative_bill_saving": {
+          "1": {
+            "reason": null,
+            "value": 0.41562629664256034
+          },
+          "2": {
+            "reason": null,
+            "value": 0.430926605157483
+          },
+          "3": {
+            "reason": "nonpositive_standalone_cost",
+            "value": null
+          },
+          "4": {
+            "reason": null,
+            "value": 0.5558147275960694
+          },
+          "5": {
+            "reason": null,
+            "value": 0.4136406948486309
+          },
+          "6": {
+            "reason": null,
+            "value": 0.501256073276733
+          },
+          "7": {
+            "reason": null,
+            "value": 0.5018459271650451
+          },
+          "8": {
+            "reason": null,
+            "value": 0.2271190688261603
+          },
+          "9": {
+            "reason": null,
+            "value": 0.24395689152810296
+          }
+        },
+        "total_benefit_aud": 4244.985091828256
+      },
+      "normative_metadata": {
+        "least_core_guaranteed_by_construction": false,
+        "no_harm_guaranteed_by_construction": false,
+        "repair_necessary": false,
+        "standard_or_project_defined": "M4 fixed-quantity repricing",
+        "uses_information": "fixed exact game / M4 settlement only",
+        "uses_socioeconomic_data_in_objective": false
+      },
+      "policy_id": "P0_protected_marginal",
+      "source_policy_id": "P0_protected_marginal",
+      "variant": "raw"
+    },
+    {
+      "metrics": {
+        "arithmetic_roundoff_guard_aud": 3.637978807091713e-11,
+        "benefits_aud": {
+          "1": 277.84235491081427,
+          "2": 447.5748844415266,
+          "3": 397.31069990239916,
+          "4": 371.9757292543834,
+          "5": 842.4087547762917,
+          "6": 185.57548288848238,
+          "7": 1074.5392603746013,
+          "8": 157.85560672723386,
+          "9": 489.9023185525175
+        },
+        "bills_aud": {
+          "1": 355.3170807186856,
+          "2": 627.1588936187532,
+          "3": -415.873859319864,
+          "4": 251.36618895966456,
+          "5": 1395.0334952237083,
+          "6": 134.42512560273713,
+          "7": 1133.8850862481677,
+          "8": 519.7536483276259,
+          "9": 1508.5883326844025
+        },
+        "classification_tolerance_aud": 1.0000036379788072e-05,
+        "coalition": {
+          "allocation_in_core": true,
+          "blocking_count_by_size": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "efficiency_residual_aud": -8.185452315956354e-12,
+          "empty_deficit_aud": 0.0,
+          "grand_deficit_aud": 8.185452315956354e-12,
+          "maximum_positive_proper_deficit_aud": 1.0000000202126103e-05,
+          "minimum_member_benefit_aud": 157.85560672723386,
+          "no_harm_violation_aud": 0.0,
+          "proper_blocking_count": 0,
+          "proper_multi_member_blocking_count": 0,
+          "singleton_blocking_count": 0,
+          "sum_u_aud": 4244.98509182825,
+          "worst_blocking_coalition": null,
+          "worst_proper_coalition": {
+            "benefit_sum_aud": 3357.7720733733336,
+            "blocking": false,
+            "classification": "indifferent",
+            "deficit_aud": 1.0000000202126103e-05,
+            "kind": "proper_multi_member",
+            "mask": 251,
+            "members": [
+              1,
+              2,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          }
+        },
+        "constitutionally_admissible": true,
+        "contribution_fidelity": {
+          "reason": null,
+          "value": 0.9789480897142231
+        },
+        "contribution_share_L1_distance": 0.021051910285776895,
+        "equal_benefit_L1_distance_aud": 1983.7106061879904,
+        "harmed_member_count": 0,
+        "inadmissibility_reasons": [],
+        "inequality": {
+          "gini": {
+            "reason": null,
+            "value": 0.32126554458275475
+          },
+          "jain": {
+            "reason": null,
+            "value": 0.7314307923400641
+          }
+        },
+        "justice": {
+          "1": {
+            "benefit_as_income_share": 0.0013892117745540713,
+            "energy_burden_change": -0.0013892117745540713,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.001776585403593428,
+            "reason": null,
+            "standalone_energy_burden": 0.003165797178147499
+          },
+          "2": {
+            "benefit_as_income_share": 0.005594686055519082,
+            "energy_burden_change": -0.005594686055519082,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007839486170234415,
+            "reason": null,
+            "standalone_energy_burden": 0.013434172225753497
+          },
+          "3": {
+            "benefit_as_income_share": 0.002483191874389995,
+            "energy_burden_change": -0.002483191874389995,
+            "negative_bill_interpretation": "net annual electricity revenue",
+            "policy_energy_burden": -0.0025992116207491497,
+            "reason": null,
+            "standalone_energy_burden": -0.0001160197463591551
+          },
+          "4": {
+            "benefit_as_income_share": 0.001549898871893264,
+            "energy_burden_change": -0.001549898871893264,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0010473591206652689,
+            "reason": null,
+            "standalone_energy_burden": 0.002597257992558533
+          },
+          "5": {
+            "benefit_as_income_share": 0.012034410782518453,
+            "energy_burden_change": -0.012034410782518453,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.01992904993176726,
+            "reason": null,
+            "standalone_energy_burden": 0.03196346071428571
+          },
+          "6": {
+            "benefit_as_income_share": 0.0015464623574040198,
+            "energy_burden_change": -0.0015464623574040198,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0011202093800228093,
+            "reason": null,
+            "standalone_energy_burden": 0.002666671737426829
+          },
+          "7": {
+            "benefit_as_income_share": 0.003770313194296847,
+            "energy_burden_change": -0.003770313194296847,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.003978544162274273,
+            "reason": null,
+            "standalone_energy_burden": 0.0077488573565711195
+          },
+          "8": {
+            "benefit_as_income_share": 0.0010886593567395438,
+            "energy_burden_change": -0.0010886593567395438,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0035845079195008685,
+            "reason": null,
+            "standalone_energy_burden": 0.004673167276240412
+          },
+          "9": {
+            "benefit_as_income_share": 0.002578433255539566,
+            "energy_burden_change": -0.002578433255539566,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007939938593075803,
+            "reason": null,
+            "standalone_energy_burden": 0.01051837184861537
+          }
+        },
+        "market_L1_distance_aud": 264.7888192272324,
+        "maximum_benefit_aud": 1074.5392603746013,
+        "mean_benefit_aud": 471.6650102031389,
+        "minimum_benefit_aud": 157.85560672723386,
+        "relative_bill_saving": {
+          "1": {
+            "reason": null,
+            "value": 0.4388189439751108
+          },
+          "2": {
+            "reason": null,
+            "value": 0.41645186331570105
+          },
+          "3": {
+            "reason": "nonpositive_standalone_cost",
+            "value": null
+          },
+          "4": {
+            "reason": null,
+            "value": 0.596744288143079
+          },
+          "5": {
+            "reason": null,
+            "value": 0.37650525048246125
+          },
+          "6": {
+            "reason": null,
+            "value": 0.579922281283957
+          },
+          "7": {
+            "reason": null,
+            "value": 0.48656376299140136
+          },
+          "8": {
+            "reason": null,
+            "value": 0.23295963794717317
+          },
+          "9": {
+            "reason": null,
+            "value": 0.2451361572541276
+          }
+        },
+        "total_benefit_aud": 4244.98509182825
+      },
+      "normative_metadata": {
+        "least_core_guaranteed_by_construction": false,
+        "no_harm_guaranteed_by_construction": false,
+        "repair_necessary": true,
+        "standard_or_project_defined": "M4 fixed-quantity repricing",
+        "uses_information": "fixed exact game / M4 settlement only",
+        "uses_socioeconomic_data_in_objective": false
+      },
+      "policy_id": "P1_midpoint__repaired",
+      "source_policy_id": "P1_midpoint",
+      "variant": "ComFair repaired"
+    },
+    {
+      "metrics": {
+        "arithmetic_roundoff_guard_aud": 3.637978807091713e-11,
+        "benefits_aud": {
+          "1": 277.84235491082325,
+          "2": 439.06364451229365,
+          "3": 314.8769009138914,
+          "4": 371.97572925439215,
+          "5": 943.8486150480452,
+          "6": 165.01561188580536,
+          "7": 1030.904019643539,
+          "8": 138.99321911690504,
+          "9": 562.4649965425639
+        },
+        "bills_aud": {
+          "1": 355.3170807186766,
+          "2": 635.6701335479861,
+          "3": -333.4400603313562,
+          "4": 251.3661889596558,
+          "5": 1293.5936349519548,
+          "6": 154.98499660541415,
+          "7": 1177.52032697923,
+          "8": 538.6160359379547,
+          "9": 1436.025654694356
+        },
+        "classification_tolerance_aud": 1.0000036379788072e-05,
+        "coalition": {
+          "allocation_in_core": true,
+          "blocking_count_by_size": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "efficiency_residual_aud": 9.094947017729282e-13,
+          "empty_deficit_aud": 0.0,
+          "grand_deficit_aud": -9.094947017729282e-13,
+          "maximum_positive_proper_deficit_aud": 1.0000000656873453e-05,
+          "minimum_member_benefit_aud": 138.99321911690504,
+          "no_harm_violation_aud": 0.0,
+          "proper_blocking_count": 0,
+          "proper_multi_member_blocking_count": 0,
+          "singleton_blocking_count": 0,
+          "sum_u_aud": 4244.985091828259,
+          "worst_blocking_coalition": null,
+          "worst_proper_coalition": {
+            "benefit_sum_aud": 2284.801360206853,
+            "blocking": false,
+            "classification": "indifferent",
+            "deficit_aud": 1.0000000656873453e-05,
+            "kind": "proper_multi_member",
+            "mask": 107,
+            "members": [
+              1,
+              2,
+              4,
+              6,
+              7
+            ]
+          }
+        },
+        "constitutionally_admissible": true,
+        "contribution_fidelity": {
+          "reason": null,
+          "value": 0.9639802539000897
+        },
+        "contribution_share_L1_distance": 0.03601974609991038,
+        "equal_benefit_L1_distance_aud": 2244.4452012494567,
+        "harmed_member_count": 0,
+        "inadmissibility_reasons": [],
+        "inequality": {
+          "gini": {
+            "reason": null,
+            "value": 0.3453787414631754
+          },
+          "jain": {
+            "reason": null,
+            "value": 0.7089941626223826
+          }
+        },
+        "justice": {
+          "1": {
+            "benefit_as_income_share": 0.0013892117745541162,
+            "energy_burden_change": -0.0013892117745541162,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0017765854035933831,
+            "reason": null,
+            "standalone_energy_burden": 0.003165797178147499
+          },
+          "2": {
+            "benefit_as_income_share": 0.00548829555640367,
+            "energy_burden_change": -0.00548829555640367,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007945876669349827,
+            "reason": null,
+            "standalone_energy_burden": 0.013434172225753497
+          },
+          "3": {
+            "benefit_as_income_share": 0.001967980630711821,
+            "energy_burden_change": -0.001967980630711821,
+            "negative_bill_interpretation": "net annual electricity revenue",
+            "policy_energy_burden": -0.0020840003770709764,
+            "reason": null,
+            "standalone_energy_burden": -0.0001160197463591551
+          },
+          "4": {
+            "benefit_as_income_share": 0.0015498988718933007,
+            "energy_burden_change": -0.0015498988718933007,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0010473591206652325,
+            "reason": null,
+            "standalone_energy_burden": 0.002597257992558533
+          },
+          "5": {
+            "benefit_as_income_share": 0.013483551643543503,
+            "energy_burden_change": -0.013483551643543505,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.01847990907074221,
+            "reason": null,
+            "standalone_energy_burden": 0.03196346071428571
+          },
+          "6": {
+            "benefit_as_income_share": 0.001375130099048378,
+            "energy_burden_change": -0.001375130099048378,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0012915416383784512,
+            "reason": null,
+            "standalone_energy_burden": 0.002666671737426829
+          },
+          "7": {
+            "benefit_as_income_share": 0.003617207086468558,
+            "energy_burden_change": -0.003617207086468558,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.004131650270102562,
+            "reason": null,
+            "standalone_energy_burden": 0.0077488573565711195
+          },
+          "8": {
+            "benefit_as_income_share": 0.0009585739249441727,
+            "energy_burden_change": -0.0009585739249441727,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0037145933512962395,
+            "reason": null,
+            "standalone_energy_burden": 0.004673167276240412
+          },
+          "9": {
+            "benefit_as_income_share": 0.0029603420870661255,
+            "energy_burden_change": -0.0029603420870661264,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007558029761549242,
+            "reason": null,
+            "standalone_energy_burden": 0.01051837184861537
+          }
+        },
+        "market_L1_distance_aud": 276.1639905988041,
+        "maximum_benefit_aud": 1030.904019643539,
+        "mean_benefit_aud": 471.6650102031399,
+        "minimum_benefit_aud": 138.99321911690504,
+        "relative_bill_saving": {
+          "1": {
+            "reason": null,
+            "value": 0.438818943975125
+          },
+          "2": {
+            "reason": null,
+            "value": 0.40853246959887346
+          },
+          "3": {
+            "reason": "nonpositive_standalone_cost",
+            "value": null
+          },
+          "4": {
+            "reason": null,
+            "value": 0.596744288143093
+          },
+          "5": {
+            "reason": null,
+            "value": 0.42184267104460244
+          },
+          "6": {
+            "reason": null,
+            "value": 0.51567280657322
+          },
+          "7": {
+            "reason": null,
+            "value": 0.4668052230179621
+          },
+          "8": {
+            "reason": null,
+            "value": 0.20512296442239716
+          },
+          "9": {
+            "reason": null,
+            "value": 0.2814448975252594
+          }
+        },
+        "total_benefit_aud": 4244.985091828259
+      },
+      "normative_metadata": {
+        "least_core_guaranteed_by_construction": false,
+        "no_harm_guaranteed_by_construction": false,
+        "repair_necessary": true,
+        "standard_or_project_defined": "M4 fixed-quantity repricing",
+        "uses_information": "fixed exact game / M4 settlement only",
+        "uses_socioeconomic_data_in_objective": false
+      },
+      "policy_id": "P2_lower_fit__repaired",
+      "source_policy_id": "P2_lower_fit",
+      "variant": "ComFair repaired"
+    },
+    {
+      "metrics": {
+        "arithmetic_roundoff_guard_aud": 3.637978807091713e-11,
+        "benefits_aud": {
+          "1": 276.4402969943949,
+          "2": 447.5748844415266,
+          "3": 397.3106999023985,
+          "4": 371.9757292543827,
+          "5": 842.4087547762927,
+          "6": 185.57548288848193,
+          "7": 1074.539260374602,
+          "8": 159.2576646436528,
+          "9": 489.9023185525175
+        },
+        "bills_aud": {
+          "1": 356.71913863510497,
+          "2": 627.1588936187532,
+          "3": -415.8738593198633,
+          "4": 251.36618895966524,
+          "5": 1395.0334952237074,
+          "6": 134.42512560273758,
+          "7": 1133.885086248167,
+          "8": 518.351590411207,
+          "9": 1508.5883326844025
+        },
+        "classification_tolerance_aud": 1.0000036379788072e-05,
+        "coalition": {
+          "allocation_in_core": true,
+          "blocking_count_by_size": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "efficiency_residual_aud": -8.185452315956354e-12,
+          "empty_deficit_aud": 0.0,
+          "grand_deficit_aud": 8.185452315956354e-12,
+          "maximum_positive_proper_deficit_aud": 1.0000000202126103e-05,
+          "minimum_member_benefit_aud": 159.2576646436528,
+          "no_harm_violation_aud": 0.0,
+          "proper_blocking_count": 0,
+          "proper_multi_member_blocking_count": 0,
+          "singleton_blocking_count": 0,
+          "sum_u_aud": 4244.98509182825,
+          "worst_blocking_coalition": null,
+          "worst_proper_coalition": {
+            "benefit_sum_aud": 3425.4344781323402,
+            "blocking": false,
+            "classification": "indifferent",
+            "deficit_aud": 1.0000000202126103e-05,
+            "kind": "proper_multi_member",
+            "mask": 501,
+            "members": [
+              1,
+              3,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          }
+        },
+        "constitutionally_admissible": true,
+        "contribution_fidelity": {
+          "reason": null,
+          "value": 0.9792783754245592
+        },
+        "contribution_share_L1_distance": 0.020721624575440762,
+        "equal_benefit_L1_distance_aud": 1983.710606187994,
+        "harmed_member_count": 0,
+        "inadmissibility_reasons": [],
+        "inequality": {
+          "gini": {
+            "reason": null,
+            "value": 0.321118750933717
+          },
+          "jain": {
+            "reason": null,
+            "value": 0.7315196539101395
+          }
+        },
+        "justice": {
+          "1": {
+            "benefit_as_income_share": 0.0013822014849719745,
+            "energy_burden_change": -0.0013822014849719745,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0017835956931755248,
+            "reason": null,
+            "standalone_energy_burden": 0.003165797178147499
+          },
+          "2": {
+            "benefit_as_income_share": 0.005594686055519082,
+            "energy_burden_change": -0.005594686055519082,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007839486170234415,
+            "reason": null,
+            "standalone_energy_burden": 0.013434172225753497
+          },
+          "3": {
+            "benefit_as_income_share": 0.0024831918743899906,
+            "energy_burden_change": -0.0024831918743899906,
+            "negative_bill_interpretation": "net annual electricity revenue",
+            "policy_energy_burden": -0.002599211620749146,
+            "reason": null,
+            "standalone_energy_burden": -0.0001160197463591551
+          },
+          "4": {
+            "benefit_as_income_share": 0.0015498988718932612,
+            "energy_burden_change": -0.0015498988718932612,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.001047359120665272,
+            "reason": null,
+            "standalone_energy_burden": 0.002597257992558533
+          },
+          "5": {
+            "benefit_as_income_share": 0.012034410782518467,
+            "energy_burden_change": -0.012034410782518467,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.019929049931767247,
+            "reason": null,
+            "standalone_energy_burden": 0.03196346071428571
+          },
+          "6": {
+            "benefit_as_income_share": 0.001546462357404016,
+            "energy_burden_change": -0.001546462357404016,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0011202093800228132,
+            "reason": null,
+            "standalone_energy_burden": 0.002666671737426829
+          },
+          "7": {
+            "benefit_as_income_share": 0.003770313194296849,
+            "energy_burden_change": -0.003770313194296849,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.00397854416227427,
+            "reason": null,
+            "standalone_energy_burden": 0.0077488573565711195
+          },
+          "8": {
+            "benefit_as_income_share": 0.001098328721680364,
+            "energy_burden_change": -0.001098328721680364,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0035748385545600484,
+            "reason": null,
+            "standalone_energy_burden": 0.004673167276240412
+          },
+          "9": {
+            "benefit_as_income_share": 0.002578433255539566,
+            "energy_burden_change": -0.002578433255539566,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007939938593075803,
+            "reason": null,
+            "standalone_energy_burden": 0.01051837184861537
+          }
+        },
+        "market_L1_distance_aud": 264.78881922722854,
+        "maximum_benefit_aud": 1074.539260374602,
+        "mean_benefit_aud": 471.6650102031389,
+        "minimum_benefit_aud": 159.2576646436528,
+        "relative_bill_saving": {
+          "1": {
+            "reason": null,
+            "value": 0.4366045603024969
+          },
+          "2": {
+            "reason": null,
+            "value": 0.41645186331570105
+          },
+          "3": {
+            "reason": "nonpositive_standalone_cost",
+            "value": null
+          },
+          "4": {
+            "reason": null,
+            "value": 0.5967442881430779
+          },
+          "5": {
+            "reason": null,
+            "value": 0.3765052504824617
+          },
+          "6": {
+            "reason": null,
+            "value": 0.5799222812839555
+          },
+          "7": {
+            "reason": null,
+            "value": 0.48656376299140164
+          },
+          "8": {
+            "reason": null,
+            "value": 0.23502876245508064
+          },
+          "9": {
+            "reason": null,
+            "value": 0.2451361572541276
+          }
+        },
+        "total_benefit_aud": 4244.98509182825
+      },
+      "normative_metadata": {
+        "least_core_guaranteed_by_construction": false,
+        "no_harm_guaranteed_by_construction": false,
+        "repair_necessary": true,
+        "standard_or_project_defined": "M4 fixed-quantity repricing",
+        "uses_information": "fixed exact game / M4 settlement only",
+        "uses_socioeconomic_data_in_objective": false
+      },
+      "policy_id": "P3_upper_grid__repaired",
+      "source_policy_id": "P3_upper_grid",
+      "variant": "ComFair repaired"
+    },
+    {
+      "metrics": {
+        "arithmetic_roundoff_guard_aud": 3.637978807091713e-11,
+        "benefits_aud": {
+          "1": 263.1577114149826,
+          "2": 463.1313784275942,
+          "3": 336.60165421762724,
+          "4": 346.46261847135247,
+          "5": 925.4971669736842,
+          "6": 160.40224845847388,
+          "7": 1108.2887638047625,
+          "8": 153.89798303604766,
+          "9": 487.54556702373316
+        },
+        "bills_aud": {
+          "1": 370.00172421451725,
+          "2": 611.6023996326855,
+          "3": -355.16481363509206,
+          "4": 276.8792997426955,
+          "5": 1311.9450830263158,
+          "6": 159.59836003274563,
+          "7": 1100.1355828180065,
+          "8": 523.7112720188121,
+          "9": 1510.9450842131869
+        },
+        "classification_tolerance_aud": 1.0000036379788072e-05,
+        "coalition": {
+          "allocation_in_core": true,
+          "blocking_count_by_size": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "efficiency_residual_aud": 0.0,
+          "empty_deficit_aud": 0.0,
+          "grand_deficit_aud": 0.0,
+          "maximum_positive_proper_deficit_aud": 0.0,
+          "minimum_member_benefit_aud": 153.89798303604766,
+          "no_harm_violation_aud": 0.0,
+          "proper_blocking_count": 0,
+          "proper_multi_member_blocking_count": 0,
+          "singleton_blocking_count": 0,
+          "sum_u_aud": 4244.985091828258,
+          "worst_blocking_coalition": null,
+          "worst_proper_coalition": {
+            "benefit_sum_aud": 3518.6960019856815,
+            "blocking": false,
+            "classification": "nonblocking",
+            "deficit_aud": -7.980232094431813,
+            "kind": "proper_multi_member",
+            "mask": 508,
+            "members": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          }
+        },
+        "constitutionally_admissible": true,
+        "contribution_fidelity": {
+          "reason": null,
+          "value": 0.9788016742743479
+        },
+        "contribution_share_L1_distance": 0.02119832572565206,
+        "equal_benefit_L1_distance_aud": 2212.6729343855213,
+        "harmed_member_count": 0,
+        "inadmissibility_reasons": [],
+        "inequality": {
+          "gini": {
+            "reason": null,
+            "value": 0.3501204974480951
+          },
+          "jain": {
+            "reason": null,
+            "value": 0.6930360901392252
+          }
+        },
+        "justice": {
+          "1": {
+            "benefit_as_income_share": 0.001315788557074913,
+            "energy_burden_change": -0.001315788557074913,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0018500086210725864,
+            "reason": null,
+            "standalone_energy_burden": 0.003165797178147499
+          },
+          "2": {
+            "benefit_as_income_share": 0.005789142230344928,
+            "energy_burden_change": -0.005789142230344928,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007645029995408569,
+            "reason": null,
+            "standalone_energy_burden": 0.013434172225753497
+          },
+          "3": {
+            "benefit_as_income_share": 0.00210376033886017,
+            "energy_burden_change": -0.00210376033886017,
+            "negative_bill_interpretation": "net annual electricity revenue",
+            "policy_energy_burden": -0.0022197800852193253,
+            "reason": null,
+            "standalone_energy_burden": -0.0001160197463591551
+          },
+          "4": {
+            "benefit_as_income_share": 0.0014435942436306353,
+            "energy_burden_change": -0.0014435942436306353,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0011536637489278979,
+            "reason": null,
+            "standalone_energy_burden": 0.002597257992558533
+          },
+          "5": {
+            "benefit_as_income_share": 0.01322138809962406,
+            "energy_burden_change": -0.01322138809962406,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.018742072614661653,
+            "reason": null,
+            "standalone_energy_burden": 0.03196346071428571
+          },
+          "6": {
+            "benefit_as_income_share": 0.0013366854038206156,
+            "energy_burden_change": -0.0013366854038206156,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0013299863336062136,
+            "reason": null,
+            "standalone_energy_burden": 0.002666671737426829
+          },
+          "7": {
+            "benefit_as_income_share": 0.0038887325045781143,
+            "energy_burden_change": -0.0038887325045781143,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.003860124851993005,
+            "reason": null,
+            "standalone_energy_burden": 0.0077488573565711195
+          },
+          "8": {
+            "benefit_as_income_share": 0.0010613654002486045,
+            "energy_burden_change": -0.0010613654002486045,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0036118018759918077,
+            "reason": null,
+            "standalone_energy_burden": 0.004673167276240412
+          },
+          "9": {
+            "benefit_as_income_share": 0.0025660293001249115,
+            "energy_burden_change": -0.0025660293001249115,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007952342548490457,
+            "reason": null,
+            "standalone_energy_burden": 0.01051837184861537
+          }
+        },
+        "market_L1_distance_aud": 2.5579538487363607e-12,
+        "maximum_benefit_aud": 1108.2887638047625,
+        "mean_benefit_aud": 471.6650102031398,
+        "minimum_benefit_aud": 153.89798303604766,
+        "relative_bill_saving": {
+          "1": {
+            "reason": null,
+            "value": 0.41562629664256034
+          },
+          "2": {
+            "reason": null,
+            "value": 0.43092660515748493
+          },
+          "3": {
+            "reason": "nonpositive_standalone_cost",
+            "value": null
+          },
+          "4": {
+            "reason": null,
+            "value": 0.5558147275960694
+          },
+          "5": {
+            "reason": null,
+            "value": 0.4136406948486309
+          },
+          "6": {
+            "reason": null,
+            "value": 0.501256073276733
+          },
+          "7": {
+            "reason": null,
+            "value": 0.5018459271650452
+          },
+          "8": {
+            "reason": null,
+            "value": 0.22711906882615995
+          },
+          "9": {
+            "reason": null,
+            "value": 0.24395689152810296
+          }
+        },
+        "total_benefit_aud": 4244.985091828258
+      },
+      "normative_metadata": {
+        "least_core_guaranteed_by_construction": true,
+        "no_harm_guaranteed_by_construction": true,
+        "repair_necessary": false,
+        "standard_or_project_defined": "explicit M7 project comparator",
+        "uses_information": "fixed exact game / M4 settlement only",
+        "uses_socioeconomic_data_in_objective": false
+      },
+      "policy_id": "closest_core_l1_to_market",
+      "source_policy_id": "closest_core_l1_to_market",
+      "variant": "raw"
+    },
+    {
+      "metrics": {
+        "arithmetic_roundoff_guard_aud": 3.637978807091713e-11,
+        "benefits_aud": {
+          "1": 258.9043637162922,
+          "2": 464.1881623020263,
+          "3": 397.3106899024069,
+          "4": 355.36244139389146,
+          "5": 894.9865960197642,
+          "6": 176.793587921763,
+          "7": 1048.9806524472103,
+          "8": 176.7935879217639,
+          "9": 471.6650102031398
+        },
+        "bills_aud": {
+          "1": 374.25507191320764,
+          "2": 610.5456157582535,
+          "3": -415.87384931987174,
+          "4": 267.9794768201565,
+          "5": 1342.4556539802359,
+          "6": 143.20702056945652,
+          "7": 1159.4436941755587,
+          "8": 500.81566713309587,
+          "9": 1526.8256410337804
+        },
+        "classification_tolerance_aud": 1.0000036379788072e-05,
+        "coalition": {
+          "allocation_in_core": true,
+          "blocking_count_by_size": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "efficiency_residual_aud": 0.0,
+          "empty_deficit_aud": 0.0,
+          "grand_deficit_aud": 0.0,
+          "maximum_positive_proper_deficit_aud": 0.0,
+          "minimum_member_benefit_aud": 176.793587921763,
+          "no_harm_violation_aud": 0.0,
+          "proper_blocking_count": 0,
+          "proper_multi_member_blocking_count": 0,
+          "singleton_blocking_count": 0,
+          "sum_u_aud": 4244.985091828258,
+          "worst_blocking_coalition": null,
+          "worst_proper_coalition": {
+            "benefit_sum_aud": 1663.247457557394,
+            "blocking": false,
+            "classification": "indifferent",
+            "deficit_aud": 0.0,
+            "kind": "proper_multi_member",
+            "mask": 73,
+            "members": [
+              1,
+              4,
+              7
+            ]
+          }
+        },
+        "constitutionally_admissible": true,
+        "contribution_fidelity": {
+          "reason": null,
+          "value": 0.9782792698175925
+        },
+        "contribution_share_L1_distance": 0.02172073018240755,
+        "equal_benefit_L1_distance_aud": 2001.27445612139,
+        "harmed_member_count": 0,
+        "inadmissibility_reasons": [],
+        "inequality": {
+          "gini": {
+            "reason": null,
+            "value": 0.32339725124750957
+          },
+          "jain": {
+            "reason": null,
+            "value": 0.7272881619581217
+          }
+        },
+        "justice": {
+          "1": {
+            "benefit_as_income_share": 0.001294521818581461,
+            "energy_burden_change": -0.001294521818581461,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0018712753595660381,
+            "reason": null,
+            "standalone_energy_burden": 0.003165797178147499
+          },
+          "2": {
+            "benefit_as_income_share": 0.005802352028775329,
+            "energy_burden_change": -0.005802352028775329,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007631820196978168,
+            "reason": null,
+            "standalone_energy_burden": 0.013434172225753497
+          },
+          "3": {
+            "benefit_as_income_share": 0.002483191811890043,
+            "energy_burden_change": -0.002483191811890043,
+            "negative_bill_interpretation": "net annual electricity revenue",
+            "policy_energy_burden": -0.0025992115582491983,
+            "reason": null,
+            "standalone_energy_burden": -0.0001160197463591551
+          },
+          "4": {
+            "benefit_as_income_share": 0.0014806768391412144,
+            "energy_burden_change": -0.0014806768391412144,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0011165811534173187,
+            "reason": null,
+            "standalone_energy_burden": 0.002597257992558533
+          },
+          "5": {
+            "benefit_as_income_share": 0.012785522800282346,
+            "energy_burden_change": -0.012785522800282346,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.01917793791400337,
+            "reason": null,
+            "standalone_energy_burden": 0.03196346071428571
+          },
+          "6": {
+            "benefit_as_income_share": 0.001473279899348025,
+            "energy_burden_change": -0.001473279899348025,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0011933918380788043,
+            "reason": null,
+            "standalone_energy_burden": 0.002666671737426829
+          },
+          "7": {
+            "benefit_as_income_share": 0.0036806338682358257,
+            "energy_burden_change": -0.0036806338682358257,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.004068223488335293,
+            "reason": null,
+            "standalone_energy_burden": 0.0077488573565711195
+          },
+          "8": {
+            "benefit_as_income_share": 0.0012192661235983717,
+            "energy_burden_change": -0.0012192661235983717,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0034539011526420406,
+            "reason": null,
+            "standalone_energy_burden": 0.004673167276240412
+          },
+          "9": {
+            "benefit_as_income_share": 0.0024824474221217885,
+            "energy_burden_change": -0.0024824474221217877,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.008035924426493582,
+            "reason": null,
+            "standalone_energy_burden": 0.01051837184861537
+          }
+        },
+        "market_L1_distance_aud": 219.90517366151374,
+        "maximum_benefit_aud": 1048.9806524472103,
+        "mean_benefit_aud": 471.6650102031398,
+        "minimum_benefit_aud": 176.793587921763,
+        "relative_bill_saving": {
+          "1": {
+            "reason": null,
+            "value": 0.40890863998399435
+          },
+          "2": {
+            "reason": null,
+            "value": 0.43190990343656144
+          },
+          "3": {
+            "reason": "nonpositive_standalone_cost",
+            "value": null
+          },
+          "4": {
+            "reason": null,
+            "value": 0.5700923217422134
+          },
+          "5": {
+            "reason": null,
+            "value": 0.400004333528503
+          },
+          "6": {
+            "reason": null,
+            "value": 0.5524789116974883
+          },
+          "7": {
+            "reason": null,
+            "value": 0.474990530715423
+          },
+          "8": {
+            "reason": null,
+            "value": 0.26090787072772575
+          },
+          "9": {
+            "reason": null,
+            "value": 0.23601061626743838
+          }
+        },
+        "total_benefit_aud": 4244.985091828258
+      },
+      "normative_metadata": {
+        "least_core_guaranteed_by_construction": true,
+        "no_harm_guaranteed_by_construction": true,
+        "repair_necessary": false,
+        "standard_or_project_defined": "explicit M7 project comparator",
+        "uses_information": "fixed exact game / M4 settlement only",
+        "uses_socioeconomic_data_in_objective": false
+      },
+      "policy_id": "fair_least_core_maxmin",
+      "source_policy_id": "fair_least_core_maxmin",
+      "variant": "raw"
+    },
+    {
+      "metrics": {
+        "arithmetic_roundoff_guard_aud": 3.637978807091713e-11,
+        "benefits_aud": {
+          "1": 258.9043637162922,
+          "2": 463.13137842759215,
+          "3": 336.60165421762724,
+          "4": 346.4626184713524,
+          "5": 890.4635703233707,
+          "6": 176.7935879217639,
+          "7": 1108.2887638047623,
+          "8": 176.7935879217639,
+          "9": 487.54556702373316
+        },
+        "bills_aud": {
+          "1": 374.25507191320764,
+          "2": 611.6023996326876,
+          "3": -355.16481363509206,
+          "4": 276.87929974269554,
+          "5": 1346.9786796766293,
+          "6": 143.2070205694556,
+          "7": 1100.1355828180067,
+          "8": 500.81566713309587,
+          "9": 1510.9450842131869
+        },
+        "classification_tolerance_aud": 1.0000036379788072e-05,
+        "coalition": {
+          "allocation_in_core": true,
+          "blocking_count_by_size": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "efficiency_residual_aud": 0.0,
+          "empty_deficit_aud": 0.0,
+          "grand_deficit_aud": 0.0,
+          "maximum_positive_proper_deficit_aud": 9.094947017729282e-13,
+          "minimum_member_benefit_aud": 176.7935879217639,
+          "no_harm_violation_aud": 0.0,
+          "proper_blocking_count": 0,
+          "proper_multi_member_blocking_count": 0,
+          "singleton_blocking_count": 0,
+          "sum_u_aud": 4244.985091828258,
+          "worst_blocking_coalition": null,
+          "worst_proper_coalition": {
+            "benefit_sum_aud": 3891.3979159847304,
+            "blocking": false,
+            "classification": "indifferent",
+            "deficit_aud": 9.094947017729282e-13,
+            "kind": "proper_multi_member",
+            "mask": 351,
+            "members": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              7,
+              9
+            ]
+          }
+        },
+        "constitutionally_admissible": true,
+        "contribution_fidelity": {
+          "reason": null,
+          "value": 0.9840834675851319
+        },
+        "contribution_share_L1_distance": 0.01591653241486809,
+        "equal_benefit_L1_distance_aud": 2142.605741084894,
+        "harmed_member_count": 0,
+        "inadmissibility_reasons": [],
+        "inequality": {
+          "gini": {
+            "reason": null,
+            "value": 0.33769535068461937
+          },
+          "jain": {
+            "reason": null,
+            "value": 0.7059232557488895
+          }
+        },
+        "justice": {
+          "1": {
+            "benefit_as_income_share": 0.001294521818581461,
+            "energy_burden_change": -0.001294521818581461,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0018712753595660381,
+            "reason": null,
+            "standalone_energy_burden": 0.003165797178147499
+          },
+          "2": {
+            "benefit_as_income_share": 0.005789142230344902,
+            "energy_burden_change": -0.005789142230344902,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007645029995408595,
+            "reason": null,
+            "standalone_energy_burden": 0.013434172225753497
+          },
+          "3": {
+            "benefit_as_income_share": 0.00210376033886017,
+            "energy_burden_change": -0.00210376033886017,
+            "negative_bill_interpretation": "net annual electricity revenue",
+            "policy_energy_burden": -0.0022197800852193253,
+            "reason": null,
+            "standalone_energy_burden": -0.0001160197463591551
+          },
+          "4": {
+            "benefit_as_income_share": 0.001443594243630635,
+            "energy_burden_change": -0.001443594243630635,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.001153663748927898,
+            "reason": null,
+            "standalone_energy_burden": 0.002597257992558533
+          },
+          "5": {
+            "benefit_as_income_share": 0.012720908147476725,
+            "energy_burden_change": -0.012720908147476725,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.01924255256680899,
+            "reason": null,
+            "standalone_energy_burden": 0.03196346071428571
+          },
+          "6": {
+            "benefit_as_income_share": 0.0014732798993480325,
+            "energy_burden_change": -0.0014732798993480325,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0011933918380787967,
+            "reason": null,
+            "standalone_energy_burden": 0.002666671737426829
+          },
+          "7": {
+            "benefit_as_income_share": 0.0038887325045781134,
+            "energy_burden_change": -0.0038887325045781134,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.003860124851993006,
+            "reason": null,
+            "standalone_energy_burden": 0.0077488573565711195
+          },
+          "8": {
+            "benefit_as_income_share": 0.0012192661235983717,
+            "energy_burden_change": -0.0012192661235983717,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.0034539011526420406,
+            "reason": null,
+            "standalone_energy_burden": 0.004673167276240412
+          },
+          "9": {
+            "benefit_as_income_share": 0.0025660293001249115,
+            "energy_burden_change": -0.0025660293001249115,
+            "negative_bill_interpretation": null,
+            "policy_energy_burden": 0.007952342548490457,
+            "reason": null,
+            "standalone_energy_burden": 0.01051837184861537
+          }
+        },
+        "market_L1_distance_aud": 78.57388869800991,
+        "maximum_benefit_aud": 1108.2887638047623,
+        "mean_benefit_aud": 471.6650102031398,
+        "minimum_benefit_aud": 176.7935879217639,
+        "relative_bill_saving": {
+          "1": {
+            "reason": null,
+            "value": 0.40890863998399435
+          },
+          "2": {
+            "reason": null,
+            "value": 0.430926605157483
+          },
+          "3": {
+            "reason": "nonpositive_standalone_cost",
+            "value": null
+          },
+          "4": {
+            "reason": null,
+            "value": 0.5558147275960694
+          },
+          "5": {
+            "reason": null,
+            "value": 0.39798281735466945
+          },
+          "6": {
+            "reason": null,
+            "value": 0.5524789116974912
+          },
+          "7": {
+            "reason": null,
+            "value": 0.5018459271650451
+          },
+          "8": {
+            "reason": null,
+            "value": 0.26090787072772575
+          },
+          "9": {
+            "reason": null,
+            "value": 0.24395689152810296
+          }
+        },
+        "total_benefit_aud": 4244.985091828258
+      },
+      "normative_metadata": {
+        "least_core_guaranteed_by_construction": true,
+        "no_harm_guaranteed_by_construction": true,
+        "repair_necessary": false,
+        "standard_or_project_defined": "explicit M7 project comparator",
+        "uses_information": "fixed exact game / M4 settlement only",
+        "uses_socioeconomic_data_in_objective": false
+      },
+      "policy_id": "maxmin_benefit",
+      "source_policy_id": "maxmin_benefit",
+      "variant": "raw"
+    }
+  ],
+  "constitution": "efficient; hard no-harm; proper deficits <= epsilon* + monetary tolerance",
+  "currency": "AUD",
+  "demo_default": {
+    "policy_id": "A4_minimum_repair",
+    "role": "minimal-intervention default for demonstration",
+    "trace": [
+      {
+        "remaining": [
+          "A4_minimum_repair",
+          "G0_market",
+          "G1_equal_benefit__repaired",
+          "G2_contribution_proportional__repaired",
+          "G3_shapley__repaired",
+          "G4_nucleolus",
+          "P0_protected_marginal",
+          "P1_midpoint__repaired",
+          "P2_lower_fit__repaired",
+          "P3_upper_grid__repaired",
+          "closest_core_l1_to_market",
+          "fair_least_core_maxmin",
+          "maxmin_benefit"
+        ],
+        "step": "constitution"
+      },
+      {
+        "best": 0.0,
+        "remaining": [
+          "A4_minimum_repair",
+          "G0_market",
+          "P0_protected_marginal",
+          "closest_core_l1_to_market"
+        ],
+        "step": "market_L1_distance_aud",
+        "tolerance": 1e-05,
+        "undefined_rule": "skip criterion if all undefined; otherwise retain defined candidates"
+      },
+      {
+        "best": 153.8979830360479,
+        "remaining": [
+          "A4_minimum_repair",
+          "G0_market",
+          "P0_protected_marginal",
+          "closest_core_l1_to_market"
+        ],
+        "step": "minimum_benefit_aud",
+        "tolerance": 1e-05,
+        "undefined_rule": "skip criterion if all undefined; otherwise retain defined candidates"
+      },
+      {
+        "best": 0.021198325725651765,
+        "remaining": [
+          "A4_minimum_repair",
+          "G0_market",
+          "P0_protected_marginal",
+          "closest_core_l1_to_market"
+        ],
+        "step": "contribution_share_L1_distance",
+        "tolerance": 2.3557208762052767e-09,
+        "undefined_rule": "skip criterion if all undefined; otherwise retain defined candidates"
+      },
+      {
+        "selected": "A4_minimum_repair",
+        "step": "lexical_policy_id"
+      }
+    ],
+    "universally_fairest": false
+  },
+  "frontier_scope": "Discrete candidate-policy views, not the continuous Pareto set; fixed physical cost",
+  "frontiers": {
+    "market_vs_contribution": {
+      "A4_minimum_repair": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 153.8979830360479,
+        "status": "nondominated",
+        "x_market_L1_aud": 0.0,
+        "y": 0.021198325725651765
+      },
+      "G0_market": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 153.8979830360479,
+        "status": "nondominated",
+        "x_market_L1_aud": 0.0,
+        "y": 0.021198325725651765
+      },
+      "G1_equal_benefit__repaired": {
+        "dominated_by": [
+          "A4_minimum_repair",
+          "G0_market",
+          "G2_contribution_proportional__repaired",
+          "G4_nucleolus",
+          "P0_protected_marginal",
+          "closest_core_l1_to_market",
+          "fair_least_core_maxmin",
+          "maxmin_benefit"
+        ],
+        "minimum_benefit_aud": 168.01170295503653,
+        "status": "dominated",
+        "x_market_L1_aud": 228.9623281975925,
+        "y": 0.023225330051806724
+      },
+      "G2_contribution_proportional__repaired": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 164.3060777286632,
+        "status": "nondominated",
+        "x_market_L1_aud": 160.87703598189754,
+        "y": 0.0022492561174225836
+      },
+      "G3_shapley__repaired": {
+        "dominated_by": [
+          "A4_minimum_repair",
+          "G0_market",
+          "G1_equal_benefit__repaired",
+          "G2_contribution_proportional__repaired",
+          "G4_nucleolus",
+          "P0_protected_marginal",
+          "P1_midpoint__repaired",
+          "P3_upper_grid__repaired",
+          "closest_core_l1_to_market",
+          "fair_least_core_maxmin",
+          "maxmin_benefit"
+        ],
+        "minimum_benefit_aud": 157.85560672723386,
+        "status": "dominated",
+        "x_market_L1_aud": 264.78881922729124,
+        "y": 0.025542409686291095
+      },
+      "G4_nucleolus": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 151.43089039530105,
+        "status": "nondominated",
+        "x_market_L1_aud": 76.32689497768905,
+        "y": 0.017035808663731777
+      },
+      "P0_protected_marginal": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 153.8979830360479,
+        "status": "nondominated",
+        "x_market_L1_aud": 0.0,
+        "y": 0.021198325725651765
+      },
+      "P1_midpoint__repaired": {
+        "dominated_by": [
+          "G2_contribution_proportional__repaired",
+          "G4_nucleolus",
+          "P3_upper_grid__repaired",
+          "maxmin_benefit"
+        ],
+        "minimum_benefit_aud": 157.85560672723386,
+        "status": "dominated",
+        "x_market_L1_aud": 264.7888192272324,
+        "y": 0.021051910285776895
+      },
+      "P2_lower_fit__repaired": {
+        "dominated_by": [
+          "A4_minimum_repair",
+          "G0_market",
+          "G1_equal_benefit__repaired",
+          "G2_contribution_proportional__repaired",
+          "G3_shapley__repaired",
+          "G4_nucleolus",
+          "P0_protected_marginal",
+          "P1_midpoint__repaired",
+          "P3_upper_grid__repaired",
+          "closest_core_l1_to_market",
+          "fair_least_core_maxmin",
+          "maxmin_benefit"
+        ],
+        "minimum_benefit_aud": 138.99321911690504,
+        "status": "dominated",
+        "x_market_L1_aud": 276.1639905988041,
+        "y": 0.03601974609991038
+      },
+      "P3_upper_grid__repaired": {
+        "dominated_by": [
+          "G2_contribution_proportional__repaired",
+          "G4_nucleolus",
+          "maxmin_benefit"
+        ],
+        "minimum_benefit_aud": 159.2576646436528,
+        "status": "dominated",
+        "x_market_L1_aud": 264.78881922722854,
+        "y": 0.020721624575440762
+      },
+      "closest_core_l1_to_market": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 153.89798303604766,
+        "status": "nondominated",
+        "x_market_L1_aud": 2.5579538487363607e-12,
+        "y": 0.02119832572565206
+      },
+      "fair_least_core_maxmin": {
+        "dominated_by": [
+          "A4_minimum_repair",
+          "G0_market",
+          "G2_contribution_proportional__repaired",
+          "G4_nucleolus",
+          "P0_protected_marginal",
+          "closest_core_l1_to_market",
+          "maxmin_benefit"
+        ],
+        "minimum_benefit_aud": 176.793587921763,
+        "status": "dominated",
+        "x_market_L1_aud": 219.90517366151374,
+        "y": 0.02172073018240755
+      },
+      "maxmin_benefit": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 176.7935879217639,
+        "status": "nondominated",
+        "x_market_L1_aud": 78.57388869800991,
+        "y": 0.01591653241486809
+      }
+    },
+    "market_vs_gini": {
+      "A4_minimum_repair": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 153.8979830360479,
+        "status": "nondominated",
+        "x_market_L1_aud": 0.0,
+        "y": 0.350120497448095
+      },
+      "G0_market": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 153.8979830360479,
+        "status": "nondominated",
+        "x_market_L1_aud": 0.0,
+        "y": 0.350120497448095
+      },
+      "G1_equal_benefit__repaired": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 168.01170295503653,
+        "status": "nondominated",
+        "x_market_L1_aud": 228.9623281975925,
+        "y": 0.3214747263971628
+      },
+      "G2_contribution_proportional__repaired": {
+        "dominated_by": [
+          "maxmin_benefit"
+        ],
+        "minimum_benefit_aud": 164.3060777286632,
+        "status": "dominated",
+        "x_market_L1_aud": 160.87703598189754,
+        "y": 0.3379580193713484
+      },
+      "G3_shapley__repaired": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 157.85560672723386,
+        "status": "nondominated",
+        "x_market_L1_aud": 264.78881922729124,
+        "y": 0.3198317852035028
+      },
+      "G4_nucleolus": {
+        "dominated_by": [
+          "A4_minimum_repair",
+          "G0_market",
+          "P0_protected_marginal",
+          "closest_core_l1_to_market"
+        ],
+        "minimum_benefit_aud": 151.43089039530105,
+        "status": "dominated",
+        "x_market_L1_aud": 76.32689497768905,
+        "y": 0.3538439388138786
+      },
+      "P0_protected_marginal": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 153.8979830360479,
+        "status": "nondominated",
+        "x_market_L1_aud": 0.0,
+        "y": 0.350120497448095
+      },
+      "P1_midpoint__repaired": {
+        "dominated_by": [
+          "G3_shapley__repaired",
+          "P3_upper_grid__repaired"
+        ],
+        "minimum_benefit_aud": 157.85560672723386,
+        "status": "dominated",
+        "x_market_L1_aud": 264.7888192272324,
+        "y": 0.32126554458275475
+      },
+      "P2_lower_fit__repaired": {
+        "dominated_by": [
+          "G1_equal_benefit__repaired",
+          "G2_contribution_proportional__repaired",
+          "G3_shapley__repaired",
+          "P1_midpoint__repaired",
+          "P3_upper_grid__repaired",
+          "fair_least_core_maxmin",
+          "maxmin_benefit"
+        ],
+        "minimum_benefit_aud": 138.99321911690504,
+        "status": "dominated",
+        "x_market_L1_aud": 276.1639905988041,
+        "y": 0.3453787414631754
+      },
+      "P3_upper_grid__repaired": {
+        "dominated_by": [
+          "G3_shapley__repaired"
+        ],
+        "minimum_benefit_aud": 159.2576646436528,
+        "status": "dominated",
+        "x_market_L1_aud": 264.78881922722854,
+        "y": 0.321118750933717
+      },
+      "closest_core_l1_to_market": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 153.89798303604766,
+        "status": "nondominated",
+        "x_market_L1_aud": 2.5579538487363607e-12,
+        "y": 0.3501204974480951
+      },
+      "fair_least_core_maxmin": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 176.793587921763,
+        "status": "nondominated",
+        "x_market_L1_aud": 219.90517366151374,
+        "y": 0.32339725124750957
+      },
+      "maxmin_benefit": {
+        "dominated_by": [],
+        "minimum_benefit_aud": 176.7935879217639,
+        "status": "nondominated",
+        "x_market_L1_aud": 78.57388869800991,
+        "y": 0.33769535068461937
+      }
+    }
+  },
+  "inadmissible_raw_candidates": [
+    {
+      "policy_id": "G1_equal_benefit",
+      "reasons": [
+        "coalition_deficit_above_least_core"
+      ]
+    },
+    {
+      "policy_id": "G2_contribution_proportional",
+      "reasons": [
+        "coalition_deficit_above_least_core"
+      ]
+    },
+    {
+      "policy_id": "G3_shapley",
+      "reasons": [
+        "coalition_deficit_above_least_core"
+      ]
+    },
+    {
+      "policy_id": "P1_midpoint",
+      "reasons": [
+        "individual_harm",
+        "coalition_deficit_above_least_core"
+      ]
+    },
+    {
+      "policy_id": "P2_lower_fit",
+      "reasons": [
+        "individual_harm",
+        "coalition_deficit_above_least_core"
+      ]
+    },
+    {
+      "policy_id": "P3_upper_grid",
+      "reasons": [
+        "individual_harm",
+        "coalition_deficit_above_least_core"
+      ]
+    }
+  ],
+  "member_5_case_study": {
+    "metadata": {
+      "annual_demand_kwh": 6920.581,
+      "annual_income_aud": 70000.0,
+      "battery_capacity_kwh": 0.0,
+      "battery_modules": 0,
+      "household_type": "Single-parent family with children. One adult part-time employed.",
+      "occupant_count": 3,
+      "pv_capacity_kw": 0.0,
+      "pv_modules": 0
+    },
+    "policies": [
+      {
+        "policy_id": "A4_minimum_repair",
+        "raw_admissible": true,
+        "raw_benefit_aud": 925.4971669736842,
+        "raw_bill_aud": 1311.9450830263158,
+        "raw_harmed": false,
+        "raw_justice": {
+          "benefit_as_income_share": 0.01322138809962406,
+          "energy_burden_change": -0.01322138809962406,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.018742072614661653,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "repaired_admissible": true,
+        "repaired_benefit_aud": 925.4971669736842,
+        "repaired_bill_aud": 1311.9450830263158,
+        "repaired_justice": {
+          "benefit_as_income_share": 0.01322138809962406,
+          "energy_burden_change": -0.01322138809962406,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.018742072614661653,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "standalone_bill_aud": 2237.44225
+      },
+      {
+        "policy_id": "G0_market",
+        "raw_admissible": true,
+        "raw_benefit_aud": 925.4971669736842,
+        "raw_bill_aud": 1311.9450830263158,
+        "raw_harmed": false,
+        "raw_justice": {
+          "benefit_as_income_share": 0.01322138809962406,
+          "energy_burden_change": -0.01322138809962406,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.018742072614661653,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "repaired_admissible": true,
+        "repaired_benefit_aud": 925.4971669736842,
+        "repaired_bill_aud": 1311.9450830263158,
+        "repaired_justice": {
+          "benefit_as_income_share": 0.01322138809962406,
+          "energy_burden_change": -0.01322138809962406,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.018742072614661653,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "standalone_bill_aud": 2237.44225
+      },
+      {
+        "policy_id": "G1_equal_benefit",
+        "raw_admissible": false,
+        "raw_benefit_aud": 471.6650102031398,
+        "raw_bill_aud": 1765.7772397968602,
+        "raw_harmed": false,
+        "raw_justice": {
+          "benefit_as_income_share": 0.006738071574330568,
+          "energy_burden_change": -0.00673807157433057,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.025225389139955146,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "repaired_admissible": true,
+        "repaired_benefit_aud": 892.5916750678007,
+        "repaired_bill_aud": 1344.8505749321994,
+        "repaired_justice": {
+          "benefit_as_income_share": 0.012751309643825724,
+          "energy_burden_change": -0.012751309643825724,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.019212151070459992,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "standalone_bill_aud": 2237.44225
+      },
+      {
+        "policy_id": "G2_contribution_proportional",
+        "raw_admissible": false,
+        "raw_benefit_aud": 876.9150695613198,
+        "raw_bill_aud": 1360.5271804386803,
+        "raw_harmed": false,
+        "raw_justice": {
+          "benefit_as_income_share": 0.012527358136590283,
+          "energy_burden_change": -0.012527358136590283,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.019436102577695433,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "repaired_admissible": true,
+        "repaired_benefit_aud": 886.4631282474822,
+        "repaired_bill_aud": 1350.9791217525178,
+        "repaired_justice": {
+          "benefit_as_income_share": 0.012663758974964032,
+          "energy_burden_change": -0.012663758974964032,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.019299701739321683,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "standalone_bill_aud": 2237.44225
+      },
+      {
+        "policy_id": "G3_shapley",
+        "raw_admissible": false,
+        "raw_benefit_aud": 783.5356151887036,
+        "raw_bill_aud": 1453.9066348112965,
+        "raw_harmed": false,
+        "raw_justice": {
+          "benefit_as_income_share": 0.011193365931267194,
+          "energy_burden_change": -0.011193365931267194,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.02077009478301852,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "repaired_admissible": true,
+        "repaired_benefit_aud": 897.9242893862051,
+        "repaired_bill_aud": 1339.517960613795,
+        "repaired_justice": {
+          "benefit_as_income_share": 0.01282748984837436,
+          "energy_burden_change": -0.01282748984837436,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.019135970865911355,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "standalone_bill_aud": 2237.44225
+      },
+      {
+        "policy_id": "G4_nucleolus",
+        "raw_admissible": true,
+        "raw_benefit_aud": 918.4321955757609,
+        "raw_bill_aud": 1319.0100544242391,
+        "raw_harmed": false,
+        "raw_justice": {
+          "benefit_as_income_share": 0.013120459936796586,
+          "energy_burden_change": -0.013120459936796586,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.01884300077748913,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "repaired_admissible": true,
+        "repaired_benefit_aud": 918.4321955757609,
+        "repaired_bill_aud": 1319.0100544242391,
+        "repaired_justice": {
+          "benefit_as_income_share": 0.013120459936796586,
+          "energy_burden_change": -0.013120459936796586,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.01884300077748913,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "standalone_bill_aud": 2237.44225
+      },
+      {
+        "policy_id": "P0_protected_marginal",
+        "raw_admissible": true,
+        "raw_benefit_aud": 925.4971669736842,
+        "raw_bill_aud": 1311.9450830263158,
+        "raw_harmed": false,
+        "raw_justice": {
+          "benefit_as_income_share": 0.01322138809962406,
+          "energy_burden_change": -0.01322138809962406,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.018742072614661653,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "repaired_admissible": true,
+        "repaired_benefit_aud": 925.4971669736842,
+        "repaired_bill_aud": 1311.9450830263158,
+        "repaired_justice": {
+          "benefit_as_income_share": 0.01322138809962406,
+          "energy_burden_change": -0.01322138809962406,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.018742072614661653,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "standalone_bill_aud": 2237.44225
+      },
+      {
+        "policy_id": "P1_midpoint",
+        "raw_admissible": false,
+        "raw_benefit_aud": 635.773648955395,
+        "raw_bill_aud": 1601.668601044605,
+        "raw_harmed": false,
+        "raw_justice": {
+          "benefit_as_income_share": 0.009082480699362785,
+          "energy_burden_change": -0.009082480699362785,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.02288098001492293,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "repaired_admissible": true,
+        "repaired_benefit_aud": 842.4087547762917,
+        "repaired_bill_aud": 1395.0334952237083,
+        "repaired_justice": {
+          "benefit_as_income_share": 0.012034410782518453,
+          "energy_burden_change": -0.012034410782518453,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.01992904993176726,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "standalone_bill_aud": 2237.44225
+      },
+      {
+        "policy_id": "P2_lower_fit",
+        "raw_admissible": false,
+        "raw_benefit_aud": 1271.54729791079,
+        "raw_bill_aud": 965.8949520892102,
+        "raw_harmed": false,
+        "raw_justice": {
+          "benefit_as_income_share": 0.01816496139872557,
+          "energy_burden_change": -0.01816496139872557,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.013798499315560145,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "repaired_admissible": true,
+        "repaired_benefit_aud": 943.8486150480452,
+        "repaired_bill_aud": 1293.5936349519548,
+        "repaired_justice": {
+          "benefit_as_income_share": 0.013483551643543503,
+          "energy_burden_change": -0.013483551643543505,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.01847990907074221,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "standalone_bill_aud": 2237.44225
+      },
+      {
+        "policy_id": "P3_upper_grid",
+        "raw_admissible": false,
+        "raw_benefit_aud": 0.0,
+        "raw_bill_aud": 2237.44225,
+        "raw_harmed": false,
+        "raw_justice": {
+          "benefit_as_income_share": 0.0,
+          "energy_burden_change": 0.0,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.03196346071428571,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "repaired_admissible": true,
+        "repaired_benefit_aud": 842.4087547762927,
+        "repaired_bill_aud": 1395.0334952237074,
+        "repaired_justice": {
+          "benefit_as_income_share": 0.012034410782518467,
+          "energy_burden_change": -0.012034410782518467,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.019929049931767247,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "standalone_bill_aud": 2237.44225
+      },
+      {
+        "policy_id": "closest_core_l1_to_market",
+        "raw_admissible": true,
+        "raw_benefit_aud": 925.4971669736842,
+        "raw_bill_aud": 1311.9450830263158,
+        "raw_harmed": false,
+        "raw_justice": {
+          "benefit_as_income_share": 0.01322138809962406,
+          "energy_burden_change": -0.01322138809962406,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.018742072614661653,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "repaired_admissible": true,
+        "repaired_benefit_aud": 925.4971669736842,
+        "repaired_bill_aud": 1311.9450830263158,
+        "repaired_justice": {
+          "benefit_as_income_share": 0.01322138809962406,
+          "energy_burden_change": -0.01322138809962406,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.018742072614661653,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "standalone_bill_aud": 2237.44225
+      },
+      {
+        "policy_id": "fair_least_core_maxmin",
+        "raw_admissible": true,
+        "raw_benefit_aud": 894.9865960197642,
+        "raw_bill_aud": 1342.4556539802359,
+        "raw_harmed": false,
+        "raw_justice": {
+          "benefit_as_income_share": 0.012785522800282346,
+          "energy_burden_change": -0.012785522800282346,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.01917793791400337,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "repaired_admissible": true,
+        "repaired_benefit_aud": 894.9865960197642,
+        "repaired_bill_aud": 1342.4556539802359,
+        "repaired_justice": {
+          "benefit_as_income_share": 0.012785522800282346,
+          "energy_burden_change": -0.012785522800282346,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.01917793791400337,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "standalone_bill_aud": 2237.44225
+      },
+      {
+        "policy_id": "maxmin_benefit",
+        "raw_admissible": true,
+        "raw_benefit_aud": 890.4635703233707,
+        "raw_bill_aud": 1346.9786796766293,
+        "raw_harmed": false,
+        "raw_justice": {
+          "benefit_as_income_share": 0.012720908147476725,
+          "energy_burden_change": -0.012720908147476725,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.01924255256680899,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "repaired_admissible": true,
+        "repaired_benefit_aud": 890.4635703233707,
+        "repaired_bill_aud": 1346.9786796766293,
+        "repaired_justice": {
+          "benefit_as_income_share": 0.012720908147476725,
+          "energy_burden_change": -0.012720908147476725,
+          "negative_bill_interpretation": null,
+          "policy_energy_burden": 0.01924255256680899,
+          "reason": null,
+          "standalone_energy_burden": 0.03196346071428571
+        },
+        "standalone_bill_aud": 2237.44225
+      }
+    ],
+    "used_as_weight": false
+  },
+  "members_1_2_contribution": {
+    "combined_M4_benefit_aud": 726.2890898425748,
+    "interpretation": "Descriptive game comparison; no causal PV/BESS complementarity claim",
+    "joint_marginal_value_aud": 734.2693219370085,
+    "joint_minus_market_aud": 7.980232094433745,
+    "marginal_1_aud": 277.84234491082225,
+    "marginal_2_aud": 479.6418278631072,
+    "technical_profiles": {
+      "1": {
+        "annual_demand_kwh": 5315.942999999999,
+        "annual_income_aud": 200000.0,
+        "battery_capacity_kwh": 0.0,
+        "battery_modules": 0,
+        "household_type": "Couple, no children. Both adults working full-time.",
+        "occupant_count": 2,
+        "pv_capacity_kw": 6.6,
+        "pv_modules": 15
+      },
+      "2": {
+        "annual_demand_kwh": 4400.82,
+        "annual_income_aud": 80000.0,
+        "battery_capacity_kwh": 9.32,
+        "battery_modules": 2,
+        "household_type": "Couple, no children. Both adults retired.",
+        "occupant_count": 2,
+        "pv_capacity_kw": 0.0,
+        "pv_modules": 0
+      }
+    }
+  },
+  "milestone": "M7",
+  "provenance": {
+    "checkpoint_base_commit": "f30cd22",
+    "coalition_representation": "v1: bit i-1 -> member i; ascending mask",
+    "core_tolerance_aud": 1e-05,
+    "energy_tolerance_kwh": 1e-06,
+    "flow_tolerance_kw": 1e-06,
+    "game_source_sha256": "ec130a2dab391f03c6410e7b3e0b7fa68f769459eea829dd3a7c0e59c0797704",
+    "governance_source_sha256": "70f321e6040ac59793e1c0c3e008e703aea9b6e2a4e8b34a76e856c7bc069c61",
+    "input_sha256": "0321d5d9d4254a8f9e8e0911a8c4e34dcc5a4cb0518699595cd94e1d79737cd0",
+    "libraries": {
+      "highspy": "1.15.1",
+      "matplotlib": "3.11.2",
+      "numpy": "2.4.6",
+      "pyomo": "6.10.1"
+    },
+    "market_anchor": "M4 members.u0_aud; M5 witness is only a certificate",
+    "market_source_sha256": "9203c825e03ce28a01abf2bacf9ffc39795ae4be92530efb1970fd72d820722b",
+    "metadata_role": "descriptive KPIs only; capacities reuse approved M3 registry",
+    "money_tolerance_aud": 1e-05,
+    "nucleolus_tightness_aud": 1.0000000000000001e-07,
+    "physical_resolve_count": 0,
+    "physical_source_sha256": "471fd8bd5b210af883ab9b3cad934afe06317f0eb85bc450905ea705edf5efda",
+    "protected_file_sha256": {
+      "comfair/artifacts/forecasting/f0.runtime.json": "ce5ee059bc64f1a5b50378ef9a6d4dc3584b16c734dd17f05733e96211ebaffe",
+      "comfair/artifacts/forecasting/f0_baselines.json": "9b3f362bfbe35db2359288efec1b0a2c419c86d0fd8ac0828007889f370f030a",
+      "comfair/artifacts/forecasting/f0_data_audit.json": "3f1c541bec0d799284dbc8b069bbb2e79635cfebceb7aca44d181ae2597719e5",
+      "comfair/artifacts/forecasting/f0_predictions.csv": "35fa945bb3e1ebfb17948169da966ba3a253f1552ac5aac06c2f04f1ad857a9f",
+      "comfair/artifacts/forecasting/f1.runtime.json": "cb46fd5ddf5b5552ecaf20d236e5362adc3e82c362f593f61d8ec3e4e3906f1b",
+      "comfair/artifacts/forecasting/f1_champions.json": "78f77a7650b0a93c18793337dc91f4bf97aca49553b0b48c0a82225adf7dcf5c",
+      "comfair/artifacts/forecasting/f1_leaderboard.json": "05ea271c1f0cbcbcbc800971224fd2fa26919547852de1e1e8c9f4e805976743",
+      "comfair/artifacts/forecasting/f1_test_predictions.csv": "b8291eaa5d3d13ed6ee182f81acde4b48b21e077daaa3b50bac3b120c31d95ca",
+      "comfair/artifacts/forecasting/f1_test_results.json": "de0ced800ea3c178941da5a70e97efd50b6e491fe8727a2f8e23f0a263a81559",
+      "comfair/artifacts/m3_baselines.json": "767c7c1538768d8db7840194597401bc133fd8ae5c23da3d497754d7cd8997aa",
+      "comfair/artifacts/m3_baselines.runtime.json": "1437e5feec44bff889d0d2c48620572a66e165b425a2d582ae180baa107f0a1c",
+      "comfair/artifacts/m4_market.json": "c8f3e274a9a7928926e80a93d33b68606b8e44fd568bc90fffea56d97c4bf54a",
+      "comfair/artifacts/m4_market.runtime.json": "054df8fa119449641dec92ec0004c3b14793f6f7eb8aa1c0d30ce77d78269ae1",
+      "comfair/artifacts/m5.runtime.json": "6cca5ee2995633e6a0f0b151c9d284f70652dbbc6490c76c892fd6435108160f",
+      "comfair/artifacts/m5_coalitions.json": "cca30380f74cb0579e3024b401095779ae88bee7dee39f41554944810156bbb8",
+      "comfair/artifacts/m5_core.json": "985f155b46c170dc1069790cd5bdd7dfc6b6678f4214089063692cb72193a5ee",
+      "comfair/artifacts/m6.runtime.json": "cf6472fb403c5044a78c8de5bd2055a18c58eae0da36203ce3fb8e2090229b30",
+      "comfair/artifacts/m6_repair.json": "95eaf66746d6baa636145acadd702d11d5d4874a40b42b8eae766ed6deefa749",
+      "comfair/artifacts/m6_repair_curve.json": "15c38a3325ce4196035477a2aff5743ab05992744eb65e6598260aac3ab03aed",
+      "comfair/config/assumptions.yaml": "311c91ca732e5715894b1d3ec2efcaf85af601d296aac547da7145c8b81ef759",
+      "comfair/forecasting/README.md": "fa74b1353748c5d93baf198ac2bd0112dd92c35f4aab9eefd81fb7a868eb6a96",
+      "comfair/forecasting/__init__.py": "dc6470746697b11d9f08091c42ce1666420385e300f4fb36a3460aa20081cbc7",
+      "comfair/forecasting/baselines.py": "104a50402e197a233424ddc6aed4f045083b33d241e4aad496ebd3fa7b2448bb",
+      "comfair/forecasting/benchmark.py": "2d84b2d0f2eda7563dd5e2d7f93513ca061b4ff0424580d1ae42129474994440",
+      "comfair/forecasting/data.py": "0ccfc68dbf0ff88cd57860b62236421eda9316025328eac0aa137bf609f02d69",
+      "comfair/forecasting/features.py": "5f0e268cd379233d823002d116c59f2c2703279c1c154918859f96141ddf3b7e",
+      "comfair/forecasting/metrics.py": "f13fa339f6cb575e038464649dda32a111d10ff44e8c5f06bf51ddc04e714c11",
+      "comfair/forecasting/model_benchmark.py": "0370994a6d2271ddf40700c7b353b1b405aa6e0ed11957adfce84231aff188c1",
+      "comfair/forecasting/models.py": "ff4a323362e2677a9ff8e079b696c9240e96ab0ead2e1cdd871f847076412d75",
+      "comfair/forecasting/schemas.py": "a736d736a8b9bb9460e15585171a597aa361900e6e3292fc7abf20730f858464",
+      "comfair/forecasting/selection.py": "607c5e5e6d2a36882bf83b037aad3e20227bd684bbf095961f5f8d05f1dd93f9",
+      "comfair/forecasting/splits.py": "0720addd042d2e180d3d3aaa65217ac7a377465afcce6687ddd185e698277a46",
+      "comfair/forecasting/training.py": "cf0c5fc6c3b323bedc3965a186de2ebabb2902ac6bf1561e4b1f0a454f88ca2e",
+      "comfair/game/README.md": "db9a8c3b6eec2cdd3dccc64ef1e71cf83181504f1d6a348a81f58e0901512340",
+      "comfair/game/__init__.py": "a40572a9b058ce72cb5211f36167ab9aaabd774681f45adfa7db67896cda0c11",
+      "comfair/game/checkpoint.py": "9d3717c3319e2adb24f09977a6d31db4f0c116805c56739ec63c93194d3891c9",
+      "comfair/game/coalitions.py": "9c65c7b29f7b30ca091542c035229d5a6759918ad9ee0c66ab2569f7ec348ae7",
+      "comfair/game/engine.py": "084331a5d2ffbcff0a7144991ec9b6ee4231b4c5ad2df47dd9292a2a19886b2d",
+      "comfair/game/provenance.py": "2db641de8ed92c055c375fefda019708630922f93384728c47cf399bd206268c",
+      "comfair/game/results.py": "fbd5d56d49d04aba4109cf95ebf9fa382c1e4265e92c09d974cfb71517035fec",
+      "comfair/game/run_game.py": "ea21b8907af9fe49d9535ed487c63b8a821ccb8ffa37f47e4b323a9a569bdc02",
+      "comfair/game/stability.py": "bd0e94fb9012c5d37f73f20909e0d781eecf25d6dbf57c56c553f3ca6d86e660",
+      "comfair/market/README.md": "590672552553cbb4710cf8b3642f59d9f96244154fc01665d933169f6e4a142e",
+      "comfair/market/__init__.py": "b5541e7a0d5209268dffcdbe5d832fdf06c18a191777e0b153d312795861c91b",
+      "comfair/market/matching.py": "1962ccc41042b507c238707a9a63afd88bcacfb364039e40cacba1dee8205a2e",
+      "comfair/market/pricing.py": "da5766965f089fb9fa08a3e68d086dd02b5994baa296990d9d1a8f3a0ff97384",
+      "comfair/market/results.py": "081214af155196b4470fe3ee0f34fd21876498d92206ba74a711e438f4b46a69",
+      "comfair/market/run_market.py": "529ef6490650b870849344e2678108d7d78369641bc1df30c0b5f5361f272a71",
+      "comfair/market/settlement.py": "1db3e1e49476de756d24685321002e0d9c32489f99ac27b3d8c4756fcfcc45c9",
+      "comfair/physical/README.md": "49f02193ce4db8810c47de2d082b469fcbb6ddfa211620d85d945eaa1d40fe75",
+      "comfair/physical/__init__.py": "93aab65cefa1aeb2f956a94283302c0573e19a378d183b4845302b505ed42e9c",
+      "comfair/physical/config.py": "262bc1d5ac960f29ba70adda5e37c1e6f49f3c2f2e0e2f212e1b2c77421e0945",
+      "comfair/physical/model.py": "e9087cd74117eaddc6f2e7e54f276267eb2a69a3b24dee947f249da334e20ddf",
+      "comfair/physical/pv.py": "bd5c42296517f3b7118fe9c9af8fc2d5a83df1eb0be44a0479c0f23d0edf760d",
+      "comfair/physical/results.py": "81b97541b1444858a17983ab1a96d69a169ee17626b6e8df0e05af0ae49004a2",
+      "comfair/physical/run_baselines.py": "60a826aa1d1edb9fc5680849dfbaee7ec99347362165d015b52f2804172054f3",
+      "comfair/physical/solver.py": "b979cf280ac21d897d2321e39191591d003a8dfe027cc08f02ac33ca083e2ad7",
+      "comfair/repair/README.md": "562328cb30b1d1bbc1d4fa1f8e4c278c7cadc70437cb32bab2ad849c45541f1a",
+      "comfair/repair/__init__.py": "5cc4dc52908b055ff1e630a3d8bef2ed0e5278f093a3ca8d92a671afc64c80d8",
+      "comfair/repair/audit.py": "9a85e725ce1e5764880b0b9a4874b504e8880beb27b07815ce8b627f444f3335",
+      "comfair/repair/coalition.py": "3ba0e9d4524727abc1f6a4347876e578eb900458fe7e2d94fcd72cfef58c559f",
+      "comfair/repair/curve.py": "1b147bacefed7539aa2bc3b7f8b64e7df7174c7b121022d6206002e322ebd7af",
+      "comfair/repair/individual.py": "7a33d0b501d360e199b47c3f216919896bfff60e98907a0ef9c02885450cc768",
+      "comfair/repair/model.py": "c8b7417ea421349c0d9fd66d32503738f7aa038a9d45909c1fac8baecb3a6eef",
+      "comfair/repair/provenance.py": "7ef97810add9fe0807c1bd90b99d017d2852e210f2fc3357a71016298eb7a757",
+      "comfair/repair/results.py": "6d2d030d98fbe9b2eb50461cb4b5e784b0404442ef1bda4ba89aa536bf3ccc6e",
+      "comfair/repair/run_repair.py": "54a81764322b48ab41aacdaf174c646ac7b73ba0e83171c83ed895e227be667e",
+      "reader/ComErgy Benchmark Dataset 2026.xlsx": "c559bd7dc946b2f0c01c8cc96beea75c783f3b48bdd7fe6da855b2ef01f75370",
+      "tests/test_forecasting.py": "b51ffbd3916a8dd6009b12c5b095e4f9c679342caf813828dd9599b607b6c29e",
+      "tests/test_forecasting_models.py": "b9d2da8086e1e34ebbe7a855da3481f091e675580e4cd327a787ba168cd3f948",
+      "tests/test_game.py": "ba55a8fb832fe8d1a2fa81339ad4f90d92dcd2830e456ed7768968219b989562",
+      "tests/test_market.py": "f65b657f470110305f396c5acf55dda9ba035c0773d99f2ba9ce574821110bce",
+      "tests/test_physical.py": "fc6c0ceedc1e9f34695a2e4e91488b03bf1b204d77dd20d6c6e8950d9ba4e52d",
+      "tests/test_repair.py": "814254e3186b122c56ad480e3536900a0a7690d15cd4dae4cafedbea8eb26a86"
+    },
+    "python_version": "3.11.16",
+    "rank_method": "exact rational incidence elimination",
+    "registry_sha256": "311c91ca732e5715894b1d3ec2efcaf85af601d296aac547da7145c8b81ef759",
+    "repair_source_sha256": "50c1399e53e0349ac8f521198ad71f8ddc26e1f5d8277ab9533f65b248c71cfa",
+    "share_tolerance": 2.3557208762052767e-09,
+    "solver": {
+      "name": "highs",
+      "options": {
+        "dual_feasibility_tolerance": 1e-08,
+        "primal_feasibility_tolerance": 1e-08,
+        "random_seed": 0,
+        "solver": "simplex",
+        "threads": 1
+      },
+      "pyomo_version": "6.10.1",
+      "version": "1.15.1"
+    },
+    "starting_git_commit": "8442dc9",
+    "tolerance_source": "unchanged M3 parameters.cost_tolerance_aud",
+    "upstream_artifact_hashes": {
+      "forecasting/f0_baselines.json": "9b3f362bfbe35db2359288efec1b0a2c419c86d0fd8ac0828007889f370f030a",
+      "forecasting/f0_data_audit.json": "3f1c541bec0d799284dbc8b069bbb2e79635cfebceb7aca44d181ae2597719e5",
+      "forecasting/f0_predictions.csv": "35fa945bb3e1ebfb17948169da966ba3a253f1552ac5aac06c2f04f1ad857a9f",
+      "forecasting/f1_champions.json": "78f77a7650b0a93c18793337dc91f4bf97aca49553b0b48c0a82225adf7dcf5c",
+      "forecasting/f1_leaderboard.json": "05ea271c1f0cbcbcbc800971224fd2fa26919547852de1e1e8c9f4e805976743",
+      "forecasting/f1_test_results.json": "de0ced800ea3c178941da5a70e97efd50b6e491fe8727a2f8e23f0a263a81559",
+      "m3_baselines.json": "767c7c1538768d8db7840194597401bc133fd8ae5c23da3d497754d7cd8997aa",
+      "m4_market.json": "c8f3e274a9a7928926e80a93d33b68606b8e44fd568bc90fffea56d97c4bf54a",
+      "m5_coalitions.json": "cca30380f74cb0579e3024b401095779ae88bee7dee39f41554944810156bbb8",
+      "m5_core.json": "985f155b46c170dc1069790cd5bdd7dfc6b6678f4214089063692cb72193a5ee",
+      "m6_repair.json": "95eaf66746d6baa636145acadd702d11d5d4874a40b42b8eae766ed6deefa749",
+      "m6_repair_curve.json": "15c38a3325ce4196035477a2aff5743ab05992744eb65e6598260aac3ab03aed"
+    },
+    "workbook_sha256": "c559bd7dc946b2f0c01c8cc96beea75c783f3b48bdd7fe6da855b2ef01f75370"
+  },
+  "schema_version": 1,
+  "statement": "default != universally fairest policy"
+}

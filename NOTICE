@@ -21,3 +21,12 @@ it does not convey institutional endorsement or trademark permissions.
 The ComErgy benchmark input workbook and source CSVs are not distributed
 with this code-only repository. Rights to those files remain with their
 respective owners. Third-party Python dependencies retain their own licences.
+
+Coalition research evidence
+
+The coalitions/ module also includes derived annual research artifacts, a
+benchmark summary with scenario household metadata, and generated figures.
+Their inclusion does not grant rights in the underlying third-party data.
+Redistribution of those derived materials requires confirmation of the
+applicable competition/dataset terms. No additional ownership or dataset
+licence is asserted here. See coalitions/README.md.

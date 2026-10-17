@@ -1,0 +1,7 @@
+# Optional bounded physical/market smoke test, not a complete regeneration environment.
+# HiGHS/Pyomo versions match the canonical annual solver provenance.
+numpy==2.4.6
+PyYAML==6.0.3
+openpyxl==3.1.5
+pyomo==6.10.1
+highspy==1.15.1

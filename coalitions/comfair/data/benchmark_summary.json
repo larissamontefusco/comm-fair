@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "location": "Sydney, NSW, Australia",
+    "price_unit": "AUD",
+    "daily_connection_fee": 1.0,
+    "daily_connection_fee_unit": "AUD",
+    "workbook": "ComErgy Benchmark Dataset 2026.xlsx",
+    "workbook_sha256": "c559bd7dc946b2f0c01c8cc96beea75c783f3b48bdd7fe6da855b2ef01f75370",
+    "source_notes": {
+      "A1": "Hourly Electricity Demand (kW or kWh) -- 01 Jan-31 Dec",
+      "J1": "Electricity price c/kWh",
+      "K1": "Feedin Tariff c/kWh",
+      "Q3": "Australian Dollar (~ 0.7 USD)",
+      "P19": "Battery: All Battery systems are assumed as Fox ESS EQ4800 modular lithium iron phosphate battery system providing 4.66kWh of capacity per module.",
+      "P20": "Solar PV: All solar PV modules are 440W High Efficiency LG NeON\u00ae model: https://www.lg.com/us/business/neon-2/lg-lg440n2w-e6?srsltid=AfmBOorE4RDMGcTvAwWqOB9AEF8s9lnseQwIkhGhti8Bug9WHdVXw-a4",
+      "P22": "Note: When you need other data, you have the liberty to use reliable external data beyond the provided ones."
+    },
+    "tariff_unit_status": "unresolved: c/kWh headers versus Australian Dollar note; raw values unchanged",
+    "period_order": "row 3 + t for t=0..8759; hourly Jan 1-Dec 31; year/timezone/DST unspecified",
+    "capacity_conversion": "none; module counts only",
+    "sheet": "ComErgy Benchmark Dataset 2026"
+  },
+  "dimensions": {
+    "member_count": 9,
+    "period_count": 8760
+  },
+  "demand": {
+    "annual_sum_raw": 72566.1339999997,
+    "unit_note": "Hourly Electricity Demand (kW or kWh) -- 01 Jan-31 Dec",
+    "annual_demand_per_member": {
+      "1": 5315.943000000009,
+      "2": 4400.81999999999,
+      "3": 9260.088999999836,
+      "4": 7130.82100000002,
+      "5": 6920.581000000009,
+      "6": 7436.088000000002,
+      "7": 10747.599000000006,
+      "8": 10463.174000000008,
+      "9": 10891.018999999824
+    },
+    "aggregate_peak_raw": 28.023000000000003,
+    "average_hourly_raw": 8.283805251141517
+  },
+  "pv": {
+    "owners": [
+      1,
+      3,
+      4,
+      6,
+      8,
+      9
+    ],
+    "total_modules": 112,
+    "module_distribution": {
+      "1": 15,
+      "3": 30,
+      "4": 22,
+      "6": 20,
+      "8": 15,
+      "9": 10
+    }
+  },
+  "bess": {
+    "owners": [
+      2,
+      3,
+      6,
+      7,
+      8
+    ],
+    "total_modules": 14,
+    "module_distribution": {
+      "2": 2,
+      "3": 3,
+      "6": 2,
+      "7": 4,
+      "8": 3
+    }
+  },
+  "tariffs": {
+    "grid_import_raw": {
+      "min": 0.15,
+      "max": 0.55,
+      "mean": 0.2661301369863014,
+      "constant": false,
+      "unique_values": [
+        0.15,
+        0.25,
+        0.55
+      ]
+    },
+    "feedin_raw": {
+      "min": 0.05,
+      "max": 0.05,
+      "mean": 0.04999999999999999,
+      "constant": true,
+      "unique_values": [
+        0.05
+      ]
+    }
+  },
+  "weather": {
+    "temperature_c": {
+      "min": -0.4,
+      "max": 38.3,
+      "mean": 16.449817351598178
+    },
+    "ghi_w_per_m2": {
+      "min": 0.0,
+      "max": 1000.0,
+      "mean": 215.98013698630137
+    }
+  },
+  "members": {
+    "1": {
+      "household_type": "Couple, no children. Both adults working full-time.",
+      "occupant_count": 2,
+      "annual_income_aud": 200000.0,
+      "pv_modules": 15,
+      "battery_modules": 0
+    },
+    "2": {
+      "household_type": "Couple, no children. Both adults retired.",
+      "occupant_count": 2,
+      "annual_income_aud": 80000.0,
+      "pv_modules": 0,
+      "battery_modules": 2
+    },
+    "3": {
+      "household_type": "Couple with children. One adult employed full-time, one adult stay-at-home parent.",
+      "occupant_count": 5,
+      "annual_income_aud": 160000.0,
+      "pv_modules": 30,
+      "battery_modules": 3
+    },
+    "4": {
+      "household_type": "Couple with children. Both adults employed full-time.",
+      "occupant_count": 4,
+      "annual_income_aud": 240000.0,
+      "pv_modules": 22,
+      "battery_modules": 0
+    },
+    "5": {
+      "household_type": "Single-parent family with children. One adult part-time employed.",
+      "occupant_count": 3,
+      "annual_income_aud": 70000.0,
+      "pv_modules": 0,
+      "battery_modules": 0
+    },
+    "6": {
+      "household_type": "Couple with children. One adult full-time employed, one adult part-time employed.",
+      "occupant_count": 5,
+      "annual_income_aud": 120000.0,
+      "pv_modules": 20,
+      "battery_modules": 2
+    },
+    "7": {
+      "household_type": "Multi-generation home. Two adults retired, two adults full-time employed.",
+      "occupant_count": 7,
+      "annual_income_aud": 285000.0,
+      "pv_modules": 0,
+      "battery_modules": 4
+    },
+    "8": {
+      "household_type": "Couple with children. One adult full-time employed, one adult part-time employed.",
+      "occupant_count": 6,
+      "annual_income_aud": 145000.0,
+      "pv_modules": 15,
+      "battery_modules": 3
+    },
+    "9": {
+      "household_type": "Share house. All\u00a0adults\u00a0full-time students, all part-time/casual\u00a0employed.",
+      "occupant_count": 7,
+      "annual_income_aud": 190000.0,
+      "pv_modules": 10,
+      "battery_modules": 0
+    }
+  }
+}
