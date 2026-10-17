@@ -11,7 +11,7 @@ from time import perf_counter
 import numpy as np
 
 from .baselines import MODELS, forecast
-from .data import BACKEND, History, load_forecasting_data
+from .data import BACKEND, History, load_forecasting_data, resolve_source_record
 from .metrics import aggregate_metrics
 from .models import candidates, fit_candidate, LIBRARIES
 from .schemas import MEMBERS, TARGETS, canonical_json
@@ -44,7 +44,7 @@ def verify_inputs():
             raise ValueError(f"F0 reference changed after baseline evaluation: {name}")
     audit = json.loads((F0 / "f0_data_audit.json").read_text())
     for source in audit["sources"].values():
-        if digest(BACKEND / Path(source["path"]).relative_to("backend")) != source["sha256"]:
+        if digest(resolve_source_record(source)) != source["sha256"]:
             raise ValueError(f"F0 source changed: {source['path']}")
     return audit
 
@@ -118,7 +118,7 @@ def run_f1(output_dir, verify_against=None):
         source.update(path.name.encode()+b'\0'+path.read_bytes())
     provenance = {'sources': audit['sources'], 'f0_checkpoint': '2a9a935',
                   'forecasting_source_sha256': source.hexdigest(),
-                  'requirements_sha256': digest(BACKEND/'requirements.txt'),
+                  'requirements_sha256': digest(BACKEND.parent/'requirements.txt'),
                   'upstream_artifact_hashes': EXPECTED, 'protected_artifact_hashes': protected,
                   'python': platform.python_version(),
                   'libraries': {name: version(name) for name in sorted(set(LIBRARIES.values()) | {'numpy','scipy','pandas','threadpoolctl'})}}

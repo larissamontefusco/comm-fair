@@ -9,6 +9,10 @@ x-runtime: &runtime
     - ./coalitions/reader:/app/coalitions/reader:ro
     - ./coalitions/inputs:/app/coalitions/inputs:ro
 
+x-forecast-data: &forecast-data
+  COMFAIR_LOAD_CSV: /app/examples/data/comergy/com_energy_consumption.csv
+  COMFAIR_PV_CSV: /app/examples/data/comergy/com_energy_production.csv
+
 services:
   app:
     <<: *runtime
@@ -59,6 +63,7 @@ services:
 
   forecast-demo-champion:
     <<: *runtime
+    environment: *forecast-data
     working_dir: /app/forecast
     command:
       - python
@@ -73,6 +78,7 @@ services:
 
   forecast-demo-naive24:
     <<: *runtime
+    environment: *forecast-data
     working_dir: /app/forecast
     command:
       - python
@@ -123,6 +129,7 @@ services:
 
   forecast-custom:
     <<: *runtime
+    environment: *forecast-data
     working_dir: /app/forecast
     command:
       - python
@@ -133,6 +140,7 @@ services:
 
   forecast-f0:
     <<: *runtime
+    environment: *forecast-data
     working_dir: /app/forecast
     command:
       - python
@@ -143,6 +151,7 @@ services:
 
   forecast-f1:
     <<: *runtime
+    environment: *forecast-data
     working_dir: /app/forecast
     command:
       - python
@@ -153,5 +162,6 @@ services:
 
   forecast-tests:
     <<: *runtime
+    environment: *forecast-data
     working_dir: /app/forecast
     command: ["python", "-m", "pytest", "tests", "-q"]

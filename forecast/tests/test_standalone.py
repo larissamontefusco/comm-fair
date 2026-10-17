@@ -4,10 +4,21 @@ import numpy as np
 import pytest
 
 from comfair.forecasting.configurable_engine import DEFAULT_SPLITS, parse_and_validate_splits
-from comfair.forecasting.data import load_forecasting_data
+from comfair.forecasting.data import load_forecasting_csv_data
 from comfair.forecasting.baselines import forecast
 from comfair.forecasting.models import Candidate
 from comfair.forecasting.schemas import MEMBERS
+
+
+ROOT = Path(__file__).resolve().parents[2]
+COMERGY = ROOT / "examples" / "data" / "comergy"
+
+
+def load_test_data():
+    return load_forecasting_csv_data(
+        COMERGY / "com_energy_consumption.csv",
+        COMERGY / "com_energy_production.csv",
+    )
 
 
 def test_default_splits():
@@ -26,14 +37,14 @@ def test_champion_configuration_identity():
     assert c.model_id == "ridge_global_7b21fa54198f"
 
 def test_dataset_and_zero_pv():
-    dataset, audit = load_forecasting_data()
+    dataset, audit = load_test_data()
     assert audit["status"] == "PASS"
     assert dataset.zero_pv_members == (2, 5, 7)
     assert dataset.load_kw.shape == (8760, 9)
     assert np.all(dataset.pv_available_kw[:, [1, 4, 6]] == 0)
 
 def test_forecast_grid_and_history():
-    dataset, _ = load_forecasting_data()
+    dataset, _ = load_test_data()
     result = forecast(dataset.history("pv_available_kw", 7008),
                       target="pv_available_kw", model_id="naive_24",
                       zero_pv_members=dataset.zero_pv_members)

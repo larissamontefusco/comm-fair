@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 from hashlib import sha256
 from pathlib import Path
 import csv
+import os
 
 import numpy as np
 
@@ -24,6 +25,16 @@ def file_record(path):
     path = Path(path)
     return {'path': 'backend/' + str(path.relative_to(BACKEND)),
             'sha256': sha256(path.read_bytes()).hexdigest()}
+
+
+def resolve_source_record(record):
+    """Resolve canonical ``backend/...`` and standalone absolute source paths."""
+    path = Path(record['path'])
+    if path.is_absolute():
+        return path
+    if path.parts and path.parts[0] == 'backend':
+        return BACKEND.joinpath(*path.parts[1:])
+    return BACKEND / path
 
 
 @dataclass
@@ -117,6 +128,7 @@ def load_forecasting_csv_data(load_path, pv_path):
             'first': load_stamps[0], 'last': load_stamps[-1],
             'resolution_hours': 1,
         },
+        'split_contract': split_metadata(),
         'alignment_checks': {'load_pv_timestamps_identical': True},
         'warnings': [
             'CSV values are used directly and are not checked against the private workbook.',
@@ -132,6 +144,13 @@ def load_forecasting_csv_data(load_path, pv_path):
 
 
 def load_forecasting_data():
+    example_load = os.environ.get('COMFAIR_LOAD_CSV')
+    example_pv = os.environ.get('COMFAIR_PV_CSV')
+    if bool(example_load) != bool(example_pv):
+        raise ValueError('Set both COMFAIR_LOAD_CSV and COMFAIR_PV_CSV, or neither')
+    if example_load:
+        return load_forecasting_csv_data(example_load, example_pv)
+
     from comfair.data import load_benchmark
     from comfair.physical.config import load_baseline
     from comfair.physical.pv import pv_availability

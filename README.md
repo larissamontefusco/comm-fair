@@ -154,8 +154,11 @@ python3 -m venv .venv-forecast
 . .venv-forecast/bin/activate
 python -m pip install -r requirements.txt
 cd forecast
-# Supply the authorized workbook and two CSVs before the next commands.
-python -m scripts.demo --origin-t 7008 --model champion --output-dir outputs/demo
+# Use the included official competition CSV dataset.
+python -m scripts.demo --origin-t 7008 --model champion \
+  --load-csv ../examples/data/comergy/com_energy_consumption.csv \
+  --pv-csv ../examples/data/comergy/com_energy_production.csv \
+  --output-dir ../outputs/examples/forecast-champion
 python -m pytest tests -q
 ```
 
@@ -165,18 +168,17 @@ README in this checkout; these are the existing module documents. Paths in the
 setup guide are relative to `forecast/`, not the repository root. Historical
 `backend/` examples in the methodology describe the original platform.
 
-Inputs are not distributed. Forecasting dataset tests and inference therefore
-require authorized external inputs; exhaustive forecasting experiments were
-not rerun for this release review. The root dependency list is forecasting-only.
-Custom split training is available as `python -m scripts.train_custom` from
-`forecast/`; see its `--help` before running potentially expensive experiments.
+The official competition CSVs are distributed under `examples/data/comergy/`.
+The private workbook is still required only for exact canonical workbook-based
+regeneration. The root dependency list is forecasting-only. Custom split
+training is available as `python -m scripts.train_custom` from `forecast/`;
+see its `--help` before running potentially expensive experiments.
 
 ### Forecasting algorithms in Docker
 
-First place the authorized workbook and CSVs at the paths documented in
-[Dataset setup](forecast/docs/DATA_SETUP.md). They are mounted read-only by
-Compose and are never copied into the image. Then run commands from the
-dedicated Compose services:
+The Compose forecasting services are configured to use the included ComErgy
+CSVs, so they do not require the private workbook. Run them from the repository
+root:
 
 ```bash
 # 24-hour Ridge champion forecast.
@@ -195,7 +197,7 @@ docker compose run --rm forecast-f0
 # outputs/forecast/f0 and mounts it at the path expected by F1.
 docker compose run --rm forecast-f1
 
-# Forecasting tests (dataset-dependent tests require all three input files).
+# Forecasting tests against the included ComErgy CSVs.
 docker compose run --rm forecast-tests
 ```
 
@@ -223,11 +225,11 @@ docker compose run --rm forecast-custom \
 | Example forecast: Ridge champion | See `examples/README.md` | Included consumption/production CSVs | Fully runnable; no workbook needed |
 | Example forecast: naive-24 | See `examples/README.md` | Included consumption/production CSVs | Fully runnable; no workbook needed |
 | Example coalition solve | `python examples/run_coalition_csv.py` | Included consumption/production/price CSVs | Fully runnable; assumes no batteries |
-| Forecast demo: Ridge champion | `cd forecast && python -m scripts.demo --model champion` | Workbook + consumption/PV CSVs | Runnable with authorized inputs |
-| Forecast demo: naive-24 | `cd forecast && python -m scripts.demo --model naive_24` | Same three files | Runnable with authorized inputs |
-| Custom forecasting experiment | `cd forecast && python -m scripts.train_custom` | Same three files | Runnable with authorized inputs |
-| F0 forecasting baselines | `cd forecast && python -m comfair.forecasting.benchmark --output-dir PATH` | Same three files | Runnable with authorized inputs |
-| F1 forecasting benchmark | `cd forecast && python -m comfair.forecasting.model_benchmark --output-dir PATH` | Same inputs plus F0 at its expected path | Runnable with prerequisites |
+| Forecast demo: Ridge champion | `docker compose run --rm forecast-demo-champion` | Included ComErgy consumption/PV CSVs | Fully runnable |
+| Forecast demo: naive-24 | `docker compose run --rm forecast-demo-naive24` | Included ComErgy consumption/PV CSVs | Fully runnable |
+| Custom forecasting experiment | `docker compose run --rm forecast-custom` | Included ComErgy consumption/PV CSVs | Fully runnable; potentially slower |
+| F0 forecasting baselines | `docker compose run --rm forecast-f0` | Included ComErgy consumption/PV CSVs | Fully runnable |
+| F1 forecasting benchmark | `docker compose run --rm forecast-f1` | Included CSVs plus F0 at its expected path | Run F0 first; computationally expensive |
 | Full annual physical B0/B1 | `PYTHONPATH=coalitions python -m comfair.physical.run_baselines --output PATH --workbook PATH` | Authorized canonical workbook | Source available; exact regeneration environment required |
 | Full annual M4 market | `PYTHONPATH=coalitions python -m comfair.market.run_market --output PATH --baseline PATH` | Workbook and matching M3 baseline | Source available; exact provenance required |
 | Repair/governance regeneration | — | Missing historical intermediates/source manifest | Not runnable; published artifacts remain verifiable |

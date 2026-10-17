@@ -11,7 +11,7 @@ import openpyxl
 import yaml
 
 from .baselines import MODELS, forecast
-from .data import BACKEND, load_forecasting_data
+from .data import load_forecasting_data, resolve_source_record
 from .metrics import EPSILON_KW, aggregate_metrics
 from .schemas import MEMBERS, TARGETS, canonical_json
 from .splits import SPLITS, split_metadata
@@ -99,7 +99,7 @@ def run_f0(output_dir):
         if sha256(path.read_bytes()).hexdigest()!=protected_hashes[path.name]:
             raise ValueError('Protected M3/M4 artifact changed')
     for source in audit['sources'].values():
-        path = BACKEND / Path(source['path']).relative_to('backend')
+        path = resolve_source_record(source)
         if sha256(path.read_bytes()).hexdigest()!=source['sha256']:
             raise ValueError('Source changed during F0 run')
     hashes = {p.name:sha256(p.read_bytes()).hexdigest() for p in (audit_path,summary_path,prediction_path)}
