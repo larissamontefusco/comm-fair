@@ -44,7 +44,7 @@ def build_artifacts(evaluator, records):
     counts = Counter(record.cost_source for record in records)
     shared = {
         "schema_version": 2,
-        "milestone": "M5-bilevel",
+        "milestone": "M5-coalition-game",
         "currency": records[-1].currency,
         "member_ids": list(member_ids),
         "community_model": evaluator.community_model,
@@ -122,7 +122,7 @@ def run_game(
                     "runtime": {
                         key: value
                         for key, value in runtime.items()
-                        if key != "solve_seconds_by_mask"
+                        if key != "processing_seconds_by_mask"
                     },
                 }
             )

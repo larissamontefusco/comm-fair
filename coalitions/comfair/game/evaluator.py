@@ -1,7 +1,7 @@
 """Small evaluator interface for optional, explicitly supplied calculations.
 
 The standalone site serves the baseline and cooperative-pool artifacts. It deliberately
-does not bundle the historical forecasting and bi-level optimisation platform.
+does not bundle the private energy-management execution pipeline.
 """
 
 from __future__ import annotations
@@ -33,7 +33,7 @@ class CoalitionEvaluation:
     solver: Mapping
     pricing_provenance: Mapping = field(default_factory=dict)
     forecast_provenance: Mapping = field(default_factory=dict)
-    evaluation_stage: str = "precomputed"
+    evaluation_stage: str = "external_evaluator"
     ec_manager: Mapping = field(default_factory=dict)
     diagnostics: Mapping = field(default_factory=dict)
     currency: str = "AUD"
@@ -60,6 +60,8 @@ class CoalitionEvaluation:
             raise ValueError("Coalition total does not equal final member costs")
         if self.solver.get("status") != "ok":
             raise ValueError("Coalition evaluation did not report solver status=ok")
+        if not isinstance(self.evaluation_stage, str) or not self.evaluation_stage.strip():
+            raise ValueError("Missing evaluation source label")
 
     def to_dict(self) -> dict:
         return _jsonable(asdict(self))

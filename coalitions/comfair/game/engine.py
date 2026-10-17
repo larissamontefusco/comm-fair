@@ -27,6 +27,7 @@ def game_context(evaluator, standalone, provenance=None):
 
 def _record_from_evaluation(mask, evaluation, standalone, key, member_ids):
     members = mask_to_members(mask, member_ids)
+    evaluation.validate()
     if evaluation.members != members:
         raise ValueError("Solved coalition/member mapping mismatch")
     total = float(sum(standalone[member] for member in members))
@@ -81,7 +82,7 @@ def _empty_record(key, community_model):
         physical_validation={"not_applicable": "empty coalition; no solve"},
         provenance_sha256=key,
         community_model=community_model,
-        evaluation_stage=community_model,
+        evaluation_stage="not_applicable",
     )
 
 
@@ -112,10 +113,10 @@ def enumerate_game(
     jobs=1,
     progress=None,
 ):
-    """Evaluate all coalitions serially with standalone outside options.
+    """Evaluate all coalitions serially using an explicitly supplied backend.
 
-    Nested solver parallelism is deliberately disabled until the serial legacy
-    path is deterministic. The empty coalition never calls the evaluator.
+    Parallel evaluation is not supported. The empty coalition never calls
+    the evaluator and no private optimisation backend is imported.
     """
     member_ids = member_universe(evaluator.member_ids)
     if evaluator.community_model not in {"baseline", "cooperative_pool"}:
@@ -127,6 +128,10 @@ def enumerate_game(
         member: evaluator.standalone_evaluation(member)
         for member in member_ids
     }
+    for member, evaluation in standalone_evaluations.items():
+        evaluation.validate()
+        if evaluation.members != (member,) or evaluation.community_model != "baseline":
+            raise ValueError("Standalone evaluation must use the requested member and baseline")
     standalone = {
         member: float(evaluation.total_final_member_cost)
         for member, evaluation in standalone_evaluations.items()
@@ -141,9 +146,9 @@ def enumerate_game(
     )
     started = perf_counter()
     runtime = {
-        "new_bilevel_solve_count": 0,
+        "new_coalition_record_count": 0,
         "checkpoint_reused_count": 0,
-        "solve_seconds_by_mask": {},
+        "processing_seconds_by_mask": {},
         "jobs": 1,
     }
     guard = (
@@ -161,8 +166,8 @@ def enumerate_game(
             if cache:
                 cache.save(record)
             if elapsed is not None:
-                runtime["new_bilevel_solve_count"] += 1
-                runtime["solve_seconds_by_mask"][str(record.mask)] = elapsed
+                runtime["new_coalition_record_count"] += 1
+                runtime["processing_seconds_by_mask"][str(record.mask)] = elapsed
             if progress:
                 progress(
                     len(records),
@@ -190,6 +195,8 @@ def enumerate_game(
             started_solve = perf_counter()
             try:
                 evaluation = evaluator.coalition_evaluation(members)
+                if evaluation.community_model != evaluator.community_model:
+                    raise ValueError("Coalition evaluator returned a different community model")
                 record = _record_from_evaluation(
                     mask, evaluation, standalone, key, member_ids
                 )
@@ -205,8 +212,8 @@ def enumerate_game(
 
     runtime.update(
         coalition_wall_seconds=perf_counter() - started,
-        summed_new_solve_seconds=sum(
-            runtime["solve_seconds_by_mask"].values()
+        summed_new_processing_seconds=sum(
+            runtime["processing_seconds_by_mask"].values()
         ),
         standalone_costs={str(k): v for k, v in standalone.items()},
     )

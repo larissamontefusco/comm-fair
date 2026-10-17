@@ -22,7 +22,7 @@ class CoalitionRecord:
     ec_manager: dict = field(default_factory=dict)
     pricing_provenance: dict = field(default_factory=dict)
     forecast_provenance: dict = field(default_factory=dict)
-    evaluation_stage: str = 'Household-2'
+    evaluation_stage: str = 'external_evaluator'
     currency: str = 'AUD'
 
     def validate(self, standalone, tolerance, member_ids=None):
@@ -44,6 +44,8 @@ class CoalitionRecord:
             'baseline_coalition' if self.community_model == 'baseline' else
             'cooperative_pool'
         )
+        if self.community_model not in {'baseline', 'cooperative_pool'}:
+            raise ValueError('Unsupported public coalition model')
         if self.cost_source != source:
             raise ValueError('Unexpected coalition cost source')
         if not expected and any(x != 0 for x in amounts):
@@ -63,14 +65,15 @@ class CoalitionRecord:
                 raise ValueError('Final member costs do not reconstruct C(S)')
             if self.solver.get('status') != 'ok':
                 raise ValueError('Coalition solve is not validated successful')
-            expected_stage = self.community_model
-            if self.evaluation_stage != expected_stage:
-                raise ValueError('Coalition cost came from the wrong bi-level stage')
-            if self.community_model != 'baseline':
-                if tuple(self.pricing_provenance.get('coalition_members', ())) != expected:
+            # Public evaluations need not use the private multi-stage pricing
+            # workflow. Preserve an informative source label, if supplied.
+            if not isinstance(self.evaluation_stage, str) or not self.evaluation_stage.strip():
+                raise ValueError('Missing evaluation source label')
+            # Pricing is optional for a physical cooperative pool. When a
+            # backend supplies coalition ownership, still verify it.
+            if 'coalition_members' in self.pricing_provenance:
+                if tuple(self.pricing_provenance['coalition_members']) != expected:
                     raise ValueError('Pricing provenance coalition mismatch')
-                if self.pricing_provenance.get('source') != 'pricing_model_v1.price_arrays':
-                    raise ValueError('Pricing provenance source mismatch')
         elif any((self.member_costs, self.ec_manager, self.pricing_provenance)):
             raise ValueError('Empty coalition cannot contain economic results')
 
@@ -81,6 +84,13 @@ class CoalitionRecord:
     def from_dict(cls, data):
         data = dict(data)
         data['members'] = tuple(data['members'])
+        # JSON object keys are strings; restore canonical integer member IDs
+        # so checkpoint resume returns the same record shape as a fresh run.
+        raw_costs = data.get('member_costs', {})
+        costs = {int(member): float(cost) for member, cost in raw_costs.items()}
+        if len(costs) != len(raw_costs):
+            raise ValueError('Duplicate member ID after checkpoint decoding')
+        data['member_costs'] = costs
         return cls(**data)
 
 
