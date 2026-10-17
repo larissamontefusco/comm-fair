@@ -1,13 +1,10 @@
 """Exact cooperative game and core/least-core certificate (M5)."""
 from .coalitions import mask_to_members, members_to_mask, member_universe
 from .evaluator import (
-    BilevelRunRequest,
     CoalitionCostEvaluator,
     CoalitionEvaluation,
-    LegacyBilevelCoalitionEvaluator,
 )
 from .results import CoalitionRecord, CoreCertificate
-from .stability import allocation_diagnostics, solve_least_core
 
 from .benchmark_context import BenchmarkContext, build_benchmark_context
 from .benchmark_results import (
@@ -25,8 +22,8 @@ from .precomputed import PrecomputedBenchmarkStore
 
 __all__ = [
     'mask_to_members', 'members_to_mask', 'member_universe',
-    'BilevelRunRequest', 'CoalitionCostEvaluator', 'CoalitionEvaluation',
-    'LegacyBilevelCoalitionEvaluator', 'CoalitionRecord', 'CoreCertificate',
+    'CoalitionCostEvaluator', 'CoalitionEvaluation',
+    'CoalitionRecord', 'CoreCertificate',
     'allocation_diagnostics', 'solve_least_core',
     'BenchmarkContext', 'build_benchmark_context',
     'BenchmarkEvaluationResponse', 'BenchmarkResultType', 'BenchmarkStatus',
@@ -38,6 +35,9 @@ __all__ = [
 
 
 def __getattr__(name: str):
+    if name in ('allocation_diagnostics', 'solve_least_core'):
+        from . import stability
+        return getattr(stability, name)
     if name in ('BatchPrecomputeConfig', 'BatchPrecomputeRunner', 'run_batch_precompute'):
         from . import batch_precompute
         return getattr(batch_precompute, name)

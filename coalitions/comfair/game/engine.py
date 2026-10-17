@@ -1,4 +1,4 @@
-"""Exact coalition enumeration using the legacy bi-level evaluator."""
+"""Exact coalition enumeration using an explicitly supplied evaluator."""
 
 from contextlib import nullcontext
 import math
@@ -32,11 +32,11 @@ def _record_from_evaluation(mask, evaluation, standalone, key, member_ids):
     total = float(sum(standalone[member] for member in members))
     coalition_cost = float(evaluation.total_final_member_cost)
     source = (
-        "c0_singleton"
+        "baseline_singleton"
         if len(members) == 1
-        else "c0_coalition"
-        if evaluation.community_model == "c0"
-        else "bilevel_household2"
+        else "baseline_coalition"
+        if evaluation.community_model == "baseline"
+        else "cooperative_pool"
     )
     diagnostics = dict(evaluation.diagnostics)
     diagnostics["optimal"] = True
@@ -81,7 +81,7 @@ def _empty_record(key, community_model):
         physical_validation={"not_applicable": "empty coalition; no solve"},
         provenance_sha256=key,
         community_model=community_model,
-        evaluation_stage="C0" if community_model == "c0" else "Household-2",
+        evaluation_stage=community_model,
     )
 
 
@@ -112,16 +112,16 @@ def enumerate_game(
     jobs=1,
     progress=None,
 ):
-    """Evaluate all coalitions serially with C0 outside options.
+    """Evaluate all coalitions serially with standalone outside options.
 
     Nested solver parallelism is deliberately disabled until the serial legacy
     path is deterministic. The empty coalition never calls the evaluator.
     """
     member_ids = member_universe(evaluator.member_ids)
-    if evaluator.community_model not in {"c0", "c2", "c3", "c4", "c5"}:
+    if evaluator.community_model not in {"baseline", "cooperative_pool"}:
         raise ValueError("Unsupported community model")
     if jobs != 1:
-        raise ValueError("Bi-level coalition enumeration currently requires jobs=1")
+        raise ValueError("Coalition enumeration currently requires jobs=1")
 
     standalone_evaluations = {
         member: evaluator.standalone_evaluation(member)
@@ -132,7 +132,7 @@ def enumerate_game(
         for member, evaluation in standalone_evaluations.items()
     }
     if any(not math.isfinite(value) for value in standalone.values()):
-        raise ValueError("Invalid standalone C0 costs")
+        raise ValueError("Invalid standalone baseline costs")
 
     context = game_context(evaluator, standalone, provenance)
     key = fingerprint(context)

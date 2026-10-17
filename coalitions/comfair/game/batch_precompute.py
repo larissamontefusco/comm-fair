@@ -19,7 +19,6 @@ from pathlib import Path
 import time
 from typing import Any, Callable, Mapping, Optional, Sequence
 
-from comfair.physical.config import canonical_json
 try:
     from .benchmark_context import BenchmarkContext, CANONICAL_BENCHMARK_MEMBERS, build_benchmark_context
     from .benchmark_results import (
@@ -29,7 +28,8 @@ try:
         StabilityStatus,
     )
     from .coalitions import mask_to_members, members_to_mask
-    from .evaluator import CoalitionCostEvaluator, LegacyBilevelCoalitionEvaluator
+    from .evaluator import CoalitionCostEvaluator
+    from .jsonutil import canonical_json
     from .precomputed import PrecomputedBenchmarkStore
     from .stability import solve_least_core
 except ImportError:
@@ -41,7 +41,8 @@ except ImportError:
         StabilityStatus,
     )
     from comfair.game.coalitions import mask_to_members, members_to_mask
-    from comfair.game.evaluator import CoalitionCostEvaluator, LegacyBilevelCoalitionEvaluator
+    from comfair.game.evaluator import CoalitionCostEvaluator
+    from comfair.game.jsonutil import canonical_json
     from comfair.game.precomputed import PrecomputedBenchmarkStore
     from comfair.game.stability import solve_least_core
 
@@ -56,7 +57,7 @@ DEFAULT_CHECKPOINT_DIR = Path(__file__).resolve().parent / "precomputed_checkpoi
 class BatchPrecomputeConfig:
     """Configuration for controlled offline/batch benchmark precomputation."""
 
-    community_model: str = "c2"
+    community_model: str = "cooperative_pool"
     forecast_origin_t: Optional[int] = None
     mode: str = "economic_comparison"  # "economic_comparison" or "full_game"
     confirm_full_game: bool = False
@@ -71,17 +72,6 @@ class BatchPrecomputeConfig:
     tolerance: float = 1e-5
 
 
-def _default_evaluator_factory(context: BenchmarkContext) -> CoalitionCostEvaluator:
-    origin = context.forecast_origin_t if context.forecast_origin_t is not None else 7008
-    return LegacyBilevelCoalitionEvaluator(
-        forecast_origin_t=origin,
-        community_model=context.community_model,
-        solver_name=context.solver_name,
-        member_ids=context.member_ids,
-        optimizer_config={"simulated_assets_hash": context.simulated_assets_hash},
-    )
-
-
 class BatchPrecomputeRunner:
     """Manages the controlled execution of offline batch precomputations."""
 
@@ -91,7 +81,7 @@ class BatchPrecomputeRunner:
         evaluator_factory: Optional[Callable[[BenchmarkContext], CoalitionCostEvaluator]] = None,
     ):
         self.config = config
-        self.evaluator_factory = evaluator_factory or _default_evaluator_factory
+        self.evaluator_factory = evaluator_factory
         self.context = build_benchmark_context(
             member_ids=CANONICAL_BENCHMARK_MEMBERS,
             forecast_origin_t=config.forecast_origin_t,
@@ -192,6 +182,10 @@ class BatchPrecomputeRunner:
                 "checkpoint_file": str(self.checkpoint_file),
             }
 
+        if self.evaluator_factory is None:
+            raise RuntimeError(
+                "Batch calculation requires an explicitly supplied evaluator_factory"
+            )
         evaluator = self.evaluator_factory(self.context)
         logger.info(
             "Starting batch precomputation for context %s (%d solves total, %d remaining)",
@@ -387,7 +381,11 @@ def run_batch_precompute(
 def main() -> None:
     """CLI entry point for batch precomputation."""
     parser = argparse.ArgumentParser(description="ComFair Batch Benchmark Precomputation CLI")
-    parser.add_argument("--community-model", default="c2", choices=["c0", "c2", "c3", "c4", "c5"])
+    parser.add_argument(
+        "--community-model",
+        default="cooperative_pool",
+        choices=["baseline", "cooperative_pool"],
+    )
     parser.add_argument("--forecast-origin", type=int, default=None, help="Forecast origin t (default: None for annual)")
     parser.add_argument("--mode", default="economic_comparison", choices=["economic_comparison", "full_game"])
     parser.add_argument("--confirm-full-game", action="store_true", help="Explicit confirmation required to run full 512-mask game")

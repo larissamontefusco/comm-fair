@@ -402,7 +402,7 @@ def build_snapshot(sources: Dict[str, Any]) -> Dict[str, Any]:
             "pv_available_kwh": number(kpis["pv_available_kwh"]),
             "battery_capacity_kwh": number(h["battery_capacity_kwh"]),
             "battery_modules": int(h["battery_modules"]),
-            "battery_throughput_c0_kwh": number(kpis["battery_throughput_kwh"]),
+            "battery_throughput_baseline_kwh": number(kpis["battery_throughput_kwh"]),
             "standalone_cost_aud": b0_val,
             "market_benefit_aud": u0_val,
             "market_bill_aud": b0_val - u0_val,
@@ -463,7 +463,7 @@ def build_snapshot(sources: Dict[str, Any]) -> Dict[str, Any]:
         })
 
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "kind": "canonical_annual_coalition_insights",
         "title": "ComFair 2026 Canonical 9-Member Coalition Research Snapshot",
         "description": "Empirical scientific snapshot of coalition value formation, bipartition efficiency, stability boundaries, and distributional justice.",
@@ -479,8 +479,8 @@ def build_snapshot(sources: Dict[str, Any]) -> Dict[str, Any]:
             "time_horizon": "annual",
             "dataset_workbook_sha256": "c559bd7dc946b2f0c01c8cc96beea75c783f3b48bdd7fe6da855b2ef01f75370",
             "network_context": "Ausgrid distribution network (Sydney, NSW, Australia)",
-            "baseline_model": "C0 uncoordinated standalone dispatch (no peer exchange)",
-            "cooperative_model": "C2 centralized coordinated physical dispatch (local peer exchange)",
+            "baseline_model": "Uncoordinated standalone dispatch (no peer exchange)",
+            "cooperative_model": "Cooperative physical-pool dispatch (local peer exchange)",
             "data_provenance_notes": {
                 "electrical_demand": "Empirical hourly smart-meter load observations from the Ausgrid distribution network (Sydney, NSW, Australia).",
                 "solar_and_storage": "Physical DER specifications and equipment ratings based on ComErgy 2026 canonical benchmark parameters.",

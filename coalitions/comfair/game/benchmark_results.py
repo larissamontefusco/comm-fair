@@ -34,7 +34,7 @@ class PartitionBlockResult:
     standalone_cost_aud: float
     value_aud: float
     is_precomputed: bool
-    community_model: str = "c2"
+    community_model: str = "cooperative_pool"
     member_costs_aud: dict[str, float] = field(default_factory=dict)
     member_benefits_aud: dict[str, float] = field(default_factory=dict)
     diagnostics: dict[str, Any] = field(default_factory=dict)

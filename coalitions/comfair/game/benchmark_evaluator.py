@@ -19,23 +19,12 @@ from .benchmark_results import (
     StabilityStatus,
 )
 from .coalitions import members_to_mask
-from .evaluator import CoalitionCostEvaluator, LegacyBilevelCoalitionEvaluator
+from .evaluator import CoalitionCostEvaluator
 from .precomputed import PrecomputedBenchmarkStore
 
 logger = logging.getLogger(__name__)
 
 MAX_INTERACTIVE_BLOCK_SIZE = 3
-
-
-def _default_evaluator_factory(context: BenchmarkContext) -> CoalitionCostEvaluator:
-    origin = context.forecast_origin_t if context.forecast_origin_t is not None else 7008
-    return LegacyBilevelCoalitionEvaluator(
-        forecast_origin_t=origin,
-        community_model=context.community_model,
-        solver_name=context.solver_name,
-        member_ids=context.member_ids,
-        optimizer_config={"simulated_assets_hash": context.simulated_assets_hash},
-    )
 
 
 def evaluate_nine_member_benchmark(
@@ -94,10 +83,39 @@ def evaluate_nine_member_benchmark(
             },
         )
 
-    # Step 3: Controlled 10-solve economic comparison (9 standalones + 1 grand coalition)
-    factory = evaluator_factory or _default_evaluator_factory
+    # Live calculation is available only to callers that explicitly supply a
+    # backend. The standalone site intentionally ships no optimiser.
+    if evaluator_factory is None:
+        return BenchmarkEvaluationResponse(
+            result_type=BenchmarkResultType.PARTIAL_OR_UNAVAILABLE.value,
+            status=BenchmarkStatus.UNAVAILABLE.value,
+            data_source="none",
+            is_precomputed=False,
+            community_model=context.community_model,
+            member_ids=list(context.member_ids),
+            forecast_origin_t=context.forecast_origin_t,
+            grand_coalition_cost_aud=None,
+            sum_standalone_cost_aud=None,
+            v_N_aud=None,
+            time_horizon=context.time_horizon,
+            horizon_hours=context.horizon_hours,
+            evaluation_level="economic_comparison",
+            stability_certificate=None,
+            stability_available=False,
+            stability_status=StabilityStatus.NOT_EVALUATED.value,
+            stability_explanation="This standalone site serves precomputed results only.",
+            error={
+                "code": "calculation_backend_unavailable",
+                "detail": "No calculation backend was supplied for this cache miss.",
+            },
+            provenance={
+                "dataset_hash": context.dataset_hash,
+                "context_sha256": context.context_sha256,
+            },
+        )
+
     try:
-        evaluator = factory(context)
+        evaluator = evaluator_factory(context)
     except Exception as exc:
         logger.error("Failed to initialize evaluator for context %s: %s", context.context_sha256, exc)
         return BenchmarkEvaluationResponse(
@@ -259,7 +277,7 @@ def evaluate_coalition_partitions(
     """Evaluate a user-specified disjoint partition of the community into coalition blocks.
 
     Supports heterogeneous partitions where each block may specify an independent
-    governance model (e.g. Block 1 under C2, Block 2 under C0).
+    scenario (e.g. one block using cooperative_pool and another using baseline).
 
     Validates:
     - Non-empty blocks
@@ -389,7 +407,8 @@ def evaluate_coalition_partitions(
                 },
             )
 
-        if not allow_calculation:
+        if not allow_calculation or evaluator_factory is None:
+            backend_missing = allow_calculation and evaluator_factory is None
             return BenchmarkEvaluationResponse(
                 result_type=BenchmarkResultType.PARTIAL_OR_UNAVAILABLE.value,
                 status=BenchmarkStatus.UNAVAILABLE.value,
@@ -407,10 +426,18 @@ def evaluate_coalition_partitions(
                 stability_certificate=None,
                 stability_available=False,
                 stability_status=StabilityStatus.NOT_EVALUATED.value,
-                stability_explanation="Block is not precomputed and calculation is disabled to prevent blocking.",
+                stability_explanation=(
+                    "This standalone site serves precomputed results only."
+                    if backend_missing
+                    else "Block is not precomputed and calculation is disabled to prevent blocking."
+                ),
                 error={
-                    "code": "not_precomputed",
-                    "detail": f"Partition block {list(block_members)} under model {b_model} is not precomputed and interactive calculation is disabled.",
+                    "code": "calculation_backend_unavailable" if backend_missing else "not_precomputed",
+                    "detail": (
+                        f"Partition block {list(block_members)} under model {b_model} is not precomputed and no calculation backend was supplied."
+                        if backend_missing
+                        else f"Partition block {list(block_members)} under model {b_model} is not precomputed and interactive calculation is disabled."
+                    ),
                 },
                 provenance={
                     "dataset_hash": context.dataset_hash,
@@ -420,8 +447,7 @@ def evaluate_coalition_partitions(
 
         # Compute block live if permitted
         if b_model not in evaluators_by_model:
-            factory = evaluator_factory or _default_evaluator_factory
-            evaluators_by_model[b_model] = factory(block_context)
+            evaluators_by_model[b_model] = evaluator_factory(block_context)
         evaluator = evaluators_by_model[b_model]
 
         # Standalone costs for block

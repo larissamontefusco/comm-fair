@@ -3,7 +3,7 @@
 Guarantees cryptographic context binding, strict integrity verification, and
 prevention of silent cross-scenario fallbacks or partial/corrupted cache leaks.
 Supports request deduplication for concurrent identical contexts and indexes both
-canonical annual C2 full cooperative game and C0 physical baseline.
+canonical annual cooperative-pool game and standalone baseline.
 """
 from hashlib import sha256
 import json
@@ -13,7 +13,6 @@ from pathlib import Path
 import threading
 from typing import Any, Callable, Mapping, Optional, Sequence, Tuple
 
-from comfair.physical.config import canonical_json
 from .benchmark_context import (
     BenchmarkContext,
     CANONICAL_BENCHMARK_MEMBERS,
@@ -27,6 +26,7 @@ from .benchmark_results import (
     StabilityStatus,
 )
 from .coalitions import members_to_mask
+from .jsonutil import canonical_json
 
 logger = logging.getLogger(__name__)
 
@@ -188,20 +188,19 @@ class PrecomputedBenchmarkStore:
             error=None,
         )
 
-    def get_canonical_annual_c0_response(self, context: BenchmarkContext) -> BenchmarkEvaluationResponse:
-        """Construct verified precomputed response for canonical annual C0 standalone baseline.
+    def get_canonical_annual_baseline_response(self, context: BenchmarkContext) -> BenchmarkEvaluationResponse:
+        """Construct the verified annual standalone-baseline response.
 
-        Under C0, households operate as uncoordinated standalone entities without
+        Under the baseline, households operate independently without
         local energy exchange. Consequently, for any coalition S (including N),
-        the joint cost under C0 is identically the sum of standalone costs:
-            C(S; C0) = sum_{i in S} B_i
-            v(S; C0) = sum_{i in S} B_i - C(S; C0) = 0.0 AUD
-        The 5509.65 AUD joint cost in M3/M5 corresponds to C2 (cooperative physical pool)
-        and must never be labelled as a C0 coalition result.
+        the joint cost is identically the sum of standalone costs:
+            C_baseline(S) = sum_{i in S} B_i
+            v_baseline(S) = sum_{i in S} B_i - C_baseline(S) = 0.0 AUD
+        The 5509.65 AUD joint cost belongs to the cooperative physical pool.
         """
         self._ensure_annual_artifacts_loaded()
         if not self._m3_baselines:
-            raise FileNotFoundError("M3 baselines artifact missing for C0 benchmark")
+            raise FileNotFoundError("M3 artifact missing for baseline benchmark")
 
         b_i = {str(k): float(v) for k, v in self._m3_baselines["B_i_aud"].items()}
         sum_b_i = float(self._m3_baselines["sum_B_i_aud"])
@@ -211,7 +210,7 @@ class PrecomputedBenchmarkStore:
             status=BenchmarkStatus.COMPLETED.value,
             data_source="precomputed",
             is_precomputed=True,
-            community_model="c0",
+            community_model="baseline",
             member_ids=list(context.member_ids),
             forecast_origin_t=None,
             grand_coalition_cost_aud=sum_b_i,
@@ -227,9 +226,9 @@ class PrecomputedBenchmarkStore:
             stability_available=False,
             stability_status=StabilityStatus.NOT_EVALUATED.value,
             stability_explanation=(
-                "C0 models standalone household operation without local energy sharing. "
+                "The baseline models standalone operation without local energy sharing. "
                 "Joint cost equals summed standalone cost (9754.64 AUD) and cooperative surplus v(N) is 0.0 AUD. "
-                "Cooperative pooling (5509.65 AUD, v(N) = 4244.99 AUD) requires model C2."
+                "The cooperative pool achieves 5509.65 AUD and v(N) = 4244.99 AUD."
             ),
             partition_results=None,
             provenance={
@@ -238,7 +237,7 @@ class PrecomputedBenchmarkStore:
                 "context_sha256": context.context_sha256,
                 "source": "canonical_m3_standalone_b0",
                 "scenario_hash": context.simulated_assets_hash,
-                "governance_model": "c0",
+                "scenario": "baseline",
                 "cooperation": "none (standalone uncoordinated)",
                 "solver": self._m3_baselines.get("B1", {}).get("solver", {}),
             },
@@ -246,7 +245,7 @@ class PrecomputedBenchmarkStore:
                 "all_solves_optimal": True,
                 "cooperative_exchange": False,
                 "summed_b0_aud": sum_b_i,
-                "comparison_note": "C2 cooperative pool achieves 5509.65 AUD (surplus 4244.99 AUD relative to this C0 baseline).",
+                "comparison_note": "The cooperative pool achieves 5509.65 AUD (surplus 4244.99 AUD relative to the baseline).",
             },
             error=None,
         )
@@ -264,13 +263,13 @@ class PrecomputedBenchmarkStore:
         )
 
     def _lookup_uncached(self, context: BenchmarkContext) -> Optional[BenchmarkEvaluationResponse]:
-        # 1. Match official annual M5 C2 benchmark
-        if context.is_canonical_annual_benchmark():
+        # 1. Match official annual M5 cooperative-pool benchmark
+        if context.is_canonical_annual_cooperative_pool():
             return self.get_canonical_annual_benchmark_response(context)
 
-        # 2. Match official annual M3 C0 physical baseline
-        if context.is_canonical_annual_c0_baseline():
-            return self.get_canonical_annual_c0_response(context)
+        # 2. Match official annual M3 standalone baseline
+        if context.is_canonical_annual_baseline():
+            return self.get_canonical_annual_baseline_response(context)
 
         # 3. Check local precomputed files directory
         target_context_hash = context.context_sha256
@@ -341,8 +340,8 @@ class PrecomputedBenchmarkStore:
         self, context: BenchmarkContext, mask: int, members: Sequence[int]
     ) -> Optional[dict[str, Any]]:
         """Look up an exact coalition mask from precomputed data for the given context and model."""
-        # 1. Annual M5 C2 benchmark
-        if context.is_canonical_annual_benchmark():
+        # 1. Annual M5 cooperative-pool benchmark
+        if context.is_canonical_annual_cooperative_pool():
             self._ensure_annual_artifacts_loaded()
             records_by_mask = self._m5_records_by_mask or {}
             record = records_by_mask.get(mask)
@@ -360,14 +359,14 @@ class PrecomputedBenchmarkStore:
                     "sum_standalone_cost_aud": float(record["sum_standalone_cost_aud"]),
                     "value_aud": float(record["value_aud"]),
                     "is_precomputed": True,
-                    "community_model": "c2",
+                    "community_model": "cooperative_pool",
                     "cost_source": record.get("cost_source", "m5_precomputed"),
                     "solver": record.get("solver", {}),
                     "physical_validation": record.get("physical_validation", {}),
                 }
 
-        # 2. Annual C0 baseline: under C0, C(S) = sum_{i in S} B_i and cooperative surplus v(S) = 0.0
-        if context.is_canonical_annual_c0_baseline():
+        # 2. Annual baseline: C(S) is additive and v(S) is zero.
+        if context.is_canonical_annual_baseline():
             self._ensure_annual_artifacts_loaded()
             if self._m3_baselines:
                 b_i_map = self._m3_baselines.get("B_i_aud", {})
@@ -381,10 +380,10 @@ class PrecomputedBenchmarkStore:
                         "sum_standalone_cost_aud": cost,
                         "value_aud": 0.0,
                         "is_precomputed": True,
-                        "community_model": "c0",
-                        "cost_source": "m3_c0_standalone",
+                        "community_model": "baseline",
+                        "cost_source": "m3_standalone_baseline",
                         "solver": self._m3_baselines.get("B1", {}).get("solver", {}),
-                        "physical_validation": {"type": "c0_uncoordinated_standalone"},
+                        "physical_validation": {"type": "uncoordinated_standalone_baseline"},
                     }
 
         # 3. Check precomputed store files
@@ -455,19 +454,19 @@ class PrecomputedBenchmarkStore:
         """List all verified precomputed benchmarks available in the repository."""
         items: list[dict[str, Any]] = []
 
-        # Canonical M5 C2 Annual Benchmark
+        # Canonical M5 cooperative-pool annual benchmark
         try:
             self._ensure_annual_artifacts_loaded()
             items.append({
                 "benchmark_id": "canonical_annual_m5",
-                "title": "ComErgy 2026 Canonical 9-Member Annual Benchmark (M5 C2)",
+                "title": "ComErgy 2026 Canonical 9-Member Cooperative Pool (M5)",
                 "dataset_hash": WORKBOOK_SHA256,
                 "member_ids": list(CANONICAL_BENCHMARK_MEMBERS),
                 "forecast_origin_t": None,
                 "time_horizon": "annual",
                 "horizon_hours": 8760,
                 "evaluation_level": "full_cooperative_game",
-                "community_model": "c2",
+                "community_model": "cooperative_pool",
                 "simulated_assets_hash": build_benchmark_context().simulated_assets_hash,
                 "total_coalitions_evaluated": 512,
                 "has_stability_certificate": True,
@@ -478,21 +477,21 @@ class PrecomputedBenchmarkStore:
         except Exception as exc:
             logger.warning("Could not index canonical annual M5 benchmark: %s", exc)
 
-        # Canonical M3 C0 Annual Baseline
+        # Canonical M3 annual standalone baseline
         try:
             self._ensure_annual_artifacts_loaded()
             if self._m3_baselines:
                 sum_b0 = float(self._m3_baselines["sum_B_i_aud"])
                 items.append({
-                    "benchmark_id": "canonical_annual_m3_c0",
-                    "title": "ComErgy 2026 Canonical 9-Member Standalone Baseline (M3 C0)",
+                    "benchmark_id": "canonical_annual_m3_baseline",
+                    "title": "ComErgy 2026 Canonical 9-Member Standalone Baseline (M3)",
                     "dataset_hash": WORKBOOK_SHA256,
                     "member_ids": list(CANONICAL_BENCHMARK_MEMBERS),
                     "forecast_origin_t": None,
                     "time_horizon": "annual",
                     "horizon_hours": 8760,
                     "evaluation_level": "economic_comparison",
-                    "community_model": "c0",
+                    "community_model": "baseline",
                     "simulated_assets_hash": build_benchmark_context().simulated_assets_hash,
                     "total_coalitions_evaluated": 9,
                     "has_stability_certificate": False,
@@ -500,7 +499,7 @@ class PrecomputedBenchmarkStore:
                     "v_N_aud": 0.0,
                 })
         except Exception as exc:
-            logger.warning("Could not index canonical annual M3 C0 benchmark: %s", exc)
+            logger.warning("Could not index canonical annual M3 baseline: %s", exc)
 
 
         # Scan precomputed directory

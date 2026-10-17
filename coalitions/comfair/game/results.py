@@ -1,7 +1,7 @@
 """Plain typed game records; hourly optimiser state never enters this schema."""
 from dataclasses import asdict, dataclass, field
 import math
-from comfair.physical.config import canonical_json
+from .jsonutil import canonical_json
 from .coalitions import mask_to_members, member_universe
 
 
@@ -17,7 +17,7 @@ class CoalitionRecord:
     solver: dict
     physical_validation: dict
     provenance_sha256: str
-    community_model: str = 'c2'
+    community_model: str = 'cooperative_pool'
     member_costs: dict = field(default_factory=dict)
     ec_manager: dict = field(default_factory=dict)
     pricing_provenance: dict = field(default_factory=dict)
@@ -40,9 +40,9 @@ class CoalitionRecord:
             raise ValueError('Coalition value formula mismatch')
         source = (
             'empty' if not expected else
-            'c0_singleton' if len(expected) == 1 else
-            'c0_coalition' if self.community_model == 'c0' else
-            'bilevel_household2'
+            'baseline_singleton' if len(expected) == 1 else
+            'baseline_coalition' if self.community_model == 'baseline' else
+            'cooperative_pool'
         )
         if self.cost_source != source:
             raise ValueError('Unexpected coalition cost source')
@@ -63,10 +63,10 @@ class CoalitionRecord:
                 raise ValueError('Final member costs do not reconstruct C(S)')
             if self.solver.get('status') != 'ok':
                 raise ValueError('Coalition solve is not validated successful')
-            expected_stage = 'C0' if self.community_model == 'c0' else 'Household-2'
+            expected_stage = self.community_model
             if self.evaluation_stage != expected_stage:
                 raise ValueError('Coalition cost came from the wrong bi-level stage')
-            if self.community_model != 'c0':
+            if self.community_model != 'baseline':
                 if tuple(self.pricing_provenance.get('coalition_members', ())) != expected:
                     raise ValueError('Pricing provenance coalition mismatch')
                 if self.pricing_provenance.get('source') != 'pricing_model_v1.price_arrays':

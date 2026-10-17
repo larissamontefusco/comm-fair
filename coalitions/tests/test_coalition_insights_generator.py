@@ -70,7 +70,7 @@ class TestCoalitionInsightsGenerator(unittest.TestCase):
 
     def test_schema_integrity(self):
         """Verify explicit schema version and required scientific sections."""
-        self.assertEqual(self.snapshot["schema_version"], 1)
+        self.assertEqual(self.snapshot["schema_version"], 2)
         self.assertEqual(self.snapshot["kind"], "canonical_annual_coalition_insights")
         self.assertEqual(self.snapshot["currency"], "AUD")
         self.assertEqual(self.snapshot["period_hours"], 8760)

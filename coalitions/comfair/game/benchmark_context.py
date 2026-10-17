@@ -4,17 +4,22 @@ Every precomputed result and evaluation request is bound to an immutable context
 covering: dataset hash, canonical member IDs, forecast origin/horizon, model,
 simulated assets hash, solver name/config, and code schema version.
 """
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 import hashlib
-from typing import Any, Mapping, Optional, Sequence, Tuple
+from typing import Any, Optional, Sequence, Tuple
 
-from comfair.physical.config import canonical_json
-from helpers.scenario import normalize_simulated_assets, simulated_assets_hash
+from .jsonutil import canonical_json
 
 WORKBOOK_SHA256 = "c559bd7dc946b2f0c01c8cc96beea75c783f3b48bdd7fe6da855b2ef01f75370"
 CANONICAL_BENCHMARK_MEMBERS: Tuple[int, ...] = (1, 2, 3, 4, 5, 6, 7, 8, 9)
-SUPPORTED_COMMUNITY_MODELS = ("c0", "c2", "c3", "c4", "c5")
+SUPPORTED_COMMUNITY_MODELS = ("baseline", "cooperative_pool")
 SCHEMA_VERSION = 1
+
+
+def _simulated_assets_hash(value: Any) -> str:
+    """Fingerprint optional scenario data without a platform helper module."""
+    normalized = {} if value is None else value
+    return hashlib.sha256(canonical_json(normalized).encode("utf-8")).hexdigest()
 
 
 @dataclass(frozen=True)
@@ -52,25 +57,25 @@ class BenchmarkContext:
     def context_sha256(self) -> str:
         return hashlib.sha256(canonical_json(self.to_dict()).encode("utf-8")).hexdigest()
 
-    def is_canonical_annual_benchmark(self) -> bool:
-        """True if this context strictly matches the official annual M5 C2 benchmark."""
+    def is_canonical_annual_cooperative_pool(self) -> bool:
+        """True for the official annual M5 cooperative-pool benchmark."""
         return (
             self.dataset_hash == WORKBOOK_SHA256
             and self.member_ids == CANONICAL_BENCHMARK_MEMBERS
             and self.forecast_origin_t is None
-            and self.community_model == "c2"
-            and self.simulated_assets_hash == simulated_assets_hash(None)
+            and self.community_model == "cooperative_pool"
+            and self.simulated_assets_hash == _simulated_assets_hash(None)
             and self.solver_name == "highs"
         )
 
-    def is_canonical_annual_c0_baseline(self) -> bool:
-        """True if this context matches the official annual C0 physical baseline (M3)."""
+    def is_canonical_annual_baseline(self) -> bool:
+        """True for the official annual M3 standalone baseline."""
         return (
             self.dataset_hash == WORKBOOK_SHA256
             and self.member_ids == CANONICAL_BENCHMARK_MEMBERS
             and self.forecast_origin_t is None
-            and self.community_model == "c0"
-            and self.simulated_assets_hash == simulated_assets_hash(None)
+            and self.community_model == "baseline"
+            and self.simulated_assets_hash == _simulated_assets_hash(None)
             and self.solver_name == "highs"
         )
 
@@ -79,7 +84,7 @@ def build_benchmark_context(
     *,
     member_ids: Optional[Sequence[int]] = None,
     forecast_origin_t: Optional[int] = None,
-    community_model: str = "c2",
+    community_model: str = "cooperative_pool",
     simulated_assets: Any = None,
     solver_name: str = "highs",
     dataset_hash: str = WORKBOOK_SHA256,
@@ -111,7 +116,7 @@ def build_benchmark_context(
     if isinstance(simulated_assets, str) and len(simulated_assets) == 64 and all(c in "0123456789abcdefABCDEF" for c in simulated_assets):
         assets_hash = simulated_assets.lower()
     else:
-        assets_hash = simulated_assets_hash(simulated_assets)
+        assets_hash = _simulated_assets_hash(simulated_assets)
 
     return BenchmarkContext(
         dataset_hash=str(dataset_hash),

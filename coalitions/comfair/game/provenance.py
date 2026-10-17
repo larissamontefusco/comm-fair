@@ -10,7 +10,7 @@ from comfair.data import load_benchmark
 from comfair.physical import config_from_benchmark
 from comfair.market.run_market import source_hash, validate_baseline
 from comfair.market.matching import require_close
-from comfair.physical.config import canonical_json
+from .jsonutil import canonical_json
 from .coalitions import members_to_mask
 
 BACKEND = Path(__file__).resolve().parents[2]

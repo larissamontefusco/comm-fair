@@ -1,0 +1,103 @@
+x-runtime: &runtime
+  image: commfair:local
+  working_dir: /app
+  volumes:
+    - ./outputs:/app/outputs
+    - ./outputs/forecast/f0:/app/forecast/comfair/artifacts/forecasting
+    - ./forecast/reader:/app/forecast/reader:ro
+    - ./forecast/inputs:/app/forecast/inputs:ro
+    - ./coalitions/reader:/app/coalitions/reader:ro
+    - ./coalitions/inputs:/app/coalitions/inputs:ro
+
+services:
+  app:
+    <<: *runtime
+    build:
+      context: .
+
+  verify:
+    <<: *runtime
+    command: ["python", "coalitions/scripts/verify_release.py"]
+
+  coalition-tests:
+    <<: *runtime
+    command: ["python", "-m", "unittest", "discover", "-s", "coalitions/tests", "-v"]
+
+  coalition-query:
+    <<: *runtime
+    command: ["python", "coalitions/scripts/query_coalition.py", "--members", "1,3,8", "--model", "cooperative_pool"]
+
+  figures:
+    <<: *runtime
+    command:
+      - python
+      - coalitions/scripts/generate_coalition_fragmentation_figure.py
+      - --output-dir
+      - outputs/coalitions/figures
+
+  solver-smoke:
+    <<: *runtime
+    command: ["python", "coalitions/scripts/smoke_physical.py"]
+
+  forecast-demo-champion:
+    <<: *runtime
+    working_dir: /app/forecast
+    command:
+      - python
+      - -m
+      - scripts.demo
+      - --origin-t
+      - "7008"
+      - --model
+      - champion
+      - --output-dir
+      - /app/outputs/forecast/demo-champion
+
+  forecast-demo-naive24:
+    <<: *runtime
+    working_dir: /app/forecast
+    command:
+      - python
+      - -m
+      - scripts.demo
+      - --origin-t
+      - "7008"
+      - --model
+      - naive_24
+      - --output-dir
+      - /app/outputs/forecast/demo-naive-24
+
+  forecast-custom:
+    <<: *runtime
+    working_dir: /app/forecast
+    command:
+      - python
+      - -m
+      - scripts.train_custom
+      - --output-dir
+      - /app/outputs/forecast/custom
+
+  forecast-f0:
+    <<: *runtime
+    working_dir: /app/forecast
+    command:
+      - python
+      - -m
+      - comfair.forecasting.benchmark
+      - --output-dir
+      - /app/forecast/comfair/artifacts/forecasting
+
+  forecast-f1:
+    <<: *runtime
+    working_dir: /app/forecast
+    command:
+      - python
+      - -m
+      - comfair.forecasting.model_benchmark
+      - --output-dir
+      - /app/outputs/forecast/f1
+
+  forecast-tests:
+    <<: *runtime
+    working_dir: /app/forecast
+    command: ["python", "-m", "pytest", "tests", "-q"]

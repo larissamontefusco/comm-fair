@@ -1,0 +1,20 @@
+.git
+.gitignore
+.venv*
+venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.cache
+outputs
+*.egg-info
+.env*
+*.pdf
+*.png
+
+# Private benchmark inputs must be mounted at runtime, never baked into an
+# image that may be distributed.
+forecast/reader/*.xlsx
+forecast/inputs/*.csv
+coalitions/reader/*.xlsx
+coalitions/inputs/*.csv

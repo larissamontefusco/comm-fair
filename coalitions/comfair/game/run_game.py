@@ -1,14 +1,12 @@
-"""Coalition game backed by the forecast/pricing/legacy bi-level pipeline."""
+"""Coalition-game artifact builder for an explicitly supplied evaluator."""
 
-import argparse
 from collections import Counter
 from pathlib import Path
 from time import perf_counter
 
-from comfair.physical.config import canonical_json
 from .checkpoint import atomic_json
 from .engine import enumerate_game
-from .evaluator import LegacyBilevelCoalitionEvaluator
+from .jsonutil import canonical_json
 from .provenance import digest
 from .stability import solve_least_core
 
@@ -54,16 +52,16 @@ def build_artifacts(evaluator, records):
         "core_tolerance": evaluator.cost_tolerance,
     }
     coalitions = shared | {
-        "standalone_c0_cost": {
+        "standalone_baseline_cost": {
             str(member): cost for member, cost in standalone.items()
         },
         "records": [record.to_dict() for record in records],
         "diagnostics": {
             "coalition_count": len(records),
             "empty_count": counts["empty"],
-            "standalone_c0_count": counts["c0_singleton"],
-            "bilevel_household2_count": counts["bilevel_household2"],
-            "c0_coalition_count": counts["c0_coalition"],
+            "standalone_baseline_count": counts["baseline_singleton"],
+            "cooperative_pool_count": counts["cooperative_pool"],
+            "baseline_coalition_count": counts["baseline_coalition"],
         },
     }
     core = shared | {
@@ -79,15 +77,9 @@ def run_game(
     output_dir,
     checkpoint,
     *,
-    evaluator=None,
-    forecast_origin_t=None,
-    community_model="c2",
-    solver_name="scip",
-    member_ids=(1, 2, 3, 4, 5, 6, 7, 8, 9),
+    evaluator,
     resume=False,
     jobs=1,
-    simulated_data_scenario=None,
-    simulated_assets=None,
 ):
     started = perf_counter()
     output_dir = Path(output_dir)
@@ -96,16 +88,6 @@ def run_game(
     if any((output_dir / name).exists() for name in canonical_names):
         raise ValueError(
             "Use a fresh output directory; existing canonical M5 results are preserved"
-        )
-    if evaluator is None:
-        if forecast_origin_t is None:
-            raise ValueError("forecast_origin_t is required")
-        evaluator = LegacyBilevelCoalitionEvaluator(
-            forecast_origin_t=forecast_origin_t,
-            community_model=community_model,
-            solver_name=solver_name,
-            member_ids=member_ids,
-            optimizer_config={"simulated_data_scenario": simulated_data_scenario, "simulated_assets": simulated_assets},
         )
     try:
         def progress(done, total, mask, source):
@@ -157,41 +139,3 @@ def run_game(
             },
         )
         raise
-
-
-def _members(value):
-    try:
-        return tuple(sorted(int(item) for item in value.split(",") if item))
-    except ValueError as exc:
-        raise argparse.ArgumentTypeError(
-            "members must be comma-separated integer owner IDs"
-        ) from exc
-
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output-dir", type=Path, required=True)
-    parser.add_argument("--checkpoint", type=Path, required=True)
-    parser.add_argument("--forecast-origin", type=int, required=True)
-    parser.add_argument(
-        "--community-model",
-        choices=("c0", "c2", "c3", "c4", "c5"),
-        default="c2",
-    )
-    parser.add_argument("--solver", default="scip")
-    parser.add_argument("--members", type=_members, default=tuple(range(1, 10)))
-    parser.add_argument("--resume", action="store_true")
-    parser.add_argument("--jobs", type=int, default=1)
-    parser.add_argument("--simulated-data-scenario", type=str, default=None)
-    args = parser.parse_args()
-    run_game(
-        args.output_dir,
-        args.checkpoint,
-        forecast_origin_t=args.forecast_origin,
-        community_model=args.community_model,
-        solver_name=args.solver,
-        member_ids=args.members,
-        resume=args.resume,
-        jobs=args.jobs,
-        simulated_data_scenario=args.simulated_data_scenario,
-    )

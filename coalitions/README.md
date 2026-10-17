@@ -196,9 +196,8 @@ redistribution rights or independent proof of every historical optimization.
   not inferred from module counts or manufacturer certification.
 - LP without exclusivity binaries; material simultaneous flows fail post-solve
   checks. No network topology, EVs, flexibility bids or carbon objective.
-- This is distinct from forecast-driven daily operational C0–C5 workflows and
-  the interactive platform. Snapshot cross-references to rolling experiments
-  are historical context, not experiments reproduced by this release.
+- This is distinct from the forecast-driven daily operational workflows of the
+  original interactive platform, which are not included in this release.
 - Market benefits, least-core witnesses and governance benefits are distinct.
   Nonempty core and zero required repair do not imply a universally fairest policy.
 

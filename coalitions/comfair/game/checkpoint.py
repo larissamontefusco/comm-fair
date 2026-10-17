@@ -4,7 +4,7 @@ import json
 import os
 from pathlib import Path
 
-from comfair.physical.config import canonical_json
+from .jsonutil import canonical_json
 from .provenance import fingerprint
 from .results import CoalitionRecord
 
